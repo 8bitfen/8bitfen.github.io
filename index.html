@@ -132,6 +132,30 @@
   .tabs button.on{background:var(--c,var(--yellow));color:#1a1530}
   .sheet.hid{display:none}
   .sheet .count{font-size:13px;color:var(--muted)}
+  /* öğretmen materyalleri */
+  .subh{font-family:var(--px);font-size:24px;margin:34px 0 16px;color:var(--text)}
+  .subh small{font-family:var(--body);font-size:14px;color:var(--mint);font-weight:800;margin-left:8px}
+  .flow .card h4,.tools h4,.qcard h4{font-family:var(--px);font-size:22px;margin:4px 0 6px}
+  .step{display:inline-grid;place-items:center;width:40px;height:40px;border-radius:10px;background:var(--c);color:#1a1530;font-family:var(--px);font-size:24px;border:3px solid #000;box-shadow:0 4px 0 #000}
+  .qcard .big{font-family:var(--px);font-size:54px;line-height:1;color:var(--c);text-shadow:4px 4px 0 #000}
+  .qcard small{display:block;color:var(--muted);font-size:13px;margin-top:4px}
+  .g2{grid-template-columns:1fr 1fr;margin-top:22px}
+  @media(max-width:760px){.g2{grid-template-columns:1fr}}
+  .sharemsg{background:rgba(0,0,0,.25);border:1px dashed var(--line);border-radius:10px;padding:12px;margin:8px 0 4px;font-size:14.5px;color:#e9e5ff}
+  #printArea{display:none}
+  @media print{
+    body{background:#fff!important;color:#000;cursor:auto}
+    body:before,#sky,nav,header,main,footer,#guide,#reopen,#modal{display:none!important}
+    #printArea{display:block!important;font-family:Arial,Helvetica,sans-serif;color:#000;font-size:13pt;line-height:1.45}
+    @page{margin:18mm}
+    #printArea h1{font-family:Arial,Helvetica,sans-serif;font-size:20pt;margin:0 0 4px}
+    #printArea .who{display:flex;gap:30px;margin:10px 0 18px;font-size:12pt}
+    #printArea ol{padding-left:22px}
+    #printArea li{margin-bottom:14px;break-inside:avoid}
+    #printArea .opt{margin-left:10px}
+    #printArea .key{break-before:page}
+    #printArea .foot{margin-top:24px;font-size:10pt;color:#555;border-top:1px solid #999;padding-top:6px}
+  }
   /* takvim */
   .week{display:grid;grid-template-columns:repeat(7,1fr);gap:12px}
   @media(max-width:820px){.week{grid-template-columns:repeat(2,1fr)}}
@@ -195,6 +219,7 @@
   .mbox .btn{justify-content:center}
   .mbox .close{margin-top:14px;background:none;border:0;color:var(--muted);font-weight:800;cursor:inherit;font-family:var(--body);font-size:15px}
 </style>
+<script data-goatcounter="https://8bitfen.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </head>
 <body>
 <script>document.documentElement.classList.add('js')</script>
@@ -208,6 +233,7 @@
       <a href="#siniflar">Sınıflar</a>
       <a href="#kaynaklar">Ücretsiz Kaynaklar</a>
       <a href="#takvim">Takvim</a>
+      <a href="#ogretmen">Öğretmenler</a>
       <a href="#magaza">Mağaza</a>
       <a href="#hakkinda">Hakkında</a>
     </div>
@@ -316,6 +342,36 @@
   </div>
 </section>
 
+<section id="ogretmen">
+  <div class="wrap">
+    <div class="head rv"><span class="eyebrow">▸ ÖĞRETMEN MATERYALLERİ</span><h2>Derste kullan, ücretsiz</h2><p>Videolar, çalışma kâğıtları ve cevap anahtarlı mini quizler; akıllı tahtada ya da çıktı olarak kullanabilirsin.</p></div>
+
+    <h3 class="subh rv">Bir ders, dört adım</h3>
+    <div class="grid g4 flow">
+      <div class="card rv" style="--c:var(--mint)"><span class="step" data-px>1</span><h4>Isın</h4><p>Dersi bir Shorts quiz ile aç. Tek soru, <span data-px>30</span> saniye, tüm sınıf tahmin eder.</p></div>
+      <div class="card rv" style="--c:var(--sky)"><span class="step" data-px>2</span><h4>Keşfet</h4><p>Konunun "Tam Macera" videosunu izlet. Sorularda durdurup sınıfa sor.</p></div>
+      <div class="card rv" style="--c:var(--orange)"><span class="step" data-px>3</span><h4>Pekiştir</h4><p>Ücretsiz çalışma kâğıdını dağıt; 8. sınıflarda LGS tarzı sorularla biter.</p></div>
+      <div class="card rv" style="--c:var(--pink)"><span class="step" data-px>4</span><h4>Oyna</h4><p>Son <span data-px>5</span> dakikada "Luna'nın Bilim Koşusu"nu tahtada oynatın, soruları sınıf cevaplasın.</p></div>
+    </div>
+
+    <h3 class="subh rv">Yazdırılabilir mini quizler <small>cevap anahtarlı</small></h3>
+    <div class="grid g4" id="quizCards"></div>
+
+    <div class="grid g2 tools">
+      <div class="card rv" style="--c:var(--yellow)">
+        <h4>Veli ve öğrenci grubunda paylaş</h4>
+        <p class="sharemsg" id="shareMsg">🎮 8bitfen: 5, 6, 7 ve 8. sınıflar için 8-bit oyun tarzında fen bilimleri! Kısa quiz videoları, ücretsiz çalışma kâğıtları ve Luna'nın Bilim Koşusu oyunu burada: https://8bitfen.github.io</p>
+        <button class="dl" id="copyShare" style="--c:var(--yellow)">📋 Mesajı kopyala</button>
+      </div>
+      <div class="card rv" style="--c:var(--lila)">
+        <h4>Kullanım izni</h4>
+        <p>Videolar, çalışma kâğıtları ve quizler sınıf içinde, ödevde ve okul panolarında ücretsiz kullanılabilir. Çoğaltıp öğrencilere dağıtabilirsin. Lütfen satma ve "8bitfen" adını silme.</p>
+        <a class="more" href="#kaynaklar">Çalışma kâğıtlarına git →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="magaza" class="shop">
   <div class="wrap">
     <div class="head rv"><span class="eyebrow">▸ MAĞAZA</span><h2>Kilitli bölüm <span class="lockbig">🔒</span></h2><p>Henüz açılmadı. Açıldığında ilk haberi YouTube kanalında vereceğiz.</p></div>
@@ -345,6 +401,8 @@
     <a href="https://www.youtube.com/@8bitfen" target="_blank" rel="noopener">youtube.com/@8bitfen</a>
   </div>
 </footer>
+
+<div id="printArea" aria-hidden="true"></div>
 
 <!-- Luna rehber -->
 <div id="guide">
@@ -498,19 +556,14 @@ function tick(){
  requestAnimationFrame(tick)}
 tick();
 
-/* ---------- LUNA'NIN BİLİM KOŞUSU (mini oyun) ---------- */
-(function(){
-const stage=document.getElementById("stage"),cv=document.getElementById("game"),cx=cv.getContext("2d");
-const H=240;let W=320,GY=H-30;
-function fit(){W=Math.max(240,Math.round(H*stage.clientWidth/stage.clientHeight));cv.width=W;cv.height=H;GY=H-30}
-fit();addEventListener("resize",fit);
-
+/* ---------- soru bankası (oyun ve yazdırılabilir quizler) ---------- */
 /* sorular: her biri [sınıf, soru, doğru, yanlış] */
-const QS=[
+window.QS=[
  [5,"Ağırlığın birimi hangisidir?","Newton","Kilogram"],
  [5,"Kütle hangi araçla ölçülür?","Eşit kollu terazi","Dinamometre"],
  [5,"Sürtünme kuvveti harekete göre hangi yönde etki eder?","Harekete zıt yönde","Hareketle aynı yönde"],
  [5,"Ay kendi ışığını üretir mi?","Hayır, Güneş'in ışığını yansıtır","Evet, kendi ışığını üretir"],
+ [5,"Dünya'nın kendi ekseni etrafında dönmesi neyi oluşturur?","Gece ve gündüzü","Mevsimleri"],
  [6,"Çiçekli bitkilerde tozlaşmadan sonra ne gerçekleşir?","Döllenme","Çimlenme"],
  [6,"Kimyasal sindirimi ağızda başlayan besin hangisidir?","Karbonhidrat","Protein"],
  [6,"Proteinlerin kimyasal sindirimi nerede başlar?","Midede","Ağızda"],
@@ -519,11 +572,23 @@ const QS=[
  [7,"Yüksekten bırakılan bir topun düşerken çekim potansiyel enerjisi ne olur?","Azalır","Artar"],
  [7,"Güneş Sistemi'ndeki en büyük gezegen hangisidir?","Jüpiter","Satürn"],
  [7,"Bitkiler fotosentezde havadan hangi gazı alır?","Karbondioksit","Oksijen"],
+ [7,"Hücrede kalıtım materyalini taşıyan ve hücreyi yöneten yapı hangisidir?","Çekirdek","Hücre zarı"],
+ [7,"Güneş Sistemi'nde Güneş'e en yakın gezegen hangisidir?","Merkür","Venüs"],
  [8,"DNA'nın yapı birimi nedir?","Nükleotit","Amino asit"],
  [8,"Aynı kuvvette yüzey alanı küçülürse katı basıncı ne olur?","Artar","Azalır"],
  [8,"Derinlik arttıkça sıvı basıncı ne olur?","Artar","Azalır"],
- [8,"Kutup ayısının kalın yağ tabakası neye örnektir?","Adaptasyon","Mutasyon"]
+ [8,"Kutup ayısının kalın yağ tabakası neye örnektir?","Adaptasyon","Mutasyon"],
+ [8,"Mevsimlerin oluşmasının temel nedeni nedir?","Dünya'nın dönme ekseninin eğik olması","Dünya'nın Güneş'e olan uzaklığının değişmesi"]
 ];
+
+/* ---------- LUNA'NIN BİLİM KOŞUSU (mini oyun) ---------- */
+(function(){
+const stage=document.getElementById("stage"),cv=document.getElementById("game"),cx=cv.getContext("2d");
+const H=240;let W=320,GY=H-30;
+function fit(){W=Math.max(240,Math.round(H*stage.clientWidth/stage.clientHeight));cv.width=W;cv.height=H;GY=H-30}
+fit();addEventListener("resize",fit);
+
+const QS=window.QS;
 const GCOL={5:"#3ee6b0",6:"#4cc9f0",7:"#ff9f43",8:"#ff5fa2"};
 
 /* sesler: yumuşak üçgen/sinüs dalgası, sert kare dalga yok */
@@ -565,7 +630,7 @@ function showBest(){$("bestTxt").textContent=best?"En yüksek puanın: "+best:""
 showBest();
 
 function reset(){score=0;lives=3;level=1;speed=2.2;t=0;inv=0;spawnT=60;qT=360;ents=[];parts=[];L.y=GY-L.h;L.vy=0;L.jumps=0;setHud()}
-function start(){reset();state="run";ovS.classList.add("hide");ovE.classList.add("hide");tone(0,0)}
+function start(){reset();state="run";track("oyun-basla");ovS.classList.add("hide");ovE.classList.add("hide");tone(0,0)}
 $("bStart").onclick=e=>{e.stopPropagation();start()};
 $("bAgain").onclick=e=>{e.stopPropagation();start()};
 
@@ -637,6 +702,38 @@ function loop(){if(state==="run"&&inView)update();if(inView)draw();requestAnimat
 reset();loop();
 })();
 
+
+/* ---------- ziyaret ve indirme sayımı (GoatCounter, çerezsiz) ---------- */
+function track(name){try{if(window.goatcounter&&window.goatcounter.count)window.goatcounter.count({path:name,title:name,event:true})}catch(e){}}
+
+/* ---------- öğretmen materyalleri: yazdırılabilir mini quizler ---------- */
+(function(){
+ const cols={5:"var(--mint)",6:"var(--sky)",7:"var(--orange)",8:"var(--pink)"};
+ const box=document.getElementById("quizCards");
+ [5,6,7,8].forEach(g=>{const n=window.QS.filter(q=>q[0]===g).length;
+  const c=document.createElement("div");c.className="card qcard rv";c.style.setProperty("--c",cols[g]);
+  c.innerHTML=`<div class="big" data-px>${g}</div><h4>Sınıf Mini Quiz</h4><small><span data-px>${n}</span> soru · iki seçenekli · cevap anahtarı ayrı sayfada</small>
+   <button class="dl" data-g="${g}">🖨 Yazdır</button>`;
+  box.appendChild(c)});
+ box.querySelectorAll("[data-px]").forEach(pixify);
+ const esc=t=>t.replace(/&/g,"&amp;").replace(/</g,"&lt;");
+ box.querySelectorAll("button[data-g]").forEach(b=>b.onclick=()=>{
+  const g=+b.dataset.g;const qs=window.QS.filter(q=>q[0]===g);
+  const items=qs.map((q,i)=>{const okFirst=i%2===0;return {q:q[1],A:okFirst?q[2]:q[3],B:okFirst?q[3]:q[2],key:okFirst?"A":"B",ok:q[2]}});
+  document.getElementById("printArea").innerHTML=
+   `<h1>8bitfen · ${g}. Sınıf Mini Quiz</h1><div class="who"><span>Ad Soyad: ______________________</span><span>Sınıf: ______</span><span>Tarih: ________</span></div>
+    <ol>${items.map(it=>`<li>${esc(it.q)}<div class="opt">A) ${esc(it.A)}</div><div class="opt">B) ${esc(it.B)}</div></li>`).join("")}</ol>
+    <div class="foot">8bitfen.github.io · Sınıf içi kullanım için ücretsizdir.</div>
+    <div class="key"><h1>Cevap Anahtarı · ${g}. Sınıf</h1><ol>${items.map(it=>`<li><b>${it.key})</b> ${esc(it.ok)}</li>`).join("")}</ol>
+    <div class="foot">8bitfen.github.io · Öğretmen için cevap anahtarı</div></div>`;
+  track("quiz-yazdir/"+g);
+  try{window.print()}catch(e){}});
+ const cp=document.getElementById("copyShare");
+ cp.onclick=async()=>{const t=document.getElementById("shareMsg").textContent;
+  try{await navigator.clipboard.writeText(t);cp.textContent="✓ Kopyalandı!"}catch(e){cp.textContent="Metni seçip kopyala"}
+  track("paylas-mesaji");setTimeout(()=>cp.textContent="📋 Mesajı kopyala",2200)};
+})();
+
 /* ---------- takvim ---------- */
 const days=[["Pazartesi"],["Salı",["19:00","6. sınıf Shorts","var(--sky)"]],["Çarşamba",["19:00","7. sınıf Shorts","var(--orange)"]],
  ["Perşembe",["18:00","Tam Macera (uzun video)","var(--yellow)"]],["Cuma",["21:00","8. sınıf Shorts","var(--pink)"]],["Cumartesi"],["Pazar",["17:00","5. sınıf Shorts","var(--mint)"]]];
@@ -654,6 +751,7 @@ const TIPS={
  siniflar:["Kaçıncı sınıftasın? Seviyeni seç, videolara ışınlan!","Takvime bak","#takvim"],
  kaynaklar:["Ücretsiz PDF'ler burada! İndir, yazdır, çöz.","Takvime bak","#takvim"],
  takvim:["Yeni videolar ne zaman? Bugünün kutusu parlıyor!","Abone ol","https://www.youtube.com/@8bitfen?sub_confirmation=1"],
+ ogretmen:["Öğretmenim, buradaki quizleri yazdırıp derste kullanabilirsin!","Kâğıtlara git","#kaynaklar"],
  magaza:["Burası henüz kilitli... Ama yakında açılacak, söz!","Yukarı çık","#top"],
  hakkinda:["8bitfen'de her görev bir level. Hadi başlayalım!","Kanala git","https://www.youtube.com/@8bitfen"]};
 const guide=document.getElementById("guide"),gb=document.getElementById("gbub"),gt=document.getElementById("gtxt"),gg=document.getElementById("ggo"),ro=document.getElementById("reopen");
@@ -665,16 +763,17 @@ function say(key){if(key===cur)return;cur=key;const [t,b,h]=TIPS[key];
 guide.classList.add("hide");setTimeout(()=>{guide.classList.remove("hide");say("top")},1200);
 const secIO=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){say(e.target.id);
  document.querySelectorAll(".menu a").forEach(a=>a.classList.toggle("on",a.getAttribute("href")=="#"+e.target.id))}}),{rootMargin:"-45% 0px -45% 0px"});
-["top","siniflar","kaynaklar","takvim","magaza","hakkinda"].forEach(id=>secIO.observe(document.getElementById(id)));
+["top","siniflar","kaynaklar","takvim","ogretmen","magaza","hakkinda"].forEach(id=>secIO.observe(document.getElementById(id)));
 document.getElementById("gx").onclick=()=>{guide.classList.add("hide");ro.style.display="block"};
 ro.onclick=()=>{guide.classList.remove("hide");ro.style.display="none"};
 document.getElementById("guideLuna").onclick=()=>{const o=cur;cur="";clearTimeout(autoHide);gb.classList.remove('pop');gt.textContent="Miyav! 🐾";setTimeout(()=>say(o),1300)};
 
 /* ---------- indirme penceresi (abone olma daveti) ---------- */
 const modal=document.getElementById("modal"),mDl=document.getElementById("mDl");
-document.querySelectorAll(".dl").forEach(b=>b.onclick=()=>{
+document.querySelectorAll("#sheets .dl").forEach(b=>b.onclick=()=>{
  document.getElementById("mTitle").textContent=b.dataset.title;
- mDl.href=b.dataset.link||"https://www.youtube.com/@8bitfen";modal.classList.add("open")});
+ mDl.href=b.dataset.link||"https://www.youtube.com/@8bitfen";mDl.dataset.t=b.dataset.title;modal.classList.add("open")});
+mDl.addEventListener("click",()=>track("indir/"+(mDl.dataset.t||"")));
 document.getElementById("mClose").onclick=()=>modal.classList.remove("open");
 modal.onclick=e=>{if(e.target===modal)modal.classList.remove("open")};
 
