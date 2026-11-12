@@ -65,24 +65,28 @@
 
   .stage{position:relative;border-radius:14px;overflow:hidden;border:3px solid #000;box-shadow:0 0 0 3px rgba(255,255,255,.08),0 25px 60px rgba(0,0,0,.5);
          background:linear-gradient(180deg,#2c2470 0%,#5a2f86 60%,#a0447e 100%);height:360px}
-  .stage .hud{position:absolute;top:14px;left:16px;right:16px;display:flex;justify-content:space-between;font-family:var(--px);font-size:18px;color:#fff;text-shadow:2px 2px 0 #000}
+  .stage{user-select:none;-webkit-user-select:none;touch-action:manipulation}
+  .stage canvas{position:absolute;inset:0;width:100%;height:100%;image-rendering:pixelated}
+  .stage .hud{position:absolute;top:12px;left:14px;right:52px;display:flex;justify-content:space-between;align-items:center;font-family:var(--px);font-size:18px;color:#fff;text-shadow:2px 2px 0 #000;z-index:2;pointer-events:none}
   .stage .hud .sc{color:var(--yellow)}
-  .stars i{position:absolute;width:3px;height:3px;background:#fff;animation:tw 2s infinite}
-  @keyframes tw{50%{opacity:.2}}
-  .stage .plat{position:absolute;bottom:0;left:0;right:0;height:46px;background:
-    repeating-linear-gradient(90deg,#3ee6b0 0 18px,#2fc597 18px 36px) top/100% 12px no-repeat,
-    repeating-linear-gradient(90deg,#7a4b2a 0 18px,#6a3f22 18px 36px)}
-  .stage .block{position:absolute;bottom:200px;left:50%;transform:translateX(-50%);width:46px;height:46px;background:var(--yellow);border:3px solid #000;box-shadow:inset -5px -5px 0 #d9a400,inset 5px 5px 0 #fff3b0;display:grid;place-items:center;font-family:var(--px);font-weight:700;font-size:28px;color:#8a5a00}
-  .stage .block.hit{animation:bump .3s}
-  @keyframes bump{50%{transform:translateX(-50%) translateY(-10px)}}
-  .stage .coin{position:absolute;bottom:250px;left:50%;width:26px;height:26px;margin-left:-13px;border-radius:50%;background:var(--yellow);border:3px solid #000;opacity:0}
-  .stage .coin.go{animation:coin .8s ease-out}
-  @keyframes coin{0%{opacity:1;transform:translateY(0) scaleX(1)}50%{transform:translateY(-50px) scaleX(.2)}100%{opacity:0;transform:translateY(-80px) scaleX(1)}}
-  #heroLuna{position:absolute;bottom:46px;left:50%;width:130px;margin-left:-65px;image-rendering:pixelated}
-  #heroLuna.jump{animation:jump .7s cubic-bezier(.3,.7,.4,1)}
-  @keyframes jump{0%,100%{transform:translateY(0)}45%{transform:translateY(-62px)}}
-  .stage .bubble{position:absolute;bottom:200px;left:calc(50% + 50px);font-family:var(--px);font-size:18px;background:#fff;color:#1a1530;padding:6px 12px;border:3px solid #000;border-radius:6px;white-space:nowrap;animation:pop 3.2s infinite}
-  @keyframes pop{0%,8%{transform:scale(0)}14%,88%{transform:scale(1)}94%,100%{transform:scale(0)}}
+  #hearts{color:var(--pink);letter-spacing:2px;font-size:20px}
+  #mute{position:absolute;top:8px;right:10px;z-index:4;background:rgba(0,0,0,.35);border:2px solid rgba(255,255,255,.3);border-radius:8px;width:34px;height:30px;font-size:15px;cursor:inherit}
+  .ov{position:absolute;inset:0;z-index:3;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;text-align:center;padding:24px;background:rgba(17,14,38,.78);backdrop-filter:blur(3px)}
+  .ov.hide{display:none}
+  .ov h3{font-family:var(--px);font-size:30px;line-height:1.05;color:var(--yellow);text-shadow:3px 3px 0 #000}
+  .ov p{color:#e9e5ff;font-weight:700;font-size:15.5px;line-height:1.4}
+  .ov small{color:var(--muted);font-size:12.5px;line-height:1.4}
+  .ov .btn{font-size:20px;padding:9px 22px}
+  .ov h4{font-weight:900;font-size:18px;line-height:1.35;max-width:340px}
+  .qchip{font-family:var(--px);font-size:14px;background:var(--mint);color:#1a1530;padding:2px 12px;border-radius:999px}
+  .qbtns{display:grid;gap:10px;width:100%;max-width:300px}
+  .qb{font-family:var(--body);font-weight:900;font-size:17px;padding:10px;border:3px solid #000;border-radius:8px;background:#fff;color:#1a1530;box-shadow:0 4px 0 #000;cursor:inherit;transition:transform .1s}
+  .qb:hover{transform:translateY(-2px)}
+  .qb.ok{background:var(--mint)} .qb.no{background:#ff6b6b;color:#fff}
+  .endlink{color:var(--mint);font-weight:800;font-size:14px}
+  .toast{position:absolute;left:0;right:0;top:34%;text-align:center;font-family:var(--px);font-weight:700;font-size:28px;color:var(--yellow);text-shadow:3px 3px 0 #000;z-index:2;pointer-events:none;opacity:0}
+  .toast.on{animation:toast 1s ease-out}
+  @keyframes toast{0%{opacity:0;transform:scale(.6)}20%{opacity:1;transform:scale(1.1)}70%{opacity:1;transform:scale(1)}100%{opacity:0;transform:translateY(-20px)}}
 
   /* bölümler */
   section{padding:70px 0}
@@ -222,13 +226,28 @@
       </div>
     </div>
     <div class="stage rv" id="stage">
-      <div class="stars" id="stars"></div>
-      <div class="hud"><span>LEVEL <span data-px>5-8</span></span><span class="sc">★ <span id="score" data-px>000000</span></span></div>
-      <div class="block" id="qblock">?</div>
-      <div class="coin" id="coin"></div>
-      <div class="bubble" id="sbub">Hazır mısın?</div>
-      <svg id="heroLuna" viewBox="0 0 16 16" role="img" aria-label="Luna, beyaz piksel kedi"></svg>
-      <div class="plat"></div>
+      <canvas id="game" aria-label="Luna'nın Bilim Koşusu oyunu"></canvas>
+      <div class="hud"><span>LEVEL <span id="lvl" data-px>1</span></span><span id="hearts">♥♥♥</span><span class="sc">★ <span id="score" data-px>000000</span></span></div>
+      <button id="mute" aria-label="Sesi aç/kapat">🔊</button>
+      <div class="ov" id="ovStart">
+        <h3>LUNA'NIN<br>BİLİM KOŞUSU</h3>
+        <p>Mikroplardan zıpla, atomları topla,<br><b>?</b> bloklarındaki soruları bil!</p>
+        <button class="btn yel" id="bStart">▶ BAŞLA</button>
+        <small>Zıplamak için ekrana dokun ya da boşluk tuşuna bas.<br>Havadayken bir kez daha zıplayabilirsin.</small>
+        <small id="bestTxt"></small>
+      </div>
+      <div class="ov hide" id="ovQuiz">
+        <span class="qchip" id="qGrade"></span>
+        <h4 id="qText"></h4>
+        <div class="qbtns" id="qBtns"></div>
+      </div>
+      <div class="ov hide" id="ovEnd">
+        <h3>OYUN BİTTİ</h3>
+        <p id="endTxt"></p>
+        <button class="btn yel" id="bAgain">↻ Tekrar Oyna</button>
+        <a href="#kaynaklar" class="endlink">Konuyu pekiştir: ücretsiz kâğıtlar →</a>
+      </div>
+      <div class="toast" id="toast"></div>
     </div>
   </div>
 </header>
@@ -414,7 +433,7 @@ const LUNA_OPEN=[
  ".KWGWK....KWGWK.",
  "..KKK......KKK.."];
 const LUNA_BLINK=LUNA_OPEN.map((r,i)=>i==6?"KWWWWWWWWWWWWWWK":i==7?"KWWKKWWWWWWKKWWK":r);
-const lunas=["heroLuna","guideLuna","mLuna"].map(id=>document.getElementById(id));
+const lunas=["guideLuna","mLuna"].map(id=>document.getElementById(id));
 lunas.forEach(el=>draw(el,LUNA_OPEN));
 setInterval(()=>{lunas.forEach(el=>draw(el,LUNA_BLINK));setTimeout(()=>lunas.forEach(el=>draw(el,LUNA_OPEN)),160)},3800);
 
@@ -479,17 +498,144 @@ function tick(){
  requestAnimationFrame(tick)}
 tick();
 
-/* ---------- hero oyun sahnesi ---------- */
-const st=document.getElementById("stars");
-for(let i=0;i<30;i++){const s=document.createElement("i");s.style.left=Math.random()*100+"%";s.style.top=Math.random()*55+"%";s.style.animationDelay=Math.random()*2+"s";st.appendChild(s)}
-const hl=document.getElementById("heroLuna"),qb=document.getElementById("qblock"),coin=document.getElementById("coin"),score=document.getElementById("score");
-let pts=0;const msgs=["Hazır mısın?","Level atla!","Bilim = güç!","Soru geliyor!","Miyav!"];let mi=0;
-function heroJump(){hl.classList.remove("jump");void hl.offsetWidth;hl.classList.add("jump");
- setTimeout(()=>{qb.classList.remove("hit");void qb.offsetWidth;qb.classList.add("hit");coin.classList.remove("go");void coin.offsetWidth;coin.classList.add("go");
-  pts+=100;score.textContent=String(pts).padStart(6,"0");pixify(score)},300)}
-setInterval(heroJump,3200);setTimeout(heroJump,900);
-setInterval(()=>{mi=(mi+1)%msgs.length;document.getElementById("sbub").textContent=msgs[mi]},3200);
-document.getElementById("stage").addEventListener("click",heroJump);
+/* ---------- LUNA'NIN BİLİM KOŞUSU (mini oyun) ---------- */
+(function(){
+const stage=document.getElementById("stage"),cv=document.getElementById("game"),cx=cv.getContext("2d");
+const H=240;let W=320,GY=H-30;
+function fit(){W=Math.max(240,Math.round(H*stage.clientWidth/stage.clientHeight));cv.width=W;cv.height=H;GY=H-30}
+fit();addEventListener("resize",fit);
+
+/* sorular: her biri [sınıf, soru, doğru, yanlış] */
+const QS=[
+ [5,"Ağırlığın birimi hangisidir?","Newton","Kilogram"],
+ [5,"Kütle hangi araçla ölçülür?","Eşit kollu terazi","Dinamometre"],
+ [5,"Sürtünme kuvveti harekete göre hangi yönde etki eder?","Harekete zıt yönde","Hareketle aynı yönde"],
+ [5,"Ay kendi ışığını üretir mi?","Hayır, Güneş'in ışığını yansıtır","Evet, kendi ışığını üretir"],
+ [6,"Çiçekli bitkilerde tozlaşmadan sonra ne gerçekleşir?","Döllenme","Çimlenme"],
+ [6,"Kimyasal sindirimi ağızda başlayan besin hangisidir?","Karbonhidrat","Protein"],
+ [6,"Proteinlerin kimyasal sindirimi nerede başlar?","Midede","Ağızda"],
+ [6,"Sindirilen besinlerin çoğu nerede kana geçer?","İnce bağırsakta","Kalın bağırsakta"],
+ [6,"Kanı tüm vücuda pompalayan kalp odacığı hangisidir?","Sol karıncık","Sağ karıncık"],
+ [7,"Yüksekten bırakılan bir topun düşerken çekim potansiyel enerjisi ne olur?","Azalır","Artar"],
+ [7,"Güneş Sistemi'ndeki en büyük gezegen hangisidir?","Jüpiter","Satürn"],
+ [7,"Bitkiler fotosentezde havadan hangi gazı alır?","Karbondioksit","Oksijen"],
+ [8,"DNA'nın yapı birimi nedir?","Nükleotit","Amino asit"],
+ [8,"Aynı kuvvette yüzey alanı küçülürse katı basıncı ne olur?","Artar","Azalır"],
+ [8,"Derinlik arttıkça sıvı basıncı ne olur?","Artar","Azalır"],
+ [8,"Kutup ayısının kalın yağ tabakası neye örnektir?","Adaptasyon","Mutasyon"]
+];
+const GCOL={5:"#3ee6b0",6:"#4cc9f0",7:"#ff9f43",8:"#ff5fa2"};
+
+/* sesler: yumuşak üçgen/sinüs dalgası, sert kare dalga yok */
+let AC=null,muted=false;
+function tone(f,d,type="triangle",v=.07,to=null,delay=0){
+ if(muted)return;try{AC=AC||new (window.AudioContext||window.webkitAudioContext)();
+ const t=AC.currentTime+delay,o=AC.createOscillator(),g=AC.createGain();o.type=type;o.frequency.setValueAtTime(f,t);
+ if(to)o.frequency.exponentialRampToValueAtTime(to,t+d);g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(v,t+.015);
+ g.gain.exponentialRampToValueAtTime(.0001,t+d);o.connect(g).connect(AC.destination);o.start(t);o.stop(t+d+.05)}catch(e){}}
+const SFX={
+ jump:()=>tone(420,.16,"sine",.06,760),
+ coin:()=>{tone(988,.09,"triangle",.06);tone(1319,.18,"triangle",.06,null,.08)},
+ ok:()=>[523,659,784,1047].forEach((f,i)=>tone(f,.25,"triangle",.07,null,i*.09)),
+ no:()=>{tone(330,.22,"sine",.07);tone(262,.3,"sine",.07,null,.18)},
+ hit:()=>tone(300,.25,"sine",.08,140),
+ lvl:()=>[659,784,988,1319].forEach((f,i)=>tone(f,.18,"triangle",.06,null,i*.07)),
+ end:()=>[523,440,349,262].forEach((f,i)=>tone(f,.3,"sine",.07,null,i*.16))};
+const muteB=document.getElementById("mute");
+muteB.onclick=e=>{e.stopPropagation();muted=!muted;muteB.textContent=muted?"🔇":"🔊"};
+
+/* sprite'lar */
+const RUN_B=LUNA_OPEN.slice(0,13).concat(["..KWWWK..KWWWK..","..KWGWK..KWGWK..","...KKK....KKK..."]);
+const GERM=["..m..m..m..",".mMm.mMm.m.","..MMMMMMMm.",".MMWKMMWKMm","mMMMMMMMMMm",".MMMKKKKMM.","..MMMMMMMm.",".m.mMMm.m..","...m..m...."];
+const COIN=[".KKKK.","KYYYyK","KYHYyK","KYYYyK","KyyyyK",".KKKK."];
+function spr(rows,x,y,sc){rows.forEach((r,j)=>{for(let i=0;i<r.length;i++){const c=PAL[r[i]];if(c){cx.fillStyle=c;cx.fillRect(Math.round(x+i*sc),Math.round(y+j*sc),sc,sc)}}})}
+
+/* durum */
+let state="idle",score=0,lives=3,level=1,speed=2.2,t=0,inv=0,spawnT=60,qT=420,best=0,shake=0;
+try{best=+localStorage.getItem("8bitfen_best")||0}catch(e){}
+const L={x:46,y:0,vy:0,w:32,h:32,jumps:0};
+let ents=[],stars=[],parts=[];
+for(let i=0;i<40;i++)stars.push({x:Math.random()*600,y:Math.random()*(H-80),z:Math.random()<.3?.6:.25});
+const $=id=>document.getElementById(id);
+const ovS=$("ovStart"),ovQ=$("ovQuiz"),ovE=$("ovEnd"),toast=$("toast");
+function setHud(){$("score").textContent=String(score).padStart(6,"0");pixify($("score"));
+ $("lvl").textContent=level;pixify($("lvl"));$("hearts").textContent="♥".repeat(lives)+"♡".repeat(3-lives)}
+function say(txt,col){toast.textContent=txt;toast.style.color=col||"var(--yellow)";toast.classList.remove("on");void toast.offsetWidth;toast.classList.add("on")}
+function showBest(){$("bestTxt").textContent=best?"En yüksek puanın: "+best:""}
+showBest();
+
+function reset(){score=0;lives=3;level=1;speed=2.2;t=0;inv=0;spawnT=60;qT=360;ents=[];parts=[];L.y=GY-L.h;L.vy=0;L.jumps=0;setHud()}
+function start(){reset();state="run";ovS.classList.add("hide");ovE.classList.add("hide");tone(0,0)}
+$("bStart").onclick=e=>{e.stopPropagation();start()};
+$("bAgain").onclick=e=>{e.stopPropagation();start()};
+
+function jump(){if(state!=="run")return;
+ if(L.y>=GY-L.h-0.5){L.vy=-8.6;L.jumps=1;SFX.jump()}else if(L.jumps<2){L.vy=-7.4;L.jumps=2;SFX.jump()}}
+stage.addEventListener("pointerdown",e=>{if(e.target.closest("button,a"))return;jump()});
+addEventListener("keydown",e=>{if((e.code==="Space"||e.code==="ArrowUp")&&state==="run"&&inView){e.preventDefault();jump()}});
+let inView=true;new IntersectionObserver(es=>{inView=es[0].isIntersecting},{threshold:.3}).observe(stage);
+
+let qPool=[];
+function quiz(){state="quiz";if(!qPool.length)qPool=QS.map((_,i)=>i).sort(()=>Math.random()-.5);
+ const [g,q,ok,no]=QS[qPool.pop()];
+ $("qGrade").textContent=g+". SINIF";$("qGrade").style.background=GCOL[g];pixify($("qGrade"));$("qText").textContent=q;
+ const opts=Math.random()<.5?[ok,no]:[no,ok];const box=$("qBtns");box.innerHTML="";
+ opts.forEach(o=>{const b=document.createElement("button");b.className="qb";b.textContent=o;
+  b.onclick=ev=>{ev.stopPropagation();box.querySelectorAll("button").forEach(x=>{x.disabled=true;if(x.textContent===ok)x.classList.add("ok")});
+   if(o===ok){score+=100;SFX.ok();setHud();setTimeout(()=>{ovQ.classList.add("hide");say("DOĞRU! +100");state="run"},700)}
+   else{b.classList.add("no");SFX.no();setTimeout(()=>{ovQ.classList.add("hide");say("Bir dahakine!","#ff9fc4");state="run"},1500)}};
+  box.appendChild(b)});
+ ovQ.classList.remove("hide")}
+
+function over(){state="end";SFX.end();if(score>best){best=score;try{localStorage.setItem("8bitfen_best",best)}catch(e){}}
+ $("endTxt").innerHTML="Puanın: <b>"+score+"</b><br>En yüksek: <b>"+best+"</b>";showBest();ovE.classList.remove("hide")}
+
+function hitBox(a,b){return a.x<b.x+b.w&&a.x+a.w>b.x&&a.y<b.y+b.h&&a.y+a.h>b.y}
+function burst(x,y,c){for(let i=0;i<8;i++)parts.push({x,y,vx:(Math.random()-.5)*3,vy:-Math.random()*3,l:28,c})}
+
+function update(){
+ t++;speed=Math.min(4.6,2.2+score/900+t/5000);
+ const nl=1+Math.floor(score/400);if(nl>level){level=nl;SFX.lvl();say("LEVEL UP!");setHud()}
+ L.vy+=.42;L.y+=L.vy;if(L.y>GY-L.h){L.y=GY-L.h;L.vy=0;L.jumps=0}
+ if(inv>0)inv--;
+ if(--spawnT<=0){const r=Math.random();
+  if(r<.5)ents.push({k:"germ",x:W+10,y:GY-18,w:22,h:18});
+  else{const hy=Math.random()<.5?GY-28:GY-74;const n=3+Math.floor(Math.random()*3);for(let i=0;i<n;i++)ents.push({k:"coin",x:W+10+i*22,y:hy,w:12,h:12})}
+  spawnT=Math.max(46,95-speed*8)+Math.random()*50}
+ if(--qT<=0){ents.push({k:"q",x:W+10,y:GY-104,w:22,h:22,used:false});qT=520+Math.random()*300}
+ const lb={x:L.x+6,y:L.y+4,w:L.w-12,h:L.h-6};
+ ents.forEach(e=>{e.x-=speed;
+  if(e.k==="coin"&&!e.got&&hitBox(lb,e)){e.got=true;score+=10;SFX.coin();burst(e.x+6,e.y+6,"#ffd23f");setHud()}
+  if(e.k==="germ"&&!e.hit&&inv===0&&hitBox(lb,e)){e.hit=true;lives--;inv=70;shake=10;SFX.hit();burst(e.x+10,e.y+8,"#3ee6b0");setHud();if(lives<=0)over()}
+  if(e.k==="q"&&!e.used&&hitBox(lb,e)){e.used=true;e.bump=8;if(L.vy<0)L.vy=1.5;burst(e.x+11,e.y+11,"#ffd23f");quiz()}
+  if(e.bump)e.bump--});
+ ents=ents.filter(e=>e.x>-40&&!(e.k==="coin"&&e.got));
+ parts.forEach(p=>{p.x+=p.vx;p.y+=p.vy;p.vy+=.15;p.l--});parts=parts.filter(p=>p.l>0);
+}
+
+function draw(){
+ cx.clearRect(0,0,W,H);cx.save();if(shake>0){cx.translate((Math.random()-.5)*shake,0);shake--}
+ const mv=state==="run"?speed:.4;
+ stars.forEach(s=>{if(state!=="quiz")s.x-=mv*s.z;if(s.x<0)s.x+=W+20;cx.fillStyle=s.z>.5?"#fff":"rgba(255,255,255,.55)";cx.fillRect(Math.round(s.x)%(W+20),Math.round(s.y),s.z>.5?2:1,s.z>.5?2:1)});
+ // zemin
+ const off=Math.floor((t*speed)%16);
+ for(let x=-off;x<W;x+=16){cx.fillStyle=((x+off)/16)%2?"#2fc597":"#3ee6b0";cx.fillRect(x,GY,16,7);cx.fillStyle=((x+off)/16)%2?"#6a3f22":"#7a4b2a";cx.fillRect(x,GY+7,16,H-GY-7)}
+ // varlıklar
+ ents.forEach(e=>{
+  if(e.k==="coin"){const bob=Math.sin((t+e.x)/8)*2;spr(COIN,e.x,e.y+bob,2)}
+  if(e.k==="germ"){spr(GERM,e.x,e.y-(Math.sin(t/6+e.x)>0?1:0),2)}
+  if(e.k==="q"){const y=e.y-(e.bump?4:0);cx.fillStyle="#000";cx.fillRect(e.x-1,y-1,24,24);cx.fillStyle=e.used?"#a07a3a":"#ffd23f";cx.fillRect(e.x+1,y+1,20,20);
+   cx.fillStyle=e.used?"#7a5a20":"#d99b00";cx.fillRect(e.x+1,y+17,20,4);cx.fillRect(e.x+17,y+1,4,20);
+   if(!e.used){cx.fillStyle="#8a5a00";cx.font="bold 16px 'Pixelify Sans',monospace";cx.textAlign="center";cx.fillText("?",e.x+11,y+16)}}});
+ parts.forEach(p=>{cx.fillStyle=p.c;cx.fillRect(Math.round(p.x),Math.round(p.y),3,3)});
+ // Luna
+ if(!(inv>0&&Math.floor(inv/5)%2)){const onG=L.y>=GY-L.h-0.5;const frame=(state==="run"&&onG&&Math.floor(t/7)%2)?RUN_B:LUNA_OPEN;
+  spr(frame,L.x,Math.round(L.y)+(state==="idle"?Math.round(Math.sin(Date.now()/300)*2):0),2)}
+ cx.restore();
+}
+function loop(){if(state==="run"&&inView)update();if(inView)draw();requestAnimationFrame(loop)}
+reset();loop();
+})();
 
 /* ---------- takvim ---------- */
 const days=[["Pazartesi"],["Salı",["19:00","6. sınıf Shorts","var(--sky)"]],["Çarşamba",["19:00","7. sınıf Shorts","var(--orange)"]],
@@ -504,7 +650,7 @@ document.querySelectorAll(".rv").forEach((el,i)=>{el.style.transitionDelay=(i%4)
 
 /* ---------- Luna rehber ---------- */
 const TIPS={
- top:["Selam! Ben Luna. Ücretsiz çalışma kâğıtlarını mı arıyorsun?","Kâğıtlara git","#kaynaklar"],
+ top:["Selam! Ben Luna. Benimle bilim koşusuna var mısın? Oyunda BAŞLA'ya bas!","Ücretsiz kâğıtlar","#kaynaklar"],
  siniflar:["Kaçıncı sınıftasın? Seviyeni seç, videolara ışınlan!","Takvime bak","#takvim"],
  kaynaklar:["Ücretsiz PDF'ler burada! İndir, yazdır, çöz.","Takvime bak","#takvim"],
  takvim:["Yeni videolar ne zaman? Bugünün kutusu parlıyor!","Abone ol","https://www.youtube.com/@8bitfen?sub_confirmation=1"],
