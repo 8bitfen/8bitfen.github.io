@@ -137,7 +137,9 @@
   .subh small{font-family:var(--body);font-size:14px;color:var(--mint);font-weight:800;margin-left:8px}
   .flow .card h4,.tools h4,.qcard h4{font-family:var(--px);font-size:22px;margin:4px 0 6px}
   .step{display:inline-grid;place-items:center;width:40px;height:40px;border-radius:10px;background:var(--c);color:#1a1530;font-family:var(--px);font-size:24px;border:3px solid #000;box-shadow:0 4px 0 #000}
-  .qcard .big{font-family:var(--px);font-size:54px;line-height:1;color:var(--c);text-shadow:4px 4px 0 #000}
+  .qcard .big{font-family:var(--px);font-size:15px;color:var(--c);letter-spacing:1px}
+  .note{color:var(--muted);font-size:14.5px;max-width:820px;margin:-6px 0 16px}
+  #quizCards .qcard.hid{display:none}
   .qcard small{display:block;color:var(--muted);font-size:13px;margin-top:4px}
   .g2{grid-template-columns:1fr 1fr;margin-top:22px}
   @media(max-width:760px){.g2{grid-template-columns:1fr}}
@@ -152,7 +154,8 @@
     #printArea .who{display:flex;gap:30px;margin:10px 0 18px;font-size:12pt}
     #printArea ol{padding-left:22px}
     #printArea li{margin-bottom:14px;break-inside:avoid}
-    #printArea .opt{margin-left:10px}
+    #printArea .opt{margin-left:10px;display:inline-block;min-width:46%}
+    #printArea .meta{font-size:10.5pt;color:#444;margin-top:2px}
     #printArea .key{break-before:page}
     #printArea .foot{margin-top:24px;font-size:10pt;color:#555;border-top:1px solid #999;padding-top:6px}
   }
@@ -344,18 +347,25 @@
 
 <section id="ogretmen">
   <div class="wrap">
-    <div class="head rv"><span class="eyebrow">▸ ÖĞRETMEN MATERYALLERİ</span><h2>Derste kullan, ücretsiz</h2><p>Videolar, çalışma kâğıtları ve cevap anahtarlı mini quizler; akıllı tahtada ya da çıktı olarak kullanabilirsin.</p></div>
+    <div class="head rv"><span class="eyebrow">▸ ÖĞRETMEN MATERYALLERİ</span><h2>Derste kullan, ücretsiz</h2><p>Videolar, çalışma kâğıtları ve cevap anahtarlı ünite testleri; akıllı tahtada ya da çıktı olarak kullanabilirsin.</p></div>
 
     <h3 class="subh rv">Bir ders, dört adım</h3>
     <div class="grid g4 flow">
       <div class="card rv" style="--c:var(--mint)"><span class="step" data-px>1</span><h4>Isın</h4><p>Dersi bir Shorts quiz ile aç. Tek soru, <span data-px>30</span> saniye, tüm sınıf tahmin eder.</p></div>
       <div class="card rv" style="--c:var(--sky)"><span class="step" data-px>2</span><h4>Keşfet</h4><p>Konunun "Tam Macera" videosunu izlet. Sorularda durdurup sınıfa sor.</p></div>
-      <div class="card rv" style="--c:var(--orange)"><span class="step" data-px>3</span><h4>Pekiştir</h4><p>Ücretsiz çalışma kâğıdını dağıt; 8. sınıflarda LGS tarzı sorularla biter.</p></div>
+      <div class="card rv" style="--c:var(--orange)"><span class="step" data-px>3</span><h4>Pekiştir</h4><p>Ücretsiz çalışma kâğıdını dağıt, ardından ünite tarama testiyle ölç.</p></div>
       <div class="card rv" style="--c:var(--pink)"><span class="step" data-px>4</span><h4>Oyna</h4><p>Son <span data-px>5</span> dakikada "Luna'nın Bilim Koşusu"nu tahtada oynatın, soruları sınıf cevaplasın.</p></div>
     </div>
 
-    <h3 class="subh rv">Yazdırılabilir mini quizler <small>cevap anahtarlı</small></h3>
-    <div class="grid g4" id="quizCards"></div>
+    <h3 class="subh rv">Ünite tarama testleri <small>yazdırılabilir · cevap anahtarlı</small></h3>
+    <p class="note rv">5, 6 ve 7. sınıf testleri 2026-2027'de uygulanan <b>Türkiye Yüzyılı Maarif Modeli</b> öğretim programına, 8. sınıf testleri LGS'nin dayandığı <b>2018 Fen Bilimleri öğretim programına</b> göre hazırlandı. Her test dört seçenekli 10-11 sorudan oluşur; cevap anahtarı ayrı sayfada çıkar.</p>
+    <div class="tabs rv" id="ttabs">
+      <button class="on" data-g="5" style="--c:var(--mint)"><span data-px>5</span>. Sınıf</button>
+      <button data-g="6" style="--c:var(--sky)"><span data-px>6</span>. Sınıf</button>
+      <button data-g="7" style="--c:var(--orange)"><span data-px>7</span>. Sınıf</button>
+      <button data-g="8" style="--c:var(--pink)"><span data-px>8</span>. Sınıf · LGS</button>
+    </div>
+    <div class="grid g3" id="quizCards"></div>
 
     <div class="grid g2 tools">
       <div class="card rv" style="--c:var(--yellow)">
@@ -388,7 +398,7 @@
     <div class="head rv"><span class="eyebrow">▸ HAKKINDA</span><h2>8bitfen nedir?</h2></div>
     <div class="about">
       <div class="card rv"><h3>Oyun gibi fen</h3><p>8bitfen, fen bilimlerini 8-bit oyun dünyasında anlatan bir kanal. Her bölümde görevleri beyaz kedimiz Luna üstlenir: sorular, geri sayımlar, level atlamalar.</p></div>
-      <div class="card rv" style="--c:var(--mint)"><h3>Doğru bilgi</h3><p>Bilgiler Türkiye Yüzyılı Maarif Modeli'ne uygun ve bilimsel olarak kontrol edilir. Konular okuldaki sırayı izler; 8. sınıfta LGS'ye odaklanılır.</p></div>
+      <div class="card rv" style="--c:var(--mint)"><h3>Doğru bilgi</h3><p>5, 6 ve 7. sınıf içerikleri Türkiye Yüzyılı Maarif Modeli'ne, 8. sınıf içerikleri LGS'nin dayandığı öğretim programına göre hazırlanır ve bilimsel olarak kontrol edilir. Konular okuldaki sırayı izler.</p></div>
     </div>
   </div>
 </section>
@@ -556,30 +566,148 @@ function tick(){
  requestAnimationFrame(tick)}
 tick();
 
-/* ---------- soru bankası (oyun ve yazdırılabilir quizler) ---------- */
-/* sorular: her biri [sınıf, soru, doğru, yanlış] */
-window.QS=[
- [5,"Ağırlığın birimi hangisidir?","Newton","Kilogram"],
- [5,"Kütle hangi araçla ölçülür?","Eşit kollu terazi","Dinamometre"],
- [5,"Sürtünme kuvveti harekete göre hangi yönde etki eder?","Harekete zıt yönde","Hareketle aynı yönde"],
- [5,"Ay kendi ışığını üretir mi?","Hayır, Güneş'in ışığını yansıtır","Evet, kendi ışığını üretir"],
- [5,"Dünya'nın kendi ekseni etrafında dönmesi neyi oluşturur?","Gece ve gündüzü","Mevsimleri"],
- [6,"Çiçekli bitkilerde tozlaşmadan sonra ne gerçekleşir?","Döllenme","Çimlenme"],
- [6,"Kimyasal sindirimi ağızda başlayan besin hangisidir?","Karbonhidrat","Protein"],
- [6,"Proteinlerin kimyasal sindirimi nerede başlar?","Midede","Ağızda"],
- [6,"Sindirilen besinlerin çoğu nerede kana geçer?","İnce bağırsakta","Kalın bağırsakta"],
- [6,"Kanı tüm vücuda pompalayan kalp odacığı hangisidir?","Sol karıncık","Sağ karıncık"],
- [7,"Yüksekten bırakılan bir topun düşerken çekim potansiyel enerjisi ne olur?","Azalır","Artar"],
- [7,"Güneş Sistemi'ndeki en büyük gezegen hangisidir?","Jüpiter","Satürn"],
- [7,"Bitkiler fotosentezde havadan hangi gazı alır?","Karbondioksit","Oksijen"],
- [7,"Hücrede kalıtım materyalini taşıyan ve hücreyi yöneten yapı hangisidir?","Çekirdek","Hücre zarı"],
- [7,"Güneş Sistemi'nde Güneş'e en yakın gezegen hangisidir?","Merkür","Venüs"],
- [8,"DNA'nın yapı birimi nedir?","Nükleotit","Amino asit"],
- [8,"Aynı kuvvette yüzey alanı küçülürse katı basıncı ne olur?","Artar","Azalır"],
- [8,"Derinlik arttıkça sıvı basıncı ne olur?","Artar","Azalır"],
- [8,"Kutup ayısının kalın yağ tabakası neye örnektir?","Adaptasyon","Mutasyon"],
- [8,"Mevsimlerin oluşmasının temel nedeni nedir?","Dünya'nın dönme ekseninin eğik olması","Dünya'nın Güneş'e olan uzaklığının değişmesi"]
+/* ---------- soru bankası: ünite tarama testleri (oyun da buradan beslenir) ----------
+   5-7. sınıf: Türkiye Yüzyılı Maarif Modeli (2026-2027) · 8. sınıf: 2018 programı (LGS)
+   Her soru: [soru, doğru, yanlış1, yanlış2, yanlış3] */
+window.UNITS=[
+{g:5,u:1,ad:"Gökyüzündeki Komşularımız ve Biz",kod:"FB.5.1",q:[
+ ["Güneş ile ilgili hangisi doğrudur?","Kendi ekseni etrafında döner.","Dünya'dan küçüktür.","Işığını Ay'dan alır.","Katı bir gök cismidir."],
+ ["Güneş, Dünya'dan çok büyük olduğu hâlde gökyüzünde küçük görünür. Bunun nedeni nedir?","Dünya'ya çok uzak olması","Işığının zayıf olması","Ay'ın arkasında kalması","Her gün küçülmesi"],
+ ["Güneş'e çıplak gözle ya da filtresiz dürbünle bakılmamasının nedeni nedir?","Göz sağlığına zarar vermesi","Güneş'in ışığını azaltması","Dürbünün bozulması","Güneş'in görünmez olması"],
+ ["Ay ile ilgili hangisi doğrudur?","Güneş'ten aldığı ışığı yansıtır.","Kendi ışığını üretir.","Dünya'dan büyüktür.","Gaz hâlinde bir gök cismidir."],
+ ["Ay'ın evrelerinin oluşmasının nedeni nedir?","Ay dolanırken aydınlık yüzünün Dünya'dan farklı oranlarda görülmesi","Dünya'nın gölgesinin Ay'a düşmesi","Ay'ın kendi ışığının azalıp artması","Bulutların Ay'ı örtmesi"],
+ ["Ay'ın Dünya etrafında bir tam dolanımı yaklaşık ne kadar sürer?","Yaklaşık 1 ay","1 gün","1 hafta","1 yıl"],
+ ["Dünya'dan bakıldığında Ay'ın hep aynı yüzünün görülmesinin nedeni nedir?","Kendi etrafında dönme süresi ile Dünya etrafında dolanma süresinin eşit olması","Ay'ın kendi etrafında hiç dönmemesi","Ay'ın Dünya'dan çok uzak olması","Ay'ın diğer yüzünün hiç aydınlanmaması"],
+ ["Güneş, Dünya ve Ay'ın hacimlerinin büyükten küçüğe sıralaması hangisidir?","Güneş > Dünya > Ay","Dünya > Güneş > Ay","Güneş > Ay > Dünya","Ay > Dünya > Güneş"],
+ ["Yeni Ay evresinde Ay Dünya'dan nasıl görünür?","Görünmez","Tamamen aydınlık görünür","Yarısı aydınlık görünür","Kırmızı renkte görünür"],
+ ["Dolunaydan yaklaşık bir hafta sonra hangi evre görülür?","Son dördün","İlk dördün","Yeni Ay","Dolunay"]]},
+{g:5,u:2,ad:"Kuvveti Tanıyalım",kod:"FB.5.2",q:[
+ ["Kuvvetin büyüklüğü hangi araçla ölçülür?","Dinamometre","Eşit kollu terazi","Termometre","Cetvel"],
+ ["Kuvvetin birimi hangisidir?","Newton (N)","Kilogram (kg)","Metre (m)","Gram (g)"],
+ ["Hangisi kuvvetin bir etkisi değildir?","Cismin kütlesini değiştirmek","Cismin şeklini değiştirmek","Duran bir cismi harekete geçirmek","Hareketli bir cismin yönünü değiştirmek"],
+ ["Kütle ile ilgili hangisi doğrudur?","Bulunduğu yere göre değişmez.","Birimi newtondur.","Dinamometre ile ölçülür.","Ay'da azalır."],
+ ["Ağırlık ile ilgili hangisi doğrudur?","Kütleye etki eden yer çekimi kuvvetidir.","Bulunduğu yere göre değişmez.","Eşit kollu terazi ile ölçülür.","Birimi kilogramdır."],
+ ["Bir astronot Dünya'dan Ay'a gidiyor. Astronotun kütlesi ve ağırlığı nasıl değişir?","Kütlesi değişmez, ağırlığı azalır.","Kütlesi ve ağırlığı azalır.","Kütlesi azalır, ağırlığı değişmez.","İkisi de değişmez."],
+ ["Sürtünme kuvveti harekete göre hangi yönde etki eder?","Harekete zıt yönde","Hareketle aynı yönde","Her zaman yukarı doğru","Her zaman aşağı doğru"],
+ ["Hangisinde sürtünme kuvvetinin yararlı etkisi görülür?","Kaymadan yürüyebilmemiz","Makine parçalarının aşınması","Ayakkabı tabanlarının aşınması","Araba lastiklerinin aşınması"],
+ ["Yüzücülerin vücuda oturan mayo ve bone giymesi hangisini azaltmak içindir?","Su direncini","Yer çekimi kuvvetini","Hava direncini","Kütlelerini"],
+ ["Paraşüt açıldığında paraşütçünün yavaşlamasını sağlayan etki hangisidir?","Hava direnci","Su direnci","Yer çekimi kuvveti","Mıknatıs kuvveti"]]},
+{g:5,u:3,ad:"Canlıların Yapısına Yolculuk",kod:"FB.5.3",q:[
+ ["Hücreleri incelemek için hangi araç kullanılır?","Mikroskop","Teleskop","Dürbün","Dinamometre"],
+ ["Bitki hücresinde bulunup hayvan hücresinde bulunmayan yapı hangisidir?","Hücre duvarı","Hücre zarı","Çekirdek","Sitoplazma"],
+ ["Bitki hücresinde fotosentezin gerçekleştiği organel hangisidir?","Kloroplast","Mitokondri","Ribozom","Çekirdek"],
+ ["Hücrenin yönetim merkezi olan ve kalıtım materyalini taşıyan yapı hangisidir?","Çekirdek","Hücre zarı","Koful","Sitoplazma"],
+ ["Hücrede enerji üretiminin gerçekleştiği organel hangisidir?","Mitokondri","Koful","Ribozom","Hücre duvarı"],
+ ["Basitten karmaşığa sıralama hangisinde doğru verilmiştir?","Hücre → doku → organ → sistem → organizma","Doku → hücre → organ → sistem → organizma","Hücre → organ → doku → sistem → organizma","Organizma → sistem → organ → doku → hücre"],
+ ["Hangisi bir organdır?","Kalp","Sinir hücresi","Kemik hücresi","Sindirim sistemi"],
+ ["Kafatası kemiklerinin temel görevi nedir?","Beyni korumak","Kanı pompalamak","Besinleri sindirmek","Vücut sıcaklığını ölçmek"],
+ ["Kafatası kemikleri hangi kemik çeşidine örnektir?","Yassı kemik","Uzun kemik","Kısa kemik","Kıkırdak"],
+ ["İsteğimiz dışında çalışan ve yalnızca kalpte bulunan kas çeşidi hangisidir?","Kalp kası","İskelet kası","Düz kas","Kıkırdak"]]},
+{g:6,u:1,ad:"Güneş Sistemi ve Tutulmalar",kod:"FB.6.1",q:[
+ ["Güneş'e en yakın gezegen hangisidir?","Merkür","Venüs","Mars","Dünya"],
+ ["Güneş sistemindeki en büyük gezegen hangisidir?","Jüpiter","Satürn","Neptün","Dünya"],
+ ["Hangisi karasal (iç) gezegenlerden biridir?","Mars","Jüpiter","Satürn","Neptün"],
+ ["Asteroit kuşağı hangi iki gezegen arasındadır?","Mars ile Jüpiter","Dünya ile Mars","Jüpiter ile Satürn","Venüs ile Dünya"],
+ ["Dünya atmosferine girip sürtünmeyle ısınarak parlayan gök taşına ne ad verilir?","Meteor","Meteorit","Asteroit","Uydu"],
+ ["Yeryüzüne ulaşan gök taşına ne ad verilir?","Meteorit","Meteor","Kuyruklu yıldız","Uydu"],
+ ["Halkası en belirgin olan gezegen hangisidir?","Satürn","Mars","Venüs","Merkür"],
+ ["Güneş tutulması sırasında Güneş, Dünya ve Ay nasıl sıralanır?","Güneş – Ay – Dünya","Güneş – Dünya – Ay","Ay – Güneş – Dünya","Dünya – Güneş – Ay"],
+ ["Ay tutulması hangi evrede gerçekleşebilir?","Dolunay","Yeni Ay","İlk dördün","Son dördün"],
+ ["Ay tutulması sırasında ne olur?","Dünya'nın gölgesi Ay'ın üzerine düşer.","Ay'ın gölgesi Dünya'nın üzerine düşer.","Ay, Güneş'in önüne geçer.","Ay kendi ışığını kaybeder."]]},
+{g:6,u:2,ad:"Kuvvetin Etkisinde Hareket",kod:"FB.6.2",q:[
+ ["Bir cisme etki eden kuvvetlerin yaptığı etkiyi tek başına yapabilen kuvvete ne ad verilir?","Bileşke kuvvet","Sürtünme kuvveti","Ağırlık","Esneklik kuvveti"],
+ ["Duran bir cisme aynı doğrultuda, zıt yönde ve eşit büyüklükte iki kuvvet etki ediyor. Cisim için ne söylenebilir?","Durmaya devam eder.","Büyük kuvvet yönünde hareket eder.","Giderek hızlanır.","Yön değiştirerek hareket eder."],
+ ["Dengelenmemiş kuvvetin etkisindeki bir cisim için hangisi doğrudur?","Süratinde ya da hareket yönünde değişiklik olur.","Duruyorsa durmaya devam eder.","Kütlesi artar.","Aynı süratle hareketine devam eder."],
+ ["Halat çekme yarışında halat hareket etmiyorsa takımların uyguladığı kuvvetler için ne söylenebilir?","Kuvvetler dengelenmiştir.","Kuvvetler dengelenmemiştir.","Bir takım hiç kuvvet uygulamamaktadır.","Bileşke kuvvet en büyüktür."],
+ ["Dengelenmiş kuvvetlerin etkisindeki hareketli bir cisim için hangisi doğrudur?","Sabit süratle hareketine devam eder.","Hemen durur.","Giderek hızlanır.","Geri döner."],
+ ["Birim zamanda alınan yola ne ad verilir?","Sürat","Hız","Yer değiştirme","Kuvvet"],
+ ["Hız ile sürat arasındaki fark nedir?","Hızın yönü vardır, süratin yönü yoktur.","Süratin yönü vardır, hızın yönü yoktur.","Hız kuvvetin birimidir.","Aralarında hiçbir fark yoktur."],
+ ["Hangisi sürat birimi olarak kullanılabilir?","km/h","Newton","Kilogram","Joule"],
+ ["Bir koşucu pistte bir tur atıp başladığı noktaya geri dönüyor. Koşucunun yer değiştirmesi nedir?","Sıfır","Pistin uzunluğu kadar","Pistin yarısı kadar","Pistin iki katı kadar"],
+ ["Hangisi bir kuvveti tanımlamak için gereken özelliklerden biri değildir?","Sıcaklık","Büyüklük","Yön","Uygulama noktası"]]},
+{g:6,u:3,ad:"Canlılarda Sistemler",kod:"FB.6.3",q:[
+ ["Tek bir canlının üreme hücreleri kullanmadan kendine benzer yeni bireyler oluşturduğu üreme hangisidir?","Eşeysiz üreme","Eşeyli üreme","Tozlaşma","Döllenme"],
+ ["Hangisi bitkilerde vejetatif üremeye örnektir?","Patatesin yumrularıyla çoğalması","Bitkinin tohumla çoğalması","Polenlerin rüzgârla taşınması","Çiçekte meyve oluşması"],
+ ["Bira mayasında görülen eşeysiz üreme çeşidi hangisidir?","Tomurcuklanma","Rejenerasyon","Tozlaşma","Başkalaşım"],
+ ["Deniz yıldızının kopan bir kolundan yeni bir deniz yıldızı oluşmasına ne ad verilir?","Rejenerasyon","Tomurcuklanma","Bölünme","Tozlaşma"],
+ ["Polenlerin dişicik tepesine taşınmasına ne ad verilir?","Tozlaşma","Döllenme","Çimlenme","Başkalaşım"],
+ ["Hangisi tohumun çimlenmesi için gerekli olan etkenlerden biri değildir?","Toprak","Su","Uygun sıcaklık","Oksijen"],
+ ["Kurbağanın yumurtadan ergin bireye gelişirken geçirdiği büyük değişimlere ne ad verilir?","Başkalaşım","Rejenerasyon","Tomurcuklanma","Tozlaşma"],
+ ["Vücudun dengesini sağlayan merkezî sinir sistemi bölümü hangisidir?","Beyincik","Omurilik","Omurilik soğanı","Beyin zarı"],
+ ["Sıcak bir cisme dokunduğumuzda elimizi hemen çekmemizi sağlayan refleks hangi yapının kontrolündedir?","Omurilik","Beyincik","Mide","Kalp"],
+ ["Kandaki şeker miktarını düşüren hormon hangisidir?","İnsülin","Glukagon","Adrenalin","Büyüme hormonu"]]},
+{g:7,u:1,ad:"Uzay Çağı",kod:"FB.7.1",q:[
+ ["Hangisi uzaya yerleştirilmiş bir teleskoptur?","Hubble Uzay Teleskobu","Doğu Anadolu Gözlemevi teleskobu","TÜBİTAK Ulusal Gözlemevi teleskobu","Okul laboratuvarındaki mikroskop"],
+ ["Uzay teleskoplarının yer teleskoplarına göre en önemli üstünlüğü nedir?","Atmosferin bozucu etkisi olmadan gözlem yapabilmeleri","Daha ucuz olmaları","Tamirlerinin kolay olması","Yalnızca gece çalışmaları"],
+ ["Türkiye'nin ilk astronotu kimdir?","Alper Gezeravcı","Nüzhet Gökdoğan","Cahit Arf","Aziz Sancar"],
+ ["Işık yılı için hangisi doğrudur?","Işığın bir yılda aldığı yoldur, uzaklık birimidir.","Bir zaman birimidir.","Işığın hızıdır.","Bir yıldızın yaşıdır."],
+ ["Yıldızların oluştuğu dev gaz ve toz bulutuna ne ad verilir?","Bulutsu (nebula)","Süpernova","Kara delik","Beyaz cüce"],
+ ["Çok büyük kütleli bir yıldızın yaşamının sonunda şiddetle patlamasına ne ad verilir?","Süpernova","Bulutsu","Ön yıldız","Kırmızı dev"],
+ ["Güneş gibi düşük kütleli bir yıldız yaşamının sonunda neye dönüşür?","Beyaz cüce","Kara delik","Nötron yıldızı","Bulutsu"],
+ ["Güneş sistemimizin içinde bulunduğu galaksi hangisidir?","Samanyolu","Andromeda","Büyükayı","Avcı (Orion)"],
+ ["Büyükten küçüğe sıralama hangisinde doğru verilmiştir?","Evren > Galaksi > Yıldız","Galaksi > Evren > Yıldız","Yıldız > Galaksi > Evren","Evren > Yıldız > Galaksi"],
+ ["Gökyüzünde belirli bir şekil oluşturduğu düşünülen yıldız grubuna ne ad verilir?","Takımyıldız","Galaksi","Bulutsu","Gezegen"]]},
+{g:7,u:2,ad:"Kuvvet ve Enerjiyi Keşfedelim",kod:"FB.7.2",q:[
+ ["Hangisinde fen bilimleri açısından iş yapılmıştır?","Yerdeki çantayı kaldırıp masaya koymak","Duvarı ittiği hâlde yerinden oynatamamak","Elinde çantayı tutarak beklemek","Masada oturup kitap okumak"],
+ ["İş ve enerjinin birimi hangisidir?","Joule (J)","Newton (N)","Kilogram (kg)","Metre (m)"],
+ ["Fiziksel iş hangi iki niceliğe bağlıdır?","Uygulanan kuvvet ve kuvvet yönünde alınan yol","Kütle ve sıcaklık","Hacim ve zaman","Renk ve şekil"],
+ ["Kinetik enerji hangi iki niceliğe bağlıdır?","Kütle ve sürat","Kütle ve yükseklik","Sürat ve sıcaklık","Hacim ve renk"],
+ ["Çekim potansiyel enerjisi hangi iki niceliğe bağlıdır?","Kütle ve yükseklik","Kütle ve sürat","Sürat ve zaman","Hacim ve sıcaklık"],
+ ["Gerilmiş bir lastikte hangi enerji depolanır?","Esneklik potansiyel enerjisi","Çekim potansiyel enerjisi","Kinetik enerji","Ses enerjisi"],
+ ["Yukarı doğru atılan bir top yükselirken enerjisi nasıl değişir? (Sürtünme önemsiz)","Kinetik enerji azalır, potansiyel enerji artar.","Kinetik enerji artar, potansiyel enerji azalır.","İkisi de artar.","İkisi de değişmez."],
+ ["Sürtünmeli bir yüzeyde kayan kutunun kinetik enerjisinin bir kısmı neye dönüşür?","Isı enerjisine","Kütleye","Esneklik potansiyel enerjisine","Hiçbir şeye, yok olur"],
+ ["Enerjinin korunumu ile ilgili hangisi doğrudur?","Enerji yoktan var edilemez, yok edilemez; bir türden diğerine dönüşür.","Enerji kullanıldıkça yok olur.","Enerji yoktan var edilebilir.","Enerji yalnızca hareketli cisimlerde bulunur."],
+ ["Salıncak en yüksek noktadayken hangi enerjisi en fazladır?","Çekim potansiyel enerjisi","Kinetik enerji","Esneklik potansiyel enerjisi","Isı enerjisi"]]},
+{g:7,u:3,ad:"Vücudumuzdaki Sistemler",kod:"FB.7.3",q:[
+ ["Besinlerin sindirim kanalında izlediği yol hangisidir?","Ağız → yutak → yemek borusu → mide → ince bağırsak → kalın bağırsak","Ağız → mide → yutak → yemek borusu → ince bağırsak → kalın bağırsak","Ağız → yemek borusu → yutak → mide → kalın bağırsak → ince bağırsak","Ağız → yutak → mide → yemek borusu → kalın bağırsak → ince bağırsak"],
+ ["Hangisi fiziksel sindirime örnektir?","Besinlerin dişlerle parçalanması","Besinlerin enzimlerle yapı birimlerine ayrılması","Besinlerin kana geçmesi","Atıkların vücuttan atılması"],
+ ["Sindirilen besinlerin büyük kısmı hangi organda kana geçer?","İnce bağırsak","Kalın bağırsak","Mide","Yemek borusu"],
+ ["Hangileri yardımcı sindirim organlarıdır?","Karaciğer ve pankreas","Mide ve yemek borusu","Akciğer ve böbrek","Kalp ve yutak"],
+ ["Kalpten vücuda kan taşıyan damarlara ne ad verilir?","Atardamar","Toplardamar","Kılcal damar","Soluk borusu"],
+ ["Kan ile doku hücreleri arasında madde alışverişi hangi damarlarda olur?","Kılcal damarlar","Atardamarlar","Toplardamarlar","Hiçbirinde"],
+ ["Kalp ile akciğerler arasındaki dolaşımda (küçük dolaşım) kanın oksijen miktarı nasıl değişir?","Artar","Azalır","Değişmez","Önce artar, sonra azalır"],
+ ["Vücudu mikroplara karşı savunan kan hücresi hangisidir?","Akyuvar","Alyuvar","Kan pulcuğu","Sinir hücresi"],
+ ["Oksijen ve karbondioksit değişimi hangi organda gerçekleşir?","Akciğerler","Mide","Böbrekler","Gırtlak"],
+ ["Kanı süzerek idrar oluşturan organ hangisidir?","Böbrek","İdrar kesesi","Üreter","Karaciğer"]]},
+{g:8,u:1,ad:"Mevsimler ve İklim",kod:"LGS",q:[
+ ["Mevsimlerin oluşmasının temel nedeni nedir?","Dünya'nın dönme ekseninin eğik olması ve Güneş etrafında dolanması","Dünya'nın Güneş'e olan uzaklığının değişmesi","Dünya'nın kendi ekseni etrafında dönmesi","Ay'ın Dünya etrafında dolanması"],
+ ["21 Haziran'da Kuzey Yarım Küre'de hangisi yaşanır?","Yılın en uzun gündüzü","Yılın en uzun gecesi","Gece ve gündüzün eşit olması","Kış mevsiminin başlaması"],
+ ["21 Mart ve 23 Eylül tarihlerinde Güneş ışınları hangi noktaya dik gelir?","Ekvator","Yengeç Dönencesi","Oğlak Dönencesi","Kuzey Kutup Noktası"],
+ ["21 Aralık'ta Güneş ışınları hangi noktaya dik gelir?","Oğlak Dönencesi","Yengeç Dönencesi","Ekvator","Güney Kutup Noktası"],
+ ["Güneş ışınlarının dik geldiği yerlerde birim yüzeye düşen enerji için ne söylenebilir?","Daha fazladır.","Daha azdır.","Eğik geldiği yerlerle aynıdır.","Hiç enerji düşmez."],
+ ["Türkiye'de yaz mevsimi yaşanırken Avustralya'da hangi mevsim yaşanır?","Kış","Yaz","İlkbahar","Sonbahar"],
+ ["Geniş bir bölgede uzun yıllar boyunca gözlenen hava olaylarının ortalamasına ne ad verilir?","İklim","Hava durumu","Meteoroloji","Rüzgâr"],
+ ["İklimi inceleyen bilim dalı hangisidir?","Klimatoloji","Meteoroloji","Astronomi","Jeoloji"],
+ ["Rüzgârın oluşma nedeni nedir?","Havanın yüksek basınç alanından alçak basınç alanına hareket etmesi","Havanın alçak basınç alanından yüksek basınç alanına hareket etmesi","Dünya'nın Güneş etrafında dolanması","Bulutların yer değiştirmesi"],
+ ["\"Yarın Ankara'da yağmur bekleniyor.\" ifadesi neyle ilgilidir?","Hava olayları (hava durumu)","İklim","Mevsimlerin oluşumu","Klimatoloji"]]},
+{g:8,u:2,ad:"DNA ve Genetik Kod",kod:"LGS",q:[
+ ["DNA'nın yapı birimi nedir?","Nükleotit","Amino asit","Gen","Kromozom"],
+ ["Hangisi bir nükleotidin yapısında bulunmaz?","Amino asit","Fosfat","Deoksiriboz şekeri","Organik baz"],
+ ["DNA'da adenin bazı hangi bazla eşleşir?","Timin","Guanin","Sitozin","Adenin"],
+ ["Bir DNA molekülünde 300 adenin bazı varsa timin bazı sayısı kaçtır?","300","150","600","Bilinemez"],
+ ["Kalıtsal bir özelliği belirleyen DNA bölümüne ne ad verilir?","Gen","Kromozom","Nükleotit","Hücre zarı"],
+ ["Küçükten büyüğe sıralama hangisinde doğru verilmiştir?","Nükleotit → Gen → DNA → Kromozom","Gen → Nükleotit → DNA → Kromozom","Kromozom → DNA → Gen → Nükleotit","Nükleotit → DNA → Gen → Kromozom"],
+ ["Saf döl uzun (UU) bezelye ile kısa (uu) bezelye çaprazlanırsa oluşan bezelyelerin hepsi nasıl olur?","Uzun","Kısa","Yarısı uzun, yarısı kısa","Orta boylu"],
+ ["Aa × Aa çaprazlamasında aa genotipli birey oluşma olasılığı nedir?","1/4","1/2","3/4","0"],
+ ["Güneş altında kalan kişinin teninin bronzlaşması gibi kalıtsal olmayan değişikliklere ne ad verilir?","Modifikasyon","Mutasyon","Adaptasyon","Çaprazlama"],
+ ["Çöl tilkisinin büyük kulakları sayesinde fazla ısıyı atabilmesi neye örnektir?","Adaptasyon","Modifikasyon","Mutasyon","Çaprazlama"],
+ ["Bakterilere gen aktarılarak insülin üretilmesi hangi alana örnektir?","Biyoteknoloji (genetik mühendisliği)","Klimatoloji","Astronomi","Meteoroloji"]]},
+{g:8,u:3,ad:"Basınç",kod:"LGS",q:[
+ ["Birim yüzeye dik olarak etki eden kuvvete ne ad verilir?","Basınç","Ağırlık","Sürtünme","Enerji"],
+ ["Karda yürürken geniş tabanlı kar ayakkabısı giyilmesinin amacı nedir?","Yüzey alanını artırarak basıncı azaltmak","Yüzey alanını azaltarak basıncı artırmak","Ağırlığı azaltmak","Kütleyi artırmak"],
+ ["Bıçağın keskin tarafının ince yapılmasının amacı nedir?","Yüzey alanını azaltarak basıncı artırmak","Yüzey alanını artırarak basıncı azaltmak","Bıçağın ağırlığını artırmak","Sürtünmeyi tamamen ortadan kaldırmak"],
+ ["Katıların basıncı hangi iki niceliğe bağlıdır?","Uygulanan dik kuvvet (ağırlık) ve yüzey alanı","Sıcaklık ve renk","Derinlik ve yoğunluk","Hacim ve zaman"],
+ ["Durgun sıvıların basıncı hangi iki niceliğe bağlıdır?","Sıvının derinliği ve yoğunluğu","Kabın şekli ve sıvının miktarı","Kabın taban alanı ve sıvının rengi","Sıvının sıcaklığı ve kabın rengi"],
+ ["Baraj duvarlarının alt kısımlarının daha kalın yapılmasının nedeni nedir?","Derinlik arttıkça sıvı basıncının artması","Derinlik arttıkça sıvı basıncının azalması","Suyun yoğunluğunun yüzeyde fazla olması","Açık hava basıncının barajı itmesi"],
+ ["Aynı derinlikte tuzlu suyun basıncı tatlı suyunkine göre nasıldır?","Daha fazladır.","Daha azdır.","Eşittir.","Karşılaştırılamaz."],
+ ["Su dolu bir şişenin farklı yüksekliklerdeki deliklerinden hangisinden çıkan su en hızlı çıkar?","En alttaki delikten","En üstteki delikten","Ortadaki delikten","Hepsinden aynı hızla"],
+ ["Deniz seviyesinden yükseklere çıkıldıkça açık hava basıncı nasıl değişir?","Azalır","Artar","Değişmez","Önce artar sonra azalır"],
+ ["Pipetle meyve suyu içebilmemizi sağlayan etki hangisidir?","Açık hava basıncı","Sıvı basıncının yukarı doğru artması","Pipetin sıvıyı kendi kendine çekmesi","Yer çekimi kuvveti"],
+ ["Hidrolik fren sistemleri sıvıların hangi özelliğinden yararlanır?","Üzerlerine uygulanan basıncı her yöne aynen iletmeleri","Sıkıştırılabilmeleri","Renklerinin değişmesi","Isıyı iyi iletmeleri"]]}
 ];
+/* oyun için iki seçenekli soru havuzu: kısa sorular, doğru + ilk yanlış */
+window.QS=[];
+window.UNITS.forEach(U=>U.q.forEach(x=>{if(x[0].length<=78&&x[1].length<=40&&x[2].length<=40)window.QS.push([U.g,x[0],x[1],x[2]])}));
 
 /* ---------- LUNA'NIN BİLİM KOŞUSU (mini oyun) ---------- */
 (function(){
@@ -706,27 +834,35 @@ reset();loop();
 /* ---------- ziyaret ve indirme sayımı (GoatCounter, çerezsiz) ---------- */
 function track(name){try{if(window.goatcounter&&window.goatcounter.count)window.goatcounter.count({path:name,title:name,event:true})}catch(e){}}
 
-/* ---------- öğretmen materyalleri: yazdırılabilir mini quizler ---------- */
+/* ---------- öğretmen materyalleri: ünite tarama testleri ---------- */
 (function(){
  const cols={5:"var(--mint)",6:"var(--sky)",7:"var(--orange)",8:"var(--pink)"};
  const box=document.getElementById("quizCards");
- [5,6,7,8].forEach(g=>{const n=window.QS.filter(q=>q[0]===g).length;
-  const c=document.createElement("div");c.className="card qcard rv";c.style.setProperty("--c",cols[g]);
-  c.innerHTML=`<div class="big" data-px>${g}</div><h4>Sınıf Mini Quiz</h4><small><span data-px>${n}</span> soru · iki seçenekli · cevap anahtarı ayrı sayfada</small>
-   <button class="dl" data-g="${g}">🖨 Yazdır</button>`;
+ const esc=t=>String(t).replace(/&/g,"&amp;").replace(/</g,"&lt;");
+ window.UNITS.forEach((U,ui)=>{
+  const c=document.createElement("div");c.className="card qcard rv"+(U.g===5?"":" hid");c.dataset.g=U.g;c.style.setProperty("--c",cols[U.g]);
+  const prog=U.g===8?"2018 programı · LGS":"Maarif Modeli · "+U.kod;
+  c.innerHTML=`<span class="big">${U.g}. SINIF · ${U.u}. ÜNİTE</span><h4>${esc(U.ad)}</h4><small>${U.q.length} soru · ${prog}</small>
+   <button class="dl" data-i="${ui}">🖨 Testi yazdır</button>`;
   box.appendChild(c)});
- box.querySelectorAll("[data-px]").forEach(pixify);
- const esc=t=>t.replace(/&/g,"&amp;").replace(/</g,"&lt;");
- box.querySelectorAll("button[data-g]").forEach(b=>b.onclick=()=>{
-  const g=+b.dataset.g;const qs=window.QS.filter(q=>q[0]===g);
-  const items=qs.map((q,i)=>{const okFirst=i%2===0;return {q:q[1],A:okFirst?q[2]:q[3],B:okFirst?q[3]:q[2],key:okFirst?"A":"B",ok:q[2]}});
+ document.querySelectorAll("#ttabs button").forEach(b=>b.onclick=()=>{
+  document.querySelectorAll("#ttabs button").forEach(x=>x.classList.toggle("on",x===b));
+  box.querySelectorAll(".qcard").forEach(c=>c.classList.toggle("hid",c.dataset.g!==b.dataset.g))});
+ const L=["A","B","C","D"];
+ box.querySelectorAll("button[data-i]").forEach(b=>b.onclick=()=>{
+  const ui=+b.dataset.i,U=window.UNITS[ui];
+  const items=U.q.map((x,i)=>{const pos=(i*3+ui)%4;const wr=[x[2],x[3],x[4]];const opts=[];let w=0;
+   for(let k=0;k<4;k++)opts.push(k===pos?x[1]:wr[w++]);return {q:x[0],opts,key:L[pos],ok:x[1]}});
+  const prog=U.g===8?"8. sınıf · 2018 Fen Bilimleri öğretim programı (LGS)":U.g+". sınıf · Türkiye Yüzyılı Maarif Modeli · "+U.kod;
   document.getElementById("printArea").innerHTML=
-   `<h1>8bitfen · ${g}. Sınıf Mini Quiz</h1><div class="who"><span>Ad Soyad: ______________________</span><span>Sınıf: ______</span><span>Tarih: ________</span></div>
-    <ol>${items.map(it=>`<li>${esc(it.q)}<div class="opt">A) ${esc(it.A)}</div><div class="opt">B) ${esc(it.B)}</div></li>`).join("")}</ol>
+   `<h1>8bitfen · ${U.g}. Sınıf ${U.u}. Ünite: ${esc(U.ad)}</h1><div class="meta">Ünite tarama testi · ${esc(prog)}</div>
+    <div class="who"><span>Ad Soyad: ______________________</span><span>Sınıf: ______</span><span>Puan: ______</span></div>
+    <ol>${items.map(it=>`<li>${esc(it.q)}<div>${it.opts.map((o,k)=>`<span class="opt">${L[k]}) ${esc(o)}</span>`).join("")}</div></li>`).join("")}</ol>
     <div class="foot">8bitfen.github.io · Sınıf içi kullanım için ücretsizdir.</div>
-    <div class="key"><h1>Cevap Anahtarı · ${g}. Sınıf</h1><ol>${items.map(it=>`<li><b>${it.key})</b> ${esc(it.ok)}</li>`).join("")}</ol>
+    <div class="key"><h1>Cevap Anahtarı · ${U.g}. Sınıf ${U.u}. Ünite</h1><div class="meta">${esc(U.ad)}${100%U.q.length?"":" · her soru "+(100/U.q.length)+" puan"}</div>
+    <ol>${items.map(it=>`<li><b>${it.key})</b> ${esc(it.ok)}</li>`).join("")}</ol>
     <div class="foot">8bitfen.github.io · Öğretmen için cevap anahtarı</div></div>`;
-  track("quiz-yazdir/"+g);
+  track("test-yazdir/"+U.g+"-"+U.u);
   try{window.print()}catch(e){}});
  const cp=document.getElementById("copyShare");
  cp.onclick=async()=>{const t=document.getElementById("shareMsg").textContent;
@@ -751,7 +887,7 @@ const TIPS={
  siniflar:["Kaçıncı sınıftasın? Seviyeni seç, videolara ışınlan!","Takvime bak","#takvim"],
  kaynaklar:["Ücretsiz PDF'ler burada! İndir, yazdır, çöz.","Takvime bak","#takvim"],
  takvim:["Yeni videolar ne zaman? Bugünün kutusu parlıyor!","Abone ol","https://www.youtube.com/@8bitfen?sub_confirmation=1"],
- ogretmen:["Öğretmenim, buradaki quizleri yazdırıp derste kullanabilirsin!","Kâğıtlara git","#kaynaklar"],
+ ogretmen:["Öğretmenim, ünite testlerini cevap anahtarıyla yazdırabilirsin!","Kâğıtlara git","#kaynaklar"],
  magaza:["Burası henüz kilitli... Ama yakında açılacak, söz!","Yukarı çık","#top"],
  hakkinda:["8bitfen'de her görev bir level. Hadi başlayalım!","Kanala git","https://www.youtube.com/@8bitfen"]};
 const guide=document.getElementById("guide"),gb=document.getElementById("gbub"),gt=document.getElementById("gtxt"),gg=document.getElementById("ggo"),ro=document.getElementById("reopen");
