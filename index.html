@@ -63,6 +63,11 @@
   @media(max-width:860px){.lead{margin-left:auto;margin-right:auto}}
   .ctas{display:flex;gap:16px;flex-wrap:wrap}
 
+  .gwrap{position:relative}
+  #lunaGame{height:430px}
+  @media(max-width:860px){#lunaGame{height:min(470px,118vw)}}
+  .gfull{display:inline-block;margin-top:10px;font-family:var(--px);font-size:16px;color:var(--mint);text-decoration:none}
+  .gfull:hover{text-decoration:underline}
   .stage{position:relative;border-radius:14px;overflow:hidden;border:3px solid #000;box-shadow:0 0 0 3px rgba(255,255,255,.08),0 25px 60px rgba(0,0,0,.5);
          background:linear-gradient(180deg,#2c2470 0%,#5a2f86 60%,#a0447e 100%);height:360px}
   .stage{user-select:none;-webkit-user-select:none;touch-action:manipulation}
@@ -255,29 +260,9 @@
         <a class="btn ghost" href="#kaynaklar">Ücretsiz Kaynaklar</a>
       </div>
     </div>
-    <div class="stage rv" id="stage">
-      <canvas id="game" aria-label="Luna'nın Bilim Koşusu oyunu"></canvas>
-      <div class="hud"><span>LEVEL <span id="lvl" data-px>1</span></span><span id="hearts">♥♥♥</span><span class="sc">★ <span id="score" data-px>000000</span></span></div>
-      <button id="mute" aria-label="Sesi aç/kapat">🔊</button>
-      <div class="ov" id="ovStart">
-        <h3>LUNA'NIN<br>BİLİM KOŞUSU</h3>
-        <p>Mikroplardan zıpla, atomları topla,<br><b>?</b> bloklarındaki soruları bil!</p>
-        <button class="btn yel" id="bStart">▶ BAŞLA</button>
-        <small>Zıplamak için ekrana dokun ya da boşluk tuşuna bas.<br>Havadayken bir kez daha zıplayabilirsin.</small>
-        <small id="bestTxt"></small>
-      </div>
-      <div class="ov hide" id="ovQuiz">
-        <span class="qchip" id="qGrade"></span>
-        <h4 id="qText"></h4>
-        <div class="qbtns" id="qBtns"></div>
-      </div>
-      <div class="ov hide" id="ovEnd">
-        <h3>OYUN BİTTİ</h3>
-        <p id="endTxt"></p>
-        <button class="btn yel" id="bAgain">↻ Tekrar Oyna</button>
-        <a href="#kaynaklar" class="endlink">Konuyu pekiştir: ücretsiz kâğıtlar →</a>
-      </div>
-      <div class="toast" id="toast"></div>
+    <div class="gwrap rv">
+      <div id="lunaGame" data-kaynak="#kaynaklar"></div>
+      <a class="gfull" href="oyun.html">⛶ Büyük ekranda oyna</a>
     </div>
   </div>
 </header>
@@ -710,132 +695,6 @@ window.UNITS=[
  ["Pipetle meyve suyu içebilmemizi sağlayan etki hangisidir?","Açık hava basıncı","Sıvı basıncının yukarı doğru artması","Pipetin sıvıyı kendi kendine çekmesi","Yer çekimi kuvveti"],
  ["Hidrolik fren sistemleri sıvıların hangi özelliğinden yararlanır?","Üzerlerine uygulanan basıncı her yöne aynen iletmeleri","Sıkıştırılabilmeleri","Renklerinin değişmesi","Isıyı iyi iletmeleri"]]}
 ];
-/* oyun için iki seçenekli soru havuzu: kısa sorular, doğru + ilk yanlış */
-window.QS=[];
-window.UNITS.forEach(U=>U.q.forEach(x=>{if(x[0].length<=78&&x[1].length<=40&&x[2].length<=40)window.QS.push([U.g,x[0],x[1],x[2]])}));
-
-/* ---------- LUNA'NIN BİLİM KOŞUSU (mini oyun) ---------- */
-(function(){
-const stage=document.getElementById("stage"),cv=document.getElementById("game"),cx=cv.getContext("2d");
-const H=240;let W=320,GY=H-30;
-function fit(){W=Math.max(240,Math.round(H*stage.clientWidth/stage.clientHeight));cv.width=W;cv.height=H;GY=H-30}
-fit();addEventListener("resize",fit);
-
-const QS=window.QS;
-const GCOL={5:"#3ee6b0",6:"#4cc9f0",7:"#ff9f43",8:"#ff5fa2"};
-
-/* sesler: yumuşak üçgen/sinüs dalgası, sert kare dalga yok */
-let AC=null,muted=false;
-function tone(f,d,type="triangle",v=.07,to=null,delay=0){
- if(muted)return;try{AC=AC||new (window.AudioContext||window.webkitAudioContext)();
- const t=AC.currentTime+delay,o=AC.createOscillator(),g=AC.createGain();o.type=type;o.frequency.setValueAtTime(f,t);
- if(to)o.frequency.exponentialRampToValueAtTime(to,t+d);g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(v,t+.015);
- g.gain.exponentialRampToValueAtTime(.0001,t+d);o.connect(g).connect(AC.destination);o.start(t);o.stop(t+d+.05)}catch(e){}}
-const SFX={
- jump:()=>tone(420,.16,"sine",.06,760),
- coin:()=>{tone(988,.09,"triangle",.06);tone(1319,.18,"triangle",.06,null,.08)},
- ok:()=>[523,659,784,1047].forEach((f,i)=>tone(f,.25,"triangle",.07,null,i*.09)),
- no:()=>{tone(330,.22,"sine",.07);tone(262,.3,"sine",.07,null,.18)},
- hit:()=>tone(300,.25,"sine",.08,140),
- lvl:()=>[659,784,988,1319].forEach((f,i)=>tone(f,.18,"triangle",.06,null,i*.07)),
- end:()=>[523,440,349,262].forEach((f,i)=>tone(f,.3,"sine",.07,null,i*.16))};
-const muteB=document.getElementById("mute");
-muteB.onclick=e=>{e.stopPropagation();muted=!muted;muteB.textContent=muted?"🔇":"🔊"};
-
-/* sprite'lar */
-const RUN_B=LUNA_OPEN.slice(0,13).concat(["..KWWWK..KWWWK..","..KWGWK..KWGWK..","...KKK....KKK..."]);
-const GERM=["..m..m..m..",".mMm.mMm.m.","..MMMMMMMm.",".MMWKMMWKMm","mMMMMMMMMMm",".MMMKKKKMM.","..MMMMMMMm.",".m.mMMm.m..","...m..m...."];
-const COIN=[".KKKK.","KYYYyK","KYHYyK","KYYYyK","KyyyyK",".KKKK."];
-function spr(rows,x,y,sc){rows.forEach((r,j)=>{for(let i=0;i<r.length;i++){const c=PAL[r[i]];if(c){cx.fillStyle=c;cx.fillRect(Math.round(x+i*sc),Math.round(y+j*sc),sc,sc)}}})}
-
-/* durum */
-let state="idle",score=0,lives=3,level=1,speed=2.2,t=0,inv=0,spawnT=60,qT=420,best=0,shake=0;
-try{best=+localStorage.getItem("8bitfen_best")||0}catch(e){}
-const L={x:46,y:0,vy:0,w:32,h:32,jumps:0};
-let ents=[],stars=[],parts=[];
-for(let i=0;i<40;i++)stars.push({x:Math.random()*600,y:Math.random()*(H-80),z:Math.random()<.3?.6:.25});
-const $=id=>document.getElementById(id);
-const ovS=$("ovStart"),ovQ=$("ovQuiz"),ovE=$("ovEnd"),toast=$("toast");
-function setHud(){$("score").textContent=String(score).padStart(6,"0");pixify($("score"));
- $("lvl").textContent=level;pixify($("lvl"));$("hearts").textContent="♥".repeat(lives)+"♡".repeat(3-lives)}
-function say(txt,col){toast.textContent=txt;toast.style.color=col||"var(--yellow)";toast.classList.remove("on");void toast.offsetWidth;toast.classList.add("on")}
-function showBest(){$("bestTxt").textContent=best?"En yüksek puanın: "+best:""}
-showBest();
-
-function reset(){score=0;lives=3;level=1;speed=2.2;t=0;inv=0;spawnT=60;qT=360;ents=[];parts=[];L.y=GY-L.h;L.vy=0;L.jumps=0;setHud()}
-function start(){reset();state="run";track("oyun-basla");ovS.classList.add("hide");ovE.classList.add("hide");tone(0,0)}
-$("bStart").onclick=e=>{e.stopPropagation();start()};
-$("bAgain").onclick=e=>{e.stopPropagation();start()};
-
-function jump(){if(state!=="run")return;
- if(L.y>=GY-L.h-0.5){L.vy=-8.6;L.jumps=1;SFX.jump()}else if(L.jumps<2){L.vy=-7.4;L.jumps=2;SFX.jump()}}
-stage.addEventListener("pointerdown",e=>{if(e.target.closest("button,a"))return;jump()});
-addEventListener("keydown",e=>{if((e.code==="Space"||e.code==="ArrowUp")&&state==="run"&&inView){e.preventDefault();jump()}});
-let inView=true;new IntersectionObserver(es=>{inView=es[0].isIntersecting},{threshold:.3}).observe(stage);
-
-let qPool=[];
-function quiz(){state="quiz";if(!qPool.length)qPool=QS.map((_,i)=>i).sort(()=>Math.random()-.5);
- const [g,q,ok,no]=QS[qPool.pop()];
- $("qGrade").textContent=g+". SINIF";$("qGrade").style.background=GCOL[g];pixify($("qGrade"));$("qText").textContent=q;
- const opts=Math.random()<.5?[ok,no]:[no,ok];const box=$("qBtns");box.innerHTML="";
- opts.forEach(o=>{const b=document.createElement("button");b.className="qb";b.textContent=o;
-  b.onclick=ev=>{ev.stopPropagation();box.querySelectorAll("button").forEach(x=>{x.disabled=true;if(x.textContent===ok)x.classList.add("ok")});
-   if(o===ok){score+=100;SFX.ok();setHud();setTimeout(()=>{ovQ.classList.add("hide");say("DOĞRU! +100");state="run"},700)}
-   else{b.classList.add("no");SFX.no();setTimeout(()=>{ovQ.classList.add("hide");say("Bir dahakine!","#ff9fc4");state="run"},1500)}};
-  box.appendChild(b)});
- ovQ.classList.remove("hide")}
-
-function over(){state="end";SFX.end();if(score>best){best=score;try{localStorage.setItem("8bitfen_best",best)}catch(e){}}
- $("endTxt").innerHTML="Puanın: <b>"+score+"</b><br>En yüksek: <b>"+best+"</b>";showBest();ovE.classList.remove("hide")}
-
-function hitBox(a,b){return a.x<b.x+b.w&&a.x+a.w>b.x&&a.y<b.y+b.h&&a.y+a.h>b.y}
-function burst(x,y,c){for(let i=0;i<8;i++)parts.push({x,y,vx:(Math.random()-.5)*3,vy:-Math.random()*3,l:28,c})}
-
-function update(){
- t++;speed=Math.min(4.6,2.2+score/900+t/5000);
- const nl=1+Math.floor(score/400);if(nl>level){level=nl;SFX.lvl();say("LEVEL UP!");setHud()}
- L.vy+=.42;L.y+=L.vy;if(L.y>GY-L.h){L.y=GY-L.h;L.vy=0;L.jumps=0}
- if(inv>0)inv--;
- if(--spawnT<=0){const r=Math.random();
-  if(r<.5)ents.push({k:"germ",x:W+10,y:GY-18,w:22,h:18});
-  else{const hy=Math.random()<.5?GY-28:GY-74;const n=3+Math.floor(Math.random()*3);for(let i=0;i<n;i++)ents.push({k:"coin",x:W+10+i*22,y:hy,w:12,h:12})}
-  spawnT=Math.max(46,95-speed*8)+Math.random()*50}
- if(--qT<=0){ents.push({k:"q",x:W+10,y:GY-104,w:22,h:22,used:false});qT=520+Math.random()*300}
- const lb={x:L.x+6,y:L.y+4,w:L.w-12,h:L.h-6};
- ents.forEach(e=>{e.x-=speed;
-  if(e.k==="coin"&&!e.got&&hitBox(lb,e)){e.got=true;score+=10;SFX.coin();burst(e.x+6,e.y+6,"#ffd23f");setHud()}
-  if(e.k==="germ"&&!e.hit&&inv===0&&hitBox(lb,e)){e.hit=true;lives--;inv=70;shake=10;SFX.hit();burst(e.x+10,e.y+8,"#3ee6b0");setHud();if(lives<=0)over()}
-  if(e.k==="q"&&!e.used&&hitBox(lb,e)){e.used=true;e.bump=8;if(L.vy<0)L.vy=1.5;burst(e.x+11,e.y+11,"#ffd23f");quiz()}
-  if(e.bump)e.bump--});
- ents=ents.filter(e=>e.x>-40&&!(e.k==="coin"&&e.got));
- parts.forEach(p=>{p.x+=p.vx;p.y+=p.vy;p.vy+=.15;p.l--});parts=parts.filter(p=>p.l>0);
-}
-
-function draw(){
- cx.clearRect(0,0,W,H);cx.save();if(shake>0){cx.translate((Math.random()-.5)*shake,0);shake--}
- const mv=state==="run"?speed:.4;
- stars.forEach(s=>{if(state!=="quiz")s.x-=mv*s.z;if(s.x<0)s.x+=W+20;cx.fillStyle=s.z>.5?"#fff":"rgba(255,255,255,.55)";cx.fillRect(Math.round(s.x)%(W+20),Math.round(s.y),s.z>.5?2:1,s.z>.5?2:1)});
- // zemin
- const off=Math.floor((t*speed)%16);
- for(let x=-off;x<W;x+=16){cx.fillStyle=((x+off)/16)%2?"#2fc597":"#3ee6b0";cx.fillRect(x,GY,16,7);cx.fillStyle=((x+off)/16)%2?"#6a3f22":"#7a4b2a";cx.fillRect(x,GY+7,16,H-GY-7)}
- // varlıklar
- ents.forEach(e=>{
-  if(e.k==="coin"){const bob=Math.sin((t+e.x)/8)*2;spr(COIN,e.x,e.y+bob,2)}
-  if(e.k==="germ"){spr(GERM,e.x,e.y-(Math.sin(t/6+e.x)>0?1:0),2)}
-  if(e.k==="q"){const y=e.y-(e.bump?4:0);cx.fillStyle="#000";cx.fillRect(e.x-1,y-1,24,24);cx.fillStyle=e.used?"#a07a3a":"#ffd23f";cx.fillRect(e.x+1,y+1,20,20);
-   cx.fillStyle=e.used?"#7a5a20":"#d99b00";cx.fillRect(e.x+1,y+17,20,4);cx.fillRect(e.x+17,y+1,4,20);
-   if(!e.used){cx.fillStyle="#8a5a00";cx.font="bold 16px 'Pixelify Sans',monospace";cx.textAlign="center";cx.fillText("?",e.x+11,y+16)}}});
- parts.forEach(p=>{cx.fillStyle=p.c;cx.fillRect(Math.round(p.x),Math.round(p.y),3,3)});
- // Luna
- if(!(inv>0&&Math.floor(inv/5)%2)){const onG=L.y>=GY-L.h-0.5;const frame=(state==="run"&&onG&&Math.floor(t/7)%2)?RUN_B:LUNA_OPEN;
-  spr(frame,L.x,Math.round(L.y)+(state==="idle"?Math.round(Math.sin(Date.now()/300)*2):0),2)}
- cx.restore();
-}
-function loop(){if(state==="run"&&inView)update();if(inView)draw();requestAnimationFrame(loop)}
-reset();loop();
-})();
-
-
 /* ---------- ziyaret ve indirme sayımı (GoatCounter, çerezsiz) ---------- */
 function track(name){try{if(window.goatcounter&&window.goatcounter.count)window.goatcounter.count({path:name,title:name,event:true})}catch(e){}}
 
@@ -888,7 +747,7 @@ document.querySelectorAll(".rv").forEach((el,i)=>{el.style.transitionDelay=(i%4)
 
 /* ---------- Luna rehber ---------- */
 const TIPS={
- top:["Selam! Ben Luna. Benimle bilim koşusuna var mısın? Oyunda BAŞLA'ya bas!","Ücretsiz kâğıtlar","#kaynaklar"],
+ top:["Selam! Ben Luna. Benimle bilim koşusuna var mısın? Sınıfını seç, maceranı başlat!","Ücretsiz kâğıtlar","#kaynaklar"],
  siniflar:["Kaçıncı sınıftasın? Seviyeni seç, videolara ışınlan!","Takvime bak","#takvim"],
  kaynaklar:["Ücretsiz PDF'ler burada! İndir, yazdır, çöz.","Takvime bak","#takvim"],
  takvim:["Yeni videolar ne zaman? Bugünün kutusu parlıyor!","Abone ol","https://www.youtube.com/@8bitfen?sub_confirmation=1"],
@@ -907,6 +766,8 @@ const secIO=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){say
 ["top","siniflar","kaynaklar","takvim","ogretmen","magaza","hakkinda"].forEach(id=>secIO.observe(document.getElementById(id)));
 document.getElementById("gx").onclick=()=>{guide.classList.add("hide");ro.style.display="block"};
 ro.onclick=()=>{guide.classList.remove("hide");ro.style.display="none"};
+/* oyun başlayınca rehber balonu oyunun üstünü kapatmasın */
+addEventListener("lunagame-start",()=>{guide.classList.add("hide");ro.style.display="block"});
 document.getElementById("guideLuna").onclick=()=>{const o=cur;cur="";clearTimeout(autoHide);gb.classList.remove('pop');gt.textContent="Miyav! 🐾";setTimeout(()=>say(o),1300)};
 
 /* ---------- indirme penceresi (abone olma daveti) ---------- */
@@ -920,5 +781,6 @@ modal.onclick=e=>{if(e.target===modal)modal.classList.remove("open")};
 
 document.getElementById("yil").textContent=new Date().getFullYear();
 </script>
+<script src="oyun.js"></script>
 </body>
 </html>

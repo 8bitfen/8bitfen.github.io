@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Luna'nın Bilim Koşusu · 8bitfen</title>
+<meta name="description" content="5, 6, 7 ve 8. sınıf fen bilimleri ünite maceraları. Luna ile koş, zıpla, soruları bil, en sonda Isaac Newton'u yen!">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500;700&family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+<script data-goatcounter="https://8bitfen.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#110e26;color:#f4f1ff;font-family:'Nunito',system-ui,sans-serif;min-height:100vh;display:flex;flex-direction:column;align-items:center}
+a{color:inherit}
+.top{width:100%;max-width:1000px;display:flex;justify-content:space-between;align-items:center;padding:14px 16px 10px;gap:10px}
+.logo{font-family:'Pixelify Sans',monospace;font-weight:700;font-size:26px;text-decoration:none}
+.logo b{color:#ffd23f}
+.top a.back{font-family:'Pixelify Sans',monospace;font-size:16px;color:#3ee6b0;text-decoration:none}
+.box{width:100%;max-width:1000px;padding:0 10px}
+#lunaGame{width:100%;aspect-ratio:16/10;max-height:82vh;margin:0 auto}
+@media (max-aspect-ratio:3/4){#lunaGame{aspect-ratio:1/1.2}}
+.info{width:100%;max-width:1000px;padding:14px 16px 30px;color:#bdb6e6;font-weight:700;font-size:15px;line-height:1.55;display:grid;gap:6px}
+.info b{color:#f4f1ff}
+</style>
+</head>
+<body>
+<div class="top">
+ <a class="logo" href="https://8bitfen.github.io"><b>8bit</b>fen</a>
+ <a class="back" href="https://8bitfen.github.io">← Ana sayfa</a>
+</div>
+<div class="box"><div id="lunaGame"></div></div>
+<div class="info">
+ <div><b>Nasıl oynanır?</b> Sınıfını seç, bir üniteyi ya da Tam Macera'yı başlat. Zıplamak için ekrana dokun ya da boşluk tuşuna bas; havadayken bir kez daha zıplayabilirsin. Canavarların tepesine zıplarsan onları yenersin.</div>
+ <div><b>? blokları:</b> Her blokta o ünitenin bir sorusu var. Bilgisayarda 1, 2, 3 tuşlarıyla da cevap verebilirsin.</div>
+ <div><b>Bölüm sonu · Isaac Newton:</b> Elma fırlatır. Her doğru cevap Newton'un canını 1 azaltır; yanlış cevap Luna'nın canını götürür.</div>
+ <div>Yeni üniteler okulda işlendikçe eklenir. · <a href="https://www.youtube.com/@8bitfen">youtube.com/@8bitfen</a></div>
+</div>
+<script src="oyun.js"></script>
+</body>
+</html>
