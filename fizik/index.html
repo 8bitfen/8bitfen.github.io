@@ -137,6 +137,13 @@
         <p>Fizik Bilimi ve Kariyer Keşfi, Kuvvet ve Hareket. Kısa quiz videoları ve tatil tekrarı.</p>
         <a class="more" href="#kaynaklar">Çalışma kâğıtları →</a>
       </div>
+      <div class="card" style="--c:var(--amb)">
+        <span class="chip">LEVEL 10</span>
+        <div class="num">10</div>
+        <h3>Sınıf</h3>
+        <p>Kuvvet ve Hareket: konum, hız, ivme ve hareket grafikleri. Ünite tekrar videosu ve çalışma kâğıdı.</p>
+        <a class="more" href="#kaynaklar">Çalışma kâğıtları →</a>
+      </div>
     </div>
     <p class="note">Diğer sınıfların içerikleri yayımlandıkça bu sayfaya eklenecek.</p>
   </div>
@@ -172,7 +179,8 @@
 <script>
 document.getElementById("yil").textContent=new Date().getFullYear();
 const SHEETS=[
-  ["9","9. Sınıf Fizik · Tatil Tekrarı","7 level + 1 boss: fizik bilimi, alt dallar, bilim insanları, kariyer, nicelikler ve vektörler. 17 soru, cevap anahtarlı.","pdf/9-sinif-fizik-tatil-tekrari.pdf"]
+  ["9","9. Sınıf Fizik · Tatil Tekrarı","7 level + 1 boss: fizik bilimi, alt dallar, bilim insanları, kariyer, nicelikler ve vektörler. 17 soru, cevap anahtarlı.","pdf/9-sinif-fizik-tatil-tekrari.pdf"],
+  ["10","10. Sınıf Fizik · Kuvvet ve Hareket","7 level + 1 boss: konum, sürat ve hız, konum-zaman ve hız-zaman grafikleri, ivme, sabit ivmeli hareket grafikleri. 15 soru, cevap anahtarlı.","pdf/10-sinif-fizik-kuvvet-ve-hareket.pdf"]
 ];
 const GC={"9":"var(--cyan)","10":"var(--amb)","11":"var(--pink)","12":"var(--green)"};
 document.getElementById("sheets").innerHTML=SHEETS.map(([g,t,d,p])=>`<div class="card sheet" style="--c:${GC[g]}"><div class="pdf"></div><div>
@@ -188,6 +196,10 @@ const SL={x:96,y:300};
 const PAL={W:'#f4f4f0',G:'#c3c3d4',K:'#23223a',P:'#f4a6b8',A:'#f0a020',B:'#3a8fe8',H:'#ffffff'};
 const L16=["..K..............K..",".KWK............KWK.",".KWPK..........KPWK.",".KWPPK........KPPWK.",".KWWWWKKKKKKKKWWWWK.","KWWWWWWWWWWWWWWWWWWK","KWWWWWWWWWWWWWWWWWGK","KWWKBBKWWWWWWKAAKWGK","KWWKBHKWWWWWWKAHKWGK","KWWKBBKWWWWWWKAAKWGK","KWWWKKWWWPPWWWKKWWGK",".KWWWWWWWKKWWWWWWGK.","..KWWWWWWWWWWWWWGK..","...KKWWWWWWWWWWKK...","...KWWWWWWWWWWWGK...","..KWWWWWWWWWWWWWGK..","..KWWWWWWWWWWWWWGKKK","..KWWGWWWWWWGWWWGKWK","..KWWGWWWWWWGWWWGGWK","...KKKKKKKKKKKKKKKK."];
 const Q=[
+ ["Konum-zaman grafiğinin eğimi neyi verir?",["İvmeyi","Hızı","Alınan yolu"],1],
+ ["Hız-zaman grafiğinin altındaki alan neyi verir?",["Yer değiştirmeyi","İvmeyi","Hız değişimini"],0],
+ ["Hızı 4 s'de 2 m/s'den 10 m/s'ye çıkan aracın ivmesi?",["8 m/s²","2 m/s²","3 m/s²"],1],
+ ["Gidip başladığın yere dönersen ortalama hızın kaçtır?",["Sıfır","Süratine eşit","Bilinemez"],0],
  ["Fizik neyi inceler?",["Sadece canlıları","Madde, enerji ve aralarındaki etkileşimleri","Sadece gök cisimlerini"],1],
  ["Gökkuşağının oluşumu hangi alt dalın konusudur?",["Optik","Termodinamik","Nükleer fizik"],0],
  ["Hangisi temel bir niceliktir?",["Hız","Kütle","Kuvvet"],1],
