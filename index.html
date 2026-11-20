@@ -707,6 +707,7 @@ function track(name){try{if(window.goatcounter&&window.goatcounter.count)window.
 
 /* ---------- mağaza: LGS Tuzak Canavarı kitapçıkları ---------- */
 const BOOKS=[
+ ["LGS · AJANDA","2027 LGS Fen Ajandası","https://www.shopier.com/8bitfen/53191611","79 TL","1 Aralık 2026 – 13 Haziran 2027: her güne tarihli bir sayfa ve fen hap bilgisi, tıklanabilir aylık takvim, fen soru takibi, 41 dijital sticker (PDF)"],
  ["LGS · GÜNLÜK","LGS Günlüğüm","https://www.shopier.com/8bitfen/53167615","49 TL","22 sayfa: hedef kartı, takvim, günlük plan, pomodoro patileri, soru takibi, deneme analizi, rozetler (PDF)"],
  [1,"Mevsimler ve İklim","https://www.shopier.com/53166616","59 TL"],
  [2,"DNA ve Genetik Kod","https://www.shopier.com/8bitfen/53167722","59 TL"],
@@ -715,7 +716,7 @@ const BOOKS=[
  [5,"Basit Makineler","",""],
  [6,"Enerji Dönüşümleri ve Çevre Bilimi","",""],
  [7,"Elektrik Yükleri ve Elektrik Enerjisi","",""]];
-document.getElementById("books").innerHTML=BOOKS.map(([n,t,url,price,inc])=>`<div class="card rv">${url?"":'<span class="lock">YAKINDA</span>'}<span class="chip" style="background:${typeof n==="number"?"var(--pink)":"var(--yellow)"}">${typeof n==="number"?"LGS · ÜNİTE "+n:n}</span><h3>${t}</h3><p class="inc">${inc||"Özet + tuzaklar + yeni nesil sorular + çözümler (PDF)"}</p>${url?`<a class="btn yel" href="${url}" target="_blank" rel="noopener" data-book="${typeof n==="number"?n:"gunluk"}">${price?price+" · ":""}Satın al</a>`:`<button class="btn ghost" data-want="${typeof n==="number"?n:"gunluk"}">Açılınca haber ver</button>`}</div>`).join("");
+document.getElementById("books").innerHTML=BOOKS.map(([n,t,url,price,inc])=>`<div class="card rv">${url?"":'<span class="lock">YAKINDA</span>'}<span class="chip" style="background:${typeof n==="number"?"var(--pink)":"var(--yellow)"}">${typeof n==="number"?"LGS · ÜNİTE "+n:n}</span><h3>${t}</h3><p class="inc">${inc||"Özet + tuzaklar + yeni nesil sorular + çözümler (PDF)"}</p>${url?`<a class="btn yel" href="${url}" target="_blank" rel="noopener" data-book="${typeof n==="number"?n:(n.includes("AJANDA")?"ajanda":"gunluk")}">${price?price+" · ":""}Satın al</a>`:`<button class="btn ghost" data-want="${typeof n==="number"?n:(n.includes("AJANDA")?"ajanda":"gunluk")}">Açılınca haber ver</button>`}</div>`).join("");
 document.querySelectorAll("#books [data-book]").forEach(b=>b.addEventListener("click",()=>track("magaza-satin-al-unite-"+b.dataset.book)));
 document.querySelectorAll("#books [data-want]").forEach(b=>b.onclick=()=>{track("magaza-ilgi-unite-"+b.dataset.want);b.disabled=true;b.textContent="Not alındı ✓";document.getElementById("shopNote").textContent="Kitapçık açıldığında YouTube kanalında duyuracağız. Abone olup bildirimleri açman yeterli."});
 
