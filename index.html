@@ -46,6 +46,11 @@
   .btn:hover{transform:translateY(3px);box-shadow:0 3px 0 #000;filter:brightness(1.08)}
   .btn.red{background:#ff3b3b;color:#fff}
   .btn.yel{background:var(--yellow);color:#1a1530}
+  .btn.lgs{background:linear-gradient(90deg,var(--yellow),var(--orange));color:#1a1530;margin-top:16px;white-space:nowrap;animation:lgsglow 1.8s ease-in-out infinite}
+  .btn.lgs small{font-size:13px;background:#ff3b3b;color:#fff;border:2px solid #000;border-radius:4px;padding:1px 6px}
+  @keyframes lgsglow{0%,100%{box-shadow:0 6px 0 #000,0 0 0 0 rgba(255,210,63,.0)}50%{box-shadow:0 6px 0 #000,0 0 26px 4px rgba(255,210,63,.65)}}
+  @media(prefers-reduced-motion:reduce){.btn.lgs{animation:none}}
+  @media(max-width:420px){.btn.lgs{font-size:17px;padding:12px 16px}}
   .btn.ghost{background:rgba(255,255,255,.08);color:var(--text);border-color:rgba(255,255,255,.25);box-shadow:0 6px 0 rgba(0,0,0,.5)}
 
   /* hero */
@@ -262,6 +267,7 @@
         <a class="btn red" href="https://www.youtube.com/@8bitfen?sub_confirmation=1" target="_blank" rel="noopener">▶ Kanala Abone Ol</a>
         <a class="btn ghost" href="#kaynaklar">Ücretsiz Kaynaklar</a>
       </div>
+      <a class="btn lgs" href="#magaza" onclick="typeof track==='function'&&track('hero-lgs-tuzak')">★ LGS Tuzak Soruları <small>8. SINIF</small></a>
     </div>
     <div class="gwrap rv">
       <div id="lunaGame" data-kaynak="#kaynaklar"></div>
