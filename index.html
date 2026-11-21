@@ -143,6 +143,14 @@
   .sheet.hid{display:none}
   .sheet .count{font-size:13px;color:var(--muted)}
   /* öğretmen kaçış odaları: neon vitrin */
+  .shopnav{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:0 0 26px;position:sticky;top:70px;z-index:5;padding:10px;border-radius:14px;background:rgba(17,14,38,.82);backdrop-filter:blur(6px)}
+  .shopnav a{font-family:var(--px);font-size:16px;text-decoration:none;color:#fff;padding:8px 14px;border:2px solid var(--c,var(--yellow));border-radius:999px}
+  .shopnav a:hover{background:rgba(255,255,255,.08)}
+  .shopnav a small{font-family:inherit;opacity:.75;margin-left:4px}
+  .sgroup,#kacis-odalari{scroll-margin-top:140px}.sgroup{margin-top:34px}
+  .sgroup>.subh{margin:0 0 4px}
+  .sgroup>.sdesc{opacity:.85;margin:0 0 16px;max-width:820px}
+  @media(max-width:700px){.shopnav{position:static}.shopnav a{font-size:14px;padding:7px 11px}}
   .neon{position:relative;margin:46px 0 10px;padding:30px 26px 30px;border-radius:18px;background:radial-gradient(120% 80% at 50% 0%,rgba(62,230,176,.10),rgba(17,14,38,.6) 60%);border:2px solid var(--mint);box-shadow:0 0 6px var(--mint),0 0 22px rgba(62,230,176,.55),0 0 60px rgba(76,201,240,.25),inset 0 0 18px rgba(62,230,176,.25);animation:neonPulse 3.2s ease-in-out infinite}
   .neon .sign{display:inline-block;font-family:var(--px);font-size:15px;letter-spacing:2px;color:#fff;padding:6px 14px;border:2px solid var(--pink);border-radius:10px;text-shadow:0 0 4px #fff,0 0 10px var(--pink),0 0 22px var(--pink);box-shadow:0 0 8px var(--pink),inset 0 0 8px rgba(255,95,162,.5);animation:flick 5s infinite}
   .neon .ntop{text-align:center;margin-bottom:6px}
@@ -396,9 +404,17 @@
 
 <section id="magaza" class="shop">
   <div class="wrap">
-    <div class="head rv"><span class="eyebrow">▸ MAĞAZA</span><h2>LGS Fen kitapçıkları ve çalışma setleri</h2><p>8. sınıf LGS Fen için ünite kitapçıkları (konu özeti, tuzaklar, yeni nesil sorular, çözümlü cevap anahtarı), yarıyıl kampı, hap kartları ve planlayıcılar. Veliler ve öğretmenler için. Ücretsiz çalışma kâğıtları ücretsiz kalmaya devam edecek.</p></div>
-    <!-- Kitapçık satışa açılınca BOOKS listesinde o satırın 3. alanına Shopier ürün linkini, 4. alanına fiyatı yaz. -->
-    <div class="grid g3" id="books"></div>
+    <div class="head rv"><span class="eyebrow">▸ MAĞAZA</span><h2>8bitfen Mağaza</h2><p>Öğrenciler, veliler ve öğretmenler için 8. sınıf LGS Fen ürünleri. Aradığını kategoriden bul; ödeme Shopier üzerinden yapılır. Ücretsiz çalışma kâğıtları ücretsiz kalmaya devam edecek.</p></div>
+    <nav class="shopnav rv" aria-label="Mağaza kategorileri">
+      <a href="#m-kitap" style="--c:var(--pink)">Ünite Kitapçıkları<small id="nk"></small></a>
+      <a href="#m-set" style="--c:var(--yellow)">LGS Çalışma Setleri<small id="ns"></small></a>
+      <a href="#m-plan" style="--c:var(--sky)">Ajanda ve Günlük<small id="np"></small></a>
+      <a href="#kacis-odalari" style="--c:var(--mint)">Öğretmenlere Özel<small id="no"></small></a>
+    </nav>
+    <!-- Ürün satışa açılınca BOOKS listesinde o satırın 3. alanına Shopier ürün linkini, 4. alanına fiyatı yaz. Grup, ilk alandan otomatik seçilir. -->
+    <div class="sgroup" id="m-kitap"><h3 class="subh rv">LGS Tuzak Canavarı · Ünite Kitapçıkları</h3><p class="sdesc rv">Her üniteye bir PDF kitapçık: konu özeti ve şemalar, öğrencilerin sık düştüğü tuzaklar, yeni nesil sorular ve çözümlü cevap anahtarı.</p><div class="grid g3" id="books"></div></div>
+    <div class="sgroup" id="m-set"><h3 class="subh rv">LGS Çalışma Setleri</h3><p class="sdesc rv">Birkaç üniteyi birlikte tekrar ettiren setler: yarıyıl kampı, hap kartları ve ikisinin birlikte satıldığı paket.</p><div class="grid g3" id="sets"></div></div>
+    <div class="sgroup" id="m-plan"><h3 class="subh rv">Ajanda ve Günlük</h3><p class="sdesc rv">LGS'ye kadar çalışmayı planlamak için: tarihli dijital ajanda ve tarihsiz çalışma günlüğü.</p><div class="grid g3" id="plans"></div></div>
     <p class="shopnote" id="shopNote" aria-live="polite"></p>
     <div class="neon rv" id="kacis-odalari">
     <div class="ntop"><span class="sign">★ ÖĞRETMENLERE ÖZEL ★</span></div>
@@ -739,19 +755,23 @@ const BOOKS=[
  [5,"Basit Makineler","",""],
  [6,"Enerji Dönüşümleri ve Çevre Bilimi","",""],
  [7,"Elektrik Yükleri ve Elektrik Enerjisi","",""]];
-document.getElementById("books").innerHTML=BOOKS.map(([n,t,url,price,inc])=>`<div class="card rv">${url?"":'<span class="lock">YAKINDA</span>'}<span class="chip" style="background:${typeof n==="number"?"var(--pink)":"var(--yellow)"}">${typeof n==="number"?"LGS · ÜNİTE "+n:n}</span><h3>${t}</h3><p class="inc">${inc||"Özet + tuzaklar + yeni nesil sorular + çözümler (PDF)"}</p>${url?`<a class="btn yel" href="${url}" target="_blank" rel="noopener" data-book="${typeof n==="number"?n:(n.includes("PAKET")?"yariyil-paket":n.includes("KAMP")?"kamp":n.includes("KARTLAR")?"hap-kartlari":n.includes("AJANDA")?"ajanda":"gunluk")}">${price?price+" · ":""}Satın al</a>`:`<button class="btn ghost" data-want="${typeof n==="number"?n:(n.includes("PAKET")?"yariyil-paket":n.includes("KAMP")?"kamp":n.includes("KARTLAR")?"hap-kartlari":n.includes("AJANDA")?"ajanda":"gunluk")}">Açılınca haber ver</button>`}</div>`).join("");
+const bookCard=([n,t,url,price,inc])=>`<div class="card rv">${url?"":'<span class="lock">YAKINDA</span>'}<span class="chip" style="background:${typeof n==="number"?"var(--pink)":"var(--yellow)"}">${typeof n==="number"?"LGS · ÜNİTE "+n:n}</span><h3>${t}</h3><p class="inc">${inc||"Özet + tuzaklar + yeni nesil sorular + çözümler (PDF)"}</p>${url?`<a class="btn yel" href="${url}" target="_blank" rel="noopener" data-book="${typeof n==="number"?n:(n.includes("PAKET")?"yariyil-paket":n.includes("KAMP")?"kamp":n.includes("KARTLAR")?"hap-kartlari":n.includes("AJANDA")?"ajanda":"gunluk")}">${price?price+" · ":""}Satın al</a>`:`<button class="btn ghost" data-want="${typeof n==="number"?n:(n.includes("PAKET")?"yariyil-paket":n.includes("KAMP")?"kamp":n.includes("KARTLAR")?"hap-kartlari":n.includes("AJANDA")?"ajanda":"gunluk")}">Açılınca haber ver</button>`}</div>`;
+const bookGroup=n=>typeof n==="number"?"books":/AJANDA|GÜNLÜK/.test(n)?"plans":"sets";
+["books","sets","plans"].forEach(id=>{document.getElementById(id).innerHTML=BOOKS.filter(b=>bookGroup(b[0])===id).map(bookCard).join("")});
+[["nk","books"],["ns","sets"],["np","plans"]].forEach(([e,g])=>document.getElementById(e).textContent="("+BOOKS.filter(b=>bookGroup(b[0])===g&&b[2]).length+")");
 /* ---------- mağaza: Luna Sınıf Kaçış Odaları (öğretmen) ---------- */
 const ESCAPES=[
  ["8. SINIF · ÜNİTE 1","Mevsim Gözlemevi","https://www.shopier.com/8bitfen/53227043","69 TL","Mevsimlerin oluşumu, geliş açısı, özel tarihler, iklim ve rüzgâr: 4 oda, 12 kilit, son kasa + öğretmen yönergesi ve cevap anahtarı (HTML + PDF)","kacis-mevsim-deneme.html","8-1"],
  ["8. SINIF · ÜNİTE 2","Gen Merkezi","https://www.shopier.com/8bitfen/53227099","79 TL","DNA'nın yapısı, kalıtım, mutasyon-modifikasyon-adaptasyon, biyoteknoloji: 4 oda, 12 kilit, son kasa + öğretmen yönergesi ve cevap anahtarı (HTML + PDF)","kacis-dna-deneme.html","8-2"],
  ["8. SINIF · ÜNİTE 3","Basınç Laboratuvarı","https://www.shopier.com/8bitfen/53226463","79 TL","Katı, sıvı ve açık hava basıncı, hidrolik sistemler: 4 oda, 12 kilit, son kasa + öğretmen yönergesi ve cevap anahtarı (HTML + PDF)","kacis-basinc-deneme.html","8-3"]];
 document.getElementById("rooms").innerHTML=ESCAPES.map(([c,t,url,price,inc,demo,id])=>`<div class="card rv">${url?"":'<span class="lock">YAKINDA</span>'}<span class="chip" style="background:var(--mint)">${c}</span><h3>${t}</h3><p class="inc">${inc}</p><a class="btn ghost" href="${demo}" target="_blank" rel="noopener" data-kdemo="${id}">▶ 1. odayı ücretsiz dene</a> ${url?`<a class="btn yel" href="${url}" target="_blank" rel="noopener" data-kbuy="${id}">${price} · Satın al</a>`:`<button class="btn ghost" data-kwant="${id}">Açılınca haber ver</button>`}</div>`).join("");
+document.getElementById("no").textContent="("+ESCAPES.filter(e=>e[2]).length+")";
 document.querySelectorAll("#rooms [data-kdemo]").forEach(b=>b.addEventListener("click",()=>track("kacis-deneme-"+b.dataset.kdemo)));
 document.querySelectorAll("#rooms [data-kbuy]").forEach(b=>b.addEventListener("click",()=>track("kacis-satin-al-"+b.dataset.kbuy)));
 document.querySelectorAll("#rooms [data-kwant]").forEach(b=>b.onclick=()=>{track("kacis-ilgi-"+b.dataset.kwant);b.disabled=true;b.textContent="Not alındı ✓"});
 document.querySelectorAll("[data-neon]").forEach(b=>b.addEventListener("click",()=>track("kacis-neon-"+b.dataset.neon)));
-document.querySelectorAll("#books [data-book]").forEach(b=>b.addEventListener("click",()=>track("magaza-satin-al-unite-"+b.dataset.book)));
-document.querySelectorAll("#books [data-want]").forEach(b=>b.onclick=()=>{track("magaza-ilgi-unite-"+b.dataset.want);b.disabled=true;b.textContent="Not alındı ✓";document.getElementById("shopNote").textContent="Kitapçık açıldığında YouTube kanalında duyuracağız. Abone olup bildirimleri açman yeterli."});
+document.querySelectorAll("#magaza [data-book]").forEach(b=>b.addEventListener("click",()=>track("magaza-satin-al-unite-"+b.dataset.book)));
+document.querySelectorAll("#magaza [data-want]").forEach(b=>b.onclick=()=>{track("magaza-ilgi-unite-"+b.dataset.want);b.disabled=true;b.textContent="Not alındı ✓";document.getElementById("shopNote").textContent="Kitapçık açıldığında YouTube kanalında duyuracağız. Abone olup bildirimleri açman yeterli."});
 
 /* ---------- öğretmen materyalleri: ünite tarama testleri ---------- */
 (function(){
@@ -807,7 +827,7 @@ const TIPS={
  kaynaklar:["Ücretsiz PDF'ler burada! İndir, yazdır, çöz.","Takvime bak","#takvim"],
  takvim:["Yeni videolar ne zaman? Bugünün kutusu parlıyor!","Abone ol","https://www.youtube.com/@8bitfen?sub_confirmation=1"],
  ogretmen:["Öğretmenim, ünite testlerini cevap anahtarıyla yazdırabilirsin!","Kâğıtlara git","#kaynaklar"],
- magaza:["LGS tuzak kitapçıkları burada hazırlanıyor. İstediğin ünitede \"Açılınca haber ver\"e bas!","Yukarı çık","#top"],
+ magaza:["Mağaza dört bölüm: ünite kitapçıkları, çalışma setleri, ajanda-günlük ve öğretmenlere özel kaçış odaları. Üstteki düğmelerden seç!","Yukarı çık","#top"],
  hakkinda:["8bitfen'de her görev bir level. Hadi başlayalım!","Kanala git","https://www.youtube.com/@8bitfen"]};
 const guide=document.getElementById("guide"),gb=document.getElementById("gbub"),gt=document.getElementById("gtxt"),gg=document.getElementById("ggo"),ro=document.getElementById("reopen");
 let cur="",typing,autoHide;
