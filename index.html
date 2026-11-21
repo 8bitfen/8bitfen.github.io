@@ -387,6 +387,9 @@
     <!-- Kitapçık satışa açılınca BOOKS listesinde o satırın 3. alanına Shopier ürün linkini, 4. alanına fiyatı yaz. -->
     <div class="grid g3" id="books"></div>
     <p class="shopnote" id="shopNote" aria-live="polite"></p>
+    <h3 class="subh rv" id="kacis-odalari">Öğretmenler için: Luna Sınıf Kaçış Odaları</h3>
+    <p class="rv" style="max-width:760px;margin:0 auto 18px;text-align:center;opacity:.9">Ünite sonunda akıllı tahtada sınıfça oynanan kaçış odası: 4 oda, 12 kilit, son kasa. İnternetsiz çalışan tek dosya, öğretmen yönergesi, cevap anahtarı ve çıkış bileti. İlk odayı ücretsiz deneyebilirsin.</p>
+    <div class="grid g3" id="rooms"></div>
   </div>
 </section>
 
@@ -717,6 +720,13 @@ const BOOKS=[
  [6,"Enerji Dönüşümleri ve Çevre Bilimi","",""],
  [7,"Elektrik Yükleri ve Elektrik Enerjisi","",""]];
 document.getElementById("books").innerHTML=BOOKS.map(([n,t,url,price,inc])=>`<div class="card rv">${url?"":'<span class="lock">YAKINDA</span>'}<span class="chip" style="background:${typeof n==="number"?"var(--pink)":"var(--yellow)"}">${typeof n==="number"?"LGS · ÜNİTE "+n:n}</span><h3>${t}</h3><p class="inc">${inc||"Özet + tuzaklar + yeni nesil sorular + çözümler (PDF)"}</p>${url?`<a class="btn yel" href="${url}" target="_blank" rel="noopener" data-book="${typeof n==="number"?n:(n.includes("AJANDA")?"ajanda":"gunluk")}">${price?price+" · ":""}Satın al</a>`:`<button class="btn ghost" data-want="${typeof n==="number"?n:(n.includes("AJANDA")?"ajanda":"gunluk")}">Açılınca haber ver</button>`}</div>`).join("");
+/* ---------- mağaza: Luna Sınıf Kaçış Odaları (öğretmen) ---------- */
+const ESCAPES=[
+ ["8. SINIF · ÜNİTE 3","Basınç Laboratuvarı","","49 TL","Katı, sıvı ve açık hava basıncı, hidrolik sistemler: 4 oda, 12 kilit, son kasa + öğretmen yönergesi ve cevap anahtarı (HTML + PDF)","kacis-basinc-deneme.html","8-3"]];
+document.getElementById("rooms").innerHTML=ESCAPES.map(([c,t,url,price,inc,demo,id])=>`<div class="card rv">${url?"":'<span class="lock">YAKINDA</span>'}<span class="chip" style="background:var(--mint)">${c}</span><h3>${t}</h3><p class="inc">${inc}</p><a class="btn ghost" href="${demo}" target="_blank" rel="noopener" data-kdemo="${id}">▶ 1. odayı ücretsiz dene</a> ${url?`<a class="btn yel" href="${url}" target="_blank" rel="noopener" data-kbuy="${id}">${price} · Satın al</a>`:`<button class="btn ghost" data-kwant="${id}">Açılınca haber ver</button>`}</div>`).join("");
+document.querySelectorAll("#rooms [data-kdemo]").forEach(b=>b.addEventListener("click",()=>track("kacis-deneme-"+b.dataset.kdemo)));
+document.querySelectorAll("#rooms [data-kbuy]").forEach(b=>b.addEventListener("click",()=>track("kacis-satin-al-"+b.dataset.kbuy)));
+document.querySelectorAll("#rooms [data-kwant]").forEach(b=>b.onclick=()=>{track("kacis-ilgi-"+b.dataset.kwant);b.disabled=true;b.textContent="Not alındı ✓"});
 document.querySelectorAll("#books [data-book]").forEach(b=>b.addEventListener("click",()=>track("magaza-satin-al-unite-"+b.dataset.book)));
 document.querySelectorAll("#books [data-want]").forEach(b=>b.onclick=()=>{track("magaza-ilgi-unite-"+b.dataset.want);b.disabled=true;b.textContent="Not alındı ✓";document.getElementById("shopNote").textContent="Kitapçık açıldığında YouTube kanalında duyuracağız. Abone olup bildirimleri açman yeterli."});
 
