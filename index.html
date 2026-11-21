@@ -50,6 +50,14 @@
   .btn.lgs small{font-size:13px;background:#ff3b3b;color:#fff;border:2px solid #000;border-radius:4px;padding:1px 6px}
   @keyframes lgsglow{0%,100%{box-shadow:0 6px 0 #000,0 0 0 0 rgba(255,210,63,.0)}50%{box-shadow:0 6px 0 #000,0 0 26px 4px rgba(255,210,63,.65)}}
   @media(prefers-reduced-motion:reduce){.btn.lgs{animation:none}}
+  .btn.tch{margin-top:16px;margin-left:8px;white-space:nowrap;background:rgba(17,14,38,.85);color:#eafff8;border:2px solid var(--mint);letter-spacing:1px;text-shadow:0 0 6px var(--mint),0 0 16px var(--mint);box-shadow:0 0 8px var(--mint),0 0 26px rgba(62,230,176,.75),0 0 60px rgba(76,201,240,.45),inset 0 0 12px rgba(62,230,176,.45);animation:tchglow 1.6s ease-in-out infinite}
+  .btn.tch small{font-size:12px;color:#fff;border:1.5px solid var(--pink);border-radius:4px;padding:1px 6px;text-shadow:0 0 6px var(--pink);box-shadow:0 0 8px var(--pink)}
+  .btn.tch:hover{background:rgba(62,230,176,.18)}
+  @keyframes tchglow{50%{box-shadow:0 0 12px var(--mint),0 0 40px rgba(62,230,176,.95),0 0 90px rgba(76,201,240,.6),inset 0 0 16px rgba(62,230,176,.6)}}
+  @media(prefers-reduced-motion:reduce){.btn.tch{animation:none}}
+  @media(min-width:921px){.hero .btn.lgs,.hero .btn.tch{font-size:17px;padding:12px 16px}}
+  @media(max-width:520px){.btn.tch{margin-left:0;font-size:16px;padding:12px 14px}}
+
   @media(max-width:420px){.btn.lgs{font-size:17px;padding:12px 16px}}
   .btn.ghost{background:rgba(255,255,255,.08);color:var(--text);border-color:rgba(255,255,255,.25);box-shadow:0 6px 0 rgba(0,0,0,.5)}
 
@@ -289,6 +297,7 @@
         <a class="btn ghost" href="#kaynaklar">Ücretsiz Kaynaklar</a>
       </div>
       <a class="btn lgs" href="#magaza" onclick="typeof track==='function'&&track('hero-lgs-tuzak')">★ LGS Tuzak Soruları <small>8. SINIF</small></a>
+      <a class="btn tch" href="#kacis-odalari" onclick="typeof track==='function'&&track('hero-ogretmen')">★ ÖĞRETMENLERE ÖZEL</a>
     </div>
     <div class="gwrap rv">
       <div id="lunaGame" data-kaynak="#kaynaklar"></div>
