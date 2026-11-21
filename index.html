@@ -710,6 +710,9 @@ function track(name){try{if(window.goatcounter&&window.goatcounter.count)window.
 
 /* ---------- mağaza: LGS Tuzak Canavarı kitapçıkları ---------- */
 const BOOKS=[
+ ["LGS · YARIYIL PAKETİ","Yarıyıl Paketi: Fen Kampı + Hap Kartları","https://www.shopier.com/8bitfen/53226932","100 TL","Ayrı ayrı 79 TL + 39 TL. 10 günlük Fen Kampı ve 64 Fen Hap Kartı birlikte (8. sınıf, Ünite 1-4, PDF)"],
+ ["LGS · KAMP","Luna'nın Yarıyıl Fen Kampı","https://www.shopier.com/8bitfen/53226841","79 TL","26 sayfa: 10 günlük oyun haritası, her gün hap bilgi + görevler + kilit soru, gizli şifre, boss savaşı, sertifika (8. sınıf, Ünite 1-4, PDF)"],
+ ["LGS · KARTLAR","Fen Hap Kartları · Set 1","https://www.shopier.com/8bitfen/53226902","39 TL","64 kart, önde soru arkada cevap: yazdır-kes A4 + tek kart dijital PDF, takip tablosu (8. sınıf, Ünite 1-4)"],
  ["LGS · AJANDA","2027 LGS Fen Ajandası","https://www.shopier.com/8bitfen/53191611","99 TL","1 Aralık 2026 – 13 Haziran 2027: her güne tarihli bir sayfa ve fen hap bilgisi, tıklanabilir aylık takvim, fen soru takibi, 41 dijital sticker (PDF)"],
  ["LGS · GÜNLÜK","LGS Günlüğüm","https://www.shopier.com/8bitfen/53167615","49 TL","22 sayfa: hedef kartı, takvim, günlük plan, pomodoro patileri, soru takibi, deneme analizi, rozetler (PDF)"],
  [1,"Mevsimler ve İklim","https://www.shopier.com/53166616","59 TL"],
@@ -719,7 +722,7 @@ const BOOKS=[
  [5,"Basit Makineler","",""],
  [6,"Enerji Dönüşümleri ve Çevre Bilimi","",""],
  [7,"Elektrik Yükleri ve Elektrik Enerjisi","",""]];
-document.getElementById("books").innerHTML=BOOKS.map(([n,t,url,price,inc])=>`<div class="card rv">${url?"":'<span class="lock">YAKINDA</span>'}<span class="chip" style="background:${typeof n==="number"?"var(--pink)":"var(--yellow)"}">${typeof n==="number"?"LGS · ÜNİTE "+n:n}</span><h3>${t}</h3><p class="inc">${inc||"Özet + tuzaklar + yeni nesil sorular + çözümler (PDF)"}</p>${url?`<a class="btn yel" href="${url}" target="_blank" rel="noopener" data-book="${typeof n==="number"?n:(n.includes("AJANDA")?"ajanda":"gunluk")}">${price?price+" · ":""}Satın al</a>`:`<button class="btn ghost" data-want="${typeof n==="number"?n:(n.includes("AJANDA")?"ajanda":"gunluk")}">Açılınca haber ver</button>`}</div>`).join("");
+document.getElementById("books").innerHTML=BOOKS.map(([n,t,url,price,inc])=>`<div class="card rv">${url?"":'<span class="lock">YAKINDA</span>'}<span class="chip" style="background:${typeof n==="number"?"var(--pink)":"var(--yellow)"}">${typeof n==="number"?"LGS · ÜNİTE "+n:n}</span><h3>${t}</h3><p class="inc">${inc||"Özet + tuzaklar + yeni nesil sorular + çözümler (PDF)"}</p>${url?`<a class="btn yel" href="${url}" target="_blank" rel="noopener" data-book="${typeof n==="number"?n:(n.includes("PAKET")?"yariyil-paket":n.includes("KAMP")?"kamp":n.includes("KARTLAR")?"hap-kartlari":n.includes("AJANDA")?"ajanda":"gunluk")}">${price?price+" · ":""}Satın al</a>`:`<button class="btn ghost" data-want="${typeof n==="number"?n:(n.includes("PAKET")?"yariyil-paket":n.includes("KAMP")?"kamp":n.includes("KARTLAR")?"hap-kartlari":n.includes("AJANDA")?"ajanda":"gunluk")}">Açılınca haber ver</button>`}</div>`).join("");
 /* ---------- mağaza: Luna Sınıf Kaçış Odaları (öğretmen) ---------- */
 const ESCAPES=[
  ["8. SINIF · ÜNİTE 1","Mevsim Gözlemevi","","49 TL","Mevsimlerin oluşumu, geliş açısı, özel tarihler, iklim ve rüzgâr: 4 oda, 12 kilit, son kasa + öğretmen yönergesi ve cevap anahtarı (HTML + PDF)","kacis-mevsim-deneme.html","8-1"],
