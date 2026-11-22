@@ -149,6 +149,29 @@ const QB={
  ["Oyuncak tabancada sıkıştırılan yay bırakılınca top fırlar. Hangi enerji dönüşümü olur?","Esneklik potansiyel enerjisi → kinetik enerji","Kinetik enerji → esneklik potansiyel enerjisi","Isı enerjisi → kinetik enerji","Yayda depolanan enerji topun hareket enerjisine dönüşür."],
  ["Enerjinin korunumu ile ilgili hangisi doğrudur?","Enerji yoktan var edilemez, yok edilemez; bir türden diğerine dönüşür.","Enerji kullanıldıkça yok olur.","Enerji yoktan var edilebilir.","Toplam enerji değişmez, yalnızca biçim değiştirir."]
 ],
+"7-3":[
+ ["Kalbin görevi nedir?","Kanı pompalayarak bütün vücuda dolaştırmak","Kanı temizlemek","Besinleri sindirmek","Kalp kas yapılı bir pompadır. Kan, kalpte değil akciğerlerde oksijen alır."],
+ ["Kalpten çıkan kanı vücuda taşıyan damarlar hangileridir?","Atardamarlar","Toplardamarlar","Kılcal damarlar","Kalpten çıkan kanı atardamarlar taşır."],
+ ["Kanı vücuttan kalbe geri getiren damarlar hangileridir?","Toplardamarlar","Atardamarlar","Kılcal damarlar","Toplardamarlar kanı kalbe getirir; içlerinde kapakçıklar vardır."],
+ ["Kan ile hücreler arasındaki madde alışverişi hangi damarlarda olur?","Kılcal damarlarda","Atardamarlarda","Toplardamarlarda","Kılcal damarlar en ince damarlardır; madde alışverişi burada olur."],
+ ["Toplardamarlardaki kapakçıkların görevi nedir?","Kanın geri akmasını önlemek","Kanı temizlemek","Oksijen üretmek","Kapakçıklar kanın tek yönde, kalbe doğru akmasını sağlar."],
+ ["Atardamarların çeperi için hangisi doğrudur?","Kalın ve esnektir.","Vücuttaki en ince damar çeperidir.","İçi kapakçıklarla doludur.","Atardamarlar kalbin pompaladığı kanı taşır; çeperleri kalın ve esnektir."],
+ ["Bileğinden ölçtüğün nabız neyi gösterir?","Kalp atışıyla atardamarda oluşan vuruşu","Toplardamar kapakçıklarının açılmasını","Kılcal damarlarda besin geçişini","Kalp her kasıldığında atardamarlarda bir vuruş hissedilir."],
+ ["Koşarken nabzın artmasının nedeni nedir?","Kaslar daha çok oksijene ihtiyaç duyar.","Vücuttaki kan miktarı azalır.","Kalp yorulup yavaşlar.","Kalp daha sık atarak kaslara daha çok oksijen ve besin taşır."],
+ ["Küçük dolaşımda kan kalpten hangi organa gider?","Akciğerlere","Böbreklere","Mideye","Küçük dolaşım kalp ile akciğerler arasındadır."],
+ ["Küçük dolaşımda kanın oksijen miktarı nasıl değişir?","Artar","Azalır","Değişmez","Kan akciğerlerde karbondioksit bırakır, oksijen alır."],
+ ["Büyük dolaşımda kanın oksijen miktarı nasıl değişir?","Azalır","Artar","Değişmez","Kan vücut hücrelerine oksijen bırakır, karbondioksit alır."],
+ ["Küçük ve büyük dolaşım nerede başlar, nerede biter?","İkisi de kalpte başlar, kalpte biter.","Akciğerde başlar, kalpte biter.","Hücrelerde başlar, akciğerde biter.","Dolaşım bir döngüdür; iki dolaşım da kalpte başlar ve kalpte biter."],
+ ["Akciğerlerde kana geçen oksijen, ayak parmağındaki bir hücreye hangi sırayla ulaşır?","Akciğer → kalp → atardamar → kılcal damar → hücre","Akciğer → toplardamar → hücre","Akciğer → kılcal damar → hücre (kalbe uğramadan)","Oksijence zengin kan önce kalbe gelir; kalp onu atardamarlarla vücuda pompalar."],
+ ["Oksijen taşıyan kan hücresi hangisidir?","Alyuvar","Akyuvar","Kan pulcuğu","Alyuvarlar oksijeni akciğerlerden vücut hücrelerine taşır."],
+ ["Vücudumuzu mikroplara karşı savunan kan hücresi hangisidir?","Akyuvar","Alyuvar","Kan pulcuğu","Akyuvarlar mikroplarla savaşır. İsimleri benzediği için alyuvarla karıştırılır."],
+ ["Dizin kanadı, birkaç dakika sonra kanama durdu. Bunu sağlayan hangisidir?","Kan pulcukları","Akyuvarlar","Alyuvarlar","Kan pulcukları pıhtılaşmayı sağlar ve kanamayı durdurur."],
+ ["Besinleri, suyu ve atık maddeleri taşıyan, kanın sıvı kısmına ne ad verilir?","Kan plazması","Alyuvar","Kan pulcuğu","Kanın sıvı kısmı plazmadır; kan hücreleri plazmanın içinde taşınır."],
+ ["Bileğindeki damarlar mavi görünüyor. İçlerindeki kan için hangisi doğrudur?","Kırmızıdır; oksijeni az olan kan koyu kırmızıdır.","Mavidir.","Renksizdir.","Damarlar deri altından mavi görünür ama kanımız her zaman kırmızıdır."],
+ ["Hastalar için kanın tek kaynağı neden gönüllü kan bağışıdır?","Kan yapay olarak üretilemez.","Kan hastanede saklanamaz.","Kan yalnızca hayvanlardan alınır.","Kan laboratuvarda üretilemediği için bağış hayat kurtarır."],
+ ["Kan bağışı yapan sağlıklı bir yetişkin için hangisi doğrudur?","Vücudu bağışlanan kanı bir süre içinde yeniler.","Kanı bir daha hiç yenilenmez.","Kan grubu değişir.","Bağıştan sonra vücut kaybedilen kanı yeniden üretir."],
+ ["Kan bağışını kimler yapabilir?","18 yaşını doldurmuş sağlıklı yetişkinler","Her yaştan çocuklar","Yalnızca doktorlar","Kan bağışı için 18 yaşını doldurmuş ve sağlıklı olmak gerekir. Türkiye'de bağışları Türk Kızılay toplar."]
+],
 "8-1":[
  ["Mevsimlerin oluşmasının temel nedeni nedir?","Dünya'nın eksen eğikliği ve Güneş etrafında dolanması","Dünya'nın Güneş'e uzaklığının değişmesi","Dünya'nın kendi ekseni etrafında dönmesi","Eksen eğik olduğu için yıl boyunca Güneş ışınlarının geliş açısı değişir."],
  ["Dünya, Güneş'e en yakın konumdayken (ocak başı) Kuzey Yarım Küre'de hangi mevsim yaşanır?","Kış","Yaz","İlkbahar","Mevsimler uzaklıktan değil, ışınların geliş açısından oluşur."],
@@ -221,12 +244,12 @@ const GRADES={
 7:{c:"#ff9f43",units:[
  {u:1,ad:"Uzay Çağı",open:1,world:"UZAY ÇAĞI",kisa:"Uzay Çağı",theme:"space",icons:"rocket",ground:"pad",enemy:"junk",coin:"star",chip:"#4cc9f0"},
  {u:2,ad:"Kuvvet ve Enerjiyi Keşfedelim",open:1,world:"ENERJİ",kisa:"Enerji",theme:"force",enemy:"ruf",coin:"J",chip:"#ffd23f"},
- {u:3,ad:"Vücudumuzdaki Sistemler"},{u:4,ad:"Işığın Kırılması ve Mercekler"},{u:5,ad:"Maddenin Doğasına Yolculuk"},{u:6,ad:"Elektriklenme"},{u:7,ad:"Sürdürülebilir Yaşam ve Geri Dönüşüm"}]},
-8:{c:"#ff5fa2",units:[
+ {u:3,ad:"Vücudumuzdaki Sistemler",open:1,world:"DOLAŞIM",kisa:"Dolaşım",theme:"body",enemy:"germ",coin:"rbc",chip:"#ff4d6d",boss:"dolasim"},{u:4,ad:"Işığın Kırılması ve Mercekler"},{u:5,ad:"Maddenin Doğasına Yolculuk"},{u:6,ad:"Elektriklenme"},{u:7,ad:"Sürdürülebilir Yaşam ve Geri Dönüşüm"}]},
+8:{c:"#ff5fa2",lgs:1,units:[
  {u:1,ad:"Mevsimler ve İklim",open:1,world:"MEVSİMLER",kisa:"Mevsimler",theme:"weather",enemy:"cloud",coin:"sun",chip:"#3ee6b0"},
  {u:2,ad:"DNA ve Genetik Kod",open:1,world:"DNA",kisa:"DNA",theme:"dna",enemy:"germ",coin:"ATGC",chip:"#b388ff"},
  {u:3,ad:"Basınç"},{u:4,ad:"Madde ve Endüstri"},{u:5,ad:"Basit Makineler"},{u:6,ad:"Enerji Dönüşümleri ve Çevre Bilimi"},{u:7,ad:"Elektrik Yükleri ve Elektrik Enerjisi"}]}};
-const SKY={space:["#070620","#1c1852","#40266e"],force:["#170b06","#4a1f0e","#8a3a16"],weather:["#041a22","#0b3a48","#145a5e"],dna:["#120822","#2a1048","#4a1a66"]};
+const SKY={space:["#070620","#1c1852","#40266e"],force:["#170b06","#4a1f0e","#8a3a16"],weather:["#041a22","#0b3a48","#145a5e"],dna:["#120822","#2a1048","#4a1a66"],body:["#1a0610","#4a0f24","#7a1a38"]};
 
 /* ================= STİL ================= */
 const st=document.createElement("style");st.textContent=`
@@ -254,10 +277,11 @@ const st=document.createElement("style");st.textContent=`
 .lg-unit:hover{transform:translateY(-2px)}
 .lg-unit b{font-family:'Pixelify Sans',monospace;font-size:12px;font-size:clamp(11px,2.6cqw,14px);background:var(--c);padding:2px 8px;border-radius:999px;white-space:nowrap;border:2px solid #000}
 .lg-unit.lg-full{background:#ffd23f}
+.lg-unit.lg-lgs{background:#ffd6e8}
 .lg-lock{display:flex;flex-wrap:wrap;gap:5px;justify-content:center;max-width:460px}
 .lg-lock span{font-size:11px;font-size:clamp(10.5px,2.4cqw,13px);font-weight:800;color:#bdb6e6;border:1px dashed rgba(255,255,255,.3);border-radius:999px;padding:1px 9px}
 .lg-chip{font-family:'Pixelify Sans',monospace;font-weight:700;font-size:12px;font-size:clamp(11px,2.7cqw,15px);color:#1a1530;padding:2px 12px;border-radius:999px;border:2px solid #000}
-.lg-q{font-weight:900;font-size:15px;font-size:clamp(14px,3.6cqw,22px);line-height:1.3;max-width:620px}
+.lg-q{white-space:pre-line;font-weight:900;font-size:15px;font-size:clamp(14px,3.6cqw,22px);line-height:1.3;max-width:620px}
 .lg-qbtns{display:grid;gap:7px;width:100%;max-width:460px}
 .lg-qb{font-family:inherit;font-weight:900;font-size:14px;font-size:clamp(13px,3.2cqw,18px);padding:7px 10px;border:3px solid #000;border-radius:9px;background:#fff;color:#1a1530;box-shadow:0 4px 0 #000;cursor:pointer;line-height:1.25;transition:transform .1s}
 .lg-qb:hover:not(:disabled){transform:translateY(-2px)}.lg-qb:disabled{cursor:default}
@@ -281,7 +305,7 @@ ROOT.innerHTML=`<div class="lg-stage">
  <button class="lg-mute" aria-label="Sesi aç/kapat">🔊</button>
  <div class="lg-ov lg-menu"><div class="lg-in">
   <h3 class="lg-h">LUNA'NIN<br>BİLİM KOŞUSU</h3>
-  <p class="lg-s">Sınıfını seç, maceranı başlat! En sonda seni Isaac Newton bekliyor.</p>
+  <p class="lg-s">Sınıfını seç, maceranı başlat! En sonda seni bölüm sonu canavarı bekliyor.</p>
   <div class="lg-tabs"></div>
   <div class="lg-list"></div>
   <div class="lg-lock"></div>
@@ -341,7 +365,7 @@ function txt(t,x,y,size,col,al){cx.font=`bold ${size}px 'Pixelify Sans',monospac
 
 /* ================= SES: yumuşak üçgen/sinüs dalga, sert kare dalga yok ================= */
 let AC=null,muted=false;
-function tone(f,d,type="triangle",v=.07,to=null,delay=0){if(muted)return;try{AC=AC||new (window.AudioContext||window.webkitAudioContext)();if(AC.state==="suspended")AC.resume();
+function tone(f,d,type="triangle",v=.07,to=null,delay=0){if(window.LG_VIDEO){if(f)(window.LG_SND=window.LG_SND||[]).push([window.LG_F||0,f,d,type,v,to,delay]);return}if(muted)return;try{AC=AC||new (window.AudioContext||window.webkitAudioContext)();if(AC.state==="suspended")AC.resume();
  const t=AC.currentTime+delay,o=AC.createOscillator(),g=AC.createGain();o.type=type;o.frequency.setValueAtTime(f,t);
  if(to)o.frequency.exponentialRampToValueAtTime(to,t+d);g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(v,t+.015);
  g.gain.exponentialRampToValueAtTime(.0001,t+d);o.connect(g).connect(AC.destination);o.start(t);o.stop(t+d+.05)}catch(e){}}
@@ -355,7 +379,7 @@ Q(".lg-mute").onclick=e=>{e.stopPropagation();muted=!muted;Q(".lg-mute").textCon
 function track(n){try{if(window.track)window.track(n);else if(window.goatcounter&&window.goatcounter.count)window.goatcounter.count({path:n,title:n,event:true})}catch(e){}}
 
 /* ================= DURUM ================= */
-let state="idle",grade=5,seq=[],idx=0,cfg=null,correct=0,target=5,score=0,lives=3,t=0,inv=0,spawnT=60,qT=300,shake=0,flagOut=false,spd=2.2,base=2.2,surf="",boss=null,asked=new Set(),lastMode="full";
+let lgsMode=false,conf=[],state="idle",grade=5,seq=[],idx=0,cfg=null,correct=0,target=5,score=0,lives=3,t=0,inv=0,spawnT=60,qT=300,shake=0,flagOut=false,spd=2.2,base=2.2,surf="",boss=null,asked=new Set(),lastMode="full";
 try{grade=+localStorage.getItem("8bitfen_grade")||5;if(!GRADES[grade])grade=5}catch(e){}
 const L={x:52,y:0,vy:0,w:32,h:32,jumps:0,onG:true};
 let ents=[],parts=[],stars=[],icons=[],segs=[];
@@ -366,7 +390,7 @@ function getBest(){try{return +localStorage.getItem(bestKey())||0}catch(e){retur
 function setHud(){px(Q(".lg-scn"),String(score).padStart(6,"0"));
  Q(".lg-ht").textContent="♥".repeat(Math.max(0,lives))+"♡".repeat(3-Math.max(0,lives));
  Q(".lg-wn").textContent=grade+". SINIF · "+(cfg?cfg.world:"");
- px(Q(".lg-pg"),boss?"NEWTON "+boss.hp+"/"+boss.max:"? "+correct+"/"+target)}
+ px(Q(".lg-pg"),boss?(boss.optic?"OPTİK ":boss.dol?"DOLAŞIM ":"NEWTON ")+boss.hp+"/"+boss.max:"? "+correct+"/"+target)}
 function say(m,col){const e=Q(".lg-toast");e.textContent=m;e.style.color=col||"#ffd23f";e.classList.remove("on");void e.offsetWidth;e.classList.add("on")}
 function hint(m,col){const e=Q(".lg-hint");e.textContent=m;e.style.color=col||"#fff";e.classList.remove("on");void e.offsetWidth;e.classList.add("on")}
 function hideAll(){[ovM,ovQ,ovC,ovE].forEach(o=>o.classList.add("lg-hide"))}
@@ -377,7 +401,8 @@ function menu(){state="idle";hideAll();hud.classList.add("lg-hide");boss=null;en
  Q(".lg-menu .lg-tabs").innerHTML=Object.keys(GRADES).map(g=>`<button class="lg-tab${+g===grade?" on":""}" data-g="${g}" style="--c:${GRADES[g].c}">${g}. SINIF</button>`).join("");
  const open=G.units.filter(u=>u.open);
  let h="";
- if(open.length>1)h+=`<button class="lg-unit lg-full" data-m="full" style="--c:${G.c}"><b>TAM MACERA</b><span>${open.map(u=>u.kisa).join(" + ")} + Newton</span></button>`;
+ if(open.length>1)h+=`<button class="lg-unit lg-full" data-m="full" style="--c:${G.c}"><b>TAM MACERA</b><span>${open.map(u=>u.kisa).join(" + ")} + ${open[open.length-1].boss==="dolasim"?"Dolaşım Canavarı":"Newton"}</span></button>`;
+ if(G.lgs&&open.length)h+=`<button class="lg-unit lg-lgs" data-m="lgs" style="--c:#ff5fa2"><b>⚠ LGS</b><span>Tuzak Canavarı: tuzak sorular + Optik Canavarı</span></button>`;
  open.forEach(u=>h+=`<button class="lg-unit" data-m="${u.u}" style="--c:${u.chip}"><b>${u.u}. ÜNİTE</b><span>${u.ad}</span></button>`);
  Q(".lg-list").innerHTML=h;
  const locked=G.units.filter(u=>!u.open);
@@ -388,8 +413,8 @@ function menu(){state="idle";hideAll();hud.classList.add("lg-hide");boss=null;en
  ovM.classList.remove("lg-hide")}
 
 function start(m){lastMode=m;const open=GRADES[grade].units.filter(u=>u.open);
- seq=m==="full"?open:open.filter(u=>String(u.u)===String(m));
- target=seq.length>1?5:7;score=0;lives=3;asked=new Set();track("oyun/"+grade+"-"+m);try{window.dispatchEvent(new CustomEvent("lunagame-start"))}catch(e){}startWorld(0);tone(0,0)}
+ lgsMode=m==="lgs";seq=(m==="full"||m==="lgs")?open:open.filter(u=>String(u.u)===String(m));if(window.LG_ONLY)seq=seq.filter(u=>u.u===window.LG_ONLY);
+ target=window.LG_TARGET||(seq.length>1?5:7);score=0;lives=3;asked=new Set();track("oyun/"+grade+"-"+m);try{window.dispatchEvent(new CustomEvent("lunagame-start"))}catch(e){}startWorld(0);tone(0,0)}
 function startWorld(i){idx=i;cfg=seq[i];correct=0;flagOut=false;boss=null;t=0;inv=60;spawnT=70;qT=240;ents=[];parts=[];
  L.y=GY-L.h;L.vy=0;L.jumps=0;L.onG=true;base=2.2;spd=2.2;setupTheme();
  state="run";hideAll();hud.classList.remove("lg-hide");setHud();say(cfg.world+" DÜNYASI",cfg.chip)}
@@ -414,9 +439,10 @@ function pickQ(k){const bank=QB[k];let av=bank.map((_,i)=>i).filter(i=>!asked.ha
 let qBoss=false;
 function quiz(isBoss){state="quiz";qBoss=!!isBoss;let item;const chip=Q(".lg-chip");
  if(qBoss){const u=seq[Math.floor(Math.random()*seq.length)];
-  if(!boss.asked){boss.asked=1;item=NEWTON_Q[key(seq[seq.length-1])]||pickQ(key(u))}else item=pickQ(key(u));
-  chip.textContent="BÖLÜM SONU · NEWTON'UN SORUSU";chip.style.background="#ff5fa2"}
- else{item=pickQ(key(cfg));chip.textContent=grade+". SINIF · "+cfg.u+". ÜNİTE";chip.style.background=cfg.chip}
+  if(!boss.asked&&!boss.optic&&!boss.dol){boss.asked=1;item=NEWTON_Q[key(seq[seq.length-1])]||pickQ(key(u))}else item=pickQ(key(u));
+  chip.textContent=boss.optic?"OPTİK CANAVARI'NIN TUZAK SORUSU":boss.dol?"BÖLÜM SONU · DOLAŞIM CANAVARI'NIN SORUSU":"BÖLÜM SONU · NEWTON'UN SORUSU";chip.style.background="#ff5fa2"}
+ else{item=pickQ(key(cfg));chip.textContent=lgsMode?"LGS · TUZAK SORUSU · "+cfg.kisa.toLocaleUpperCase("tr"):grade+". SINIF · "+cfg.u+". ÜNİTE";chip.style.background=lgsMode?"#ff9fc4":cfg.chip}
+ if(window.LG_Q&&window.LG_Q.length)item=window.LG_Q.shift();
  const [q,ok,w1,w2,exp]=item;
  Q(".lg-q").textContent=q;Q(".lg-res").textContent="";Q(".lg-exp").classList.add("lg-hide");Q(".lg-next").classList.add("lg-hide");
  const box=Q(".lg-qbtns");box.innerHTML="";
@@ -424,10 +450,10 @@ function quiz(isBoss){state="quiz";qBoss=!!isBoss;let item;const chip=Q(".lg-chi
   b.onclick=ev=>{ev.stopPropagation();box.querySelectorAll("button").forEach(x=>{x.disabled=true;if(x.textContent.slice(3)===ok)x.classList.add("ok")});
    const r=Q(".lg-res");
    if(o===ok){SFX.ok();r.style.color="#3ee6b0";
-    if(qBoss){boss.hp--;boss.hitT=50;score+=300;r.textContent=boss.hp>0?"DOĞRU! Newton'a 1 vuruş! +300":"DOĞRU! NEWTON'U YENDİN! +300"}
+    if(qBoss){boss.hp--;boss.hitT=50;score+=300;const nm=boss.optic?"OPTİK CANAVARI":boss.dol?"DOLAŞIM CANAVARI":"NEWTON";r.textContent=boss.hp>0?"DOĞRU! "+nm+"'NA 1 VURUŞ! +300".replace("NEWTON'NA","NEWTON'A"):"DOĞRU! "+nm+" YENİLDİ! +300"}
     else{score+=100;correct++;r.textContent="DOĞRU! +100"}}
    else{b.classList.add("no");r.style.color="#ff9fc4";
-    if(qBoss){lives--;SFX.hit();r.textContent=lives>0?"Yanlış! Newton bir canını aldı.":"Yanlış! Canın kalmadı."}
+    if(qBoss||lgsMode){lives--;SFX.hit();shake=12;if(boss&&(boss.optic||boss.dol))boss.laugh=90;r.textContent=lgsMode?(lives>0?"TUZAĞA DÜŞTÜN! 1 can gitti.":"TUZAĞA DÜŞTÜN! Canın kalmadı."):(lives>0?"Yanlış! "+(boss&&boss.dol?"Dolaşım Canavarı":"Newton")+" bir canını aldı.":"Yanlış! Canın kalmadı.")}
     else{SFX.no();r.textContent="Bu sefer olmadı!"}}
    const ex=Q(".lg-exp");ex.textContent=exp;ex.classList.remove("lg-hide");Q(".lg-next").classList.remove("lg-hide");setHud()};
   box.appendChild(b)});
@@ -435,7 +461,8 @@ function quiz(isBoss){state="quiz";qBoss=!!isBoss;let item;const chip=Q(".lg-chi
 Q(".lg-next").onclick=e=>{e.stopPropagation();ovQ.classList.add("lg-hide");
  if(lives<=0){over();return}
  state="run";inv=Math.max(inv,45);
- if(boss&&boss.hp<=0&&!boss.dead){boss.dead=1;SFX.fan();say("NEWTON YENİLDİ!","#3ee6b0");ents=ents.filter(x=>x.k!=="ap");return}
+ if(boss&&boss.hp<=0&&!boss.dead){boss.dead=1;SFX.fan();ents=ents.filter(x=>x.k!=="ap");
+  if(boss.optic){say("OPTİK CANAVARI YENİLDİ!","#3ee6b0");confetti(160)}else if(boss.dol){say("DOLAŞIM CANAVARI YENİLDİ!","#3ee6b0");confetti(160)}else say("NEWTON YENİLDİ!","#3ee6b0");return}
  if(correct>=target&&!flagOut)hint(idx<seq.length-1?"Bayrağa koş!":"Dikkat! Bir şey geliyor...","#ffd23f")};
 
 function clearWorld(){state="clear";SFX.fan();score+=200;setHud();const nx=seq[idx+1];
@@ -443,16 +470,27 @@ function clearWorld(){state="clear";SFX.fan();score+=200;setHud();const nx=seq[i
  Q(".lg-go").textContent="▶ "+(idx+2)+". DÜNYA: "+nx.world;ovC.classList.remove("lg-hide")}
 Q(".lg-go").onclick=e=>{e.stopPropagation();startWorld(idx+1)};
 function saveBest(){const b=getBest();if(score>b){try{localStorage.setItem(bestKey(),score)}catch(e){}}return Math.max(b,score)}
-function win(){state="end";const b=saveBest();Q(".lg-et").textContent="TEBRİKLER!";hud.classList.add("lg-hide");
- Q(".lg-etxt").innerHTML=(seq.length>1?"Bütün dünyaları bitirdin ve Newton'u yendin!":"Dünyayı bitirdin ve Newton'u yendin!")+"<br>Puanın: <b>"+score+"</b> · En yüksek: <b>"+b+"</b>";ovE.classList.remove("lg-hide");track("oyun-kazandi/"+grade)}
-function over(){state="end";SFX.end();const b=saveBest();Q(".lg-et").textContent="OYUN BİTTİ";hud.classList.add("lg-hide");
+function win(){state="end";const b=saveBest();ovE.style.background=lgsMode?"rgba(14,11,34,.5)":"";ovE.style.backdropFilter=lgsMode?"none":"";if(lgsMode)confetti(220);Q(".lg-et").textContent="TEBRİKLER!";hud.classList.add("lg-hide");
+ if(lgsMode)Q(".lg-et").innerHTML="TEBRİKLER!<br>LGS'Yİ BAŞARIYLA GEÇTİN!";
+ Q(".lg-etxt").innerHTML=(lgsMode?"Optik Canavarı'nın bütün tuzaklarını gördün.":(seq.length>1?"Bütün dünyaları bitirdin ve ":"Dünyayı bitirdin ve ")+(seq[seq.length-1].boss==="dolasim"?"Dolaşım Canavarı'nı yendin!":"Newton'u yendin!"))+"<br>Puanın: <b>"+score+"</b> · En yüksek: <b>"+b+"</b>";ovE.classList.remove("lg-hide");track("oyun-kazandi/"+grade)}
+function over(){state="end";ovE.style.background="";ovE.style.backdropFilter="";SFX.end();const b=saveBest();Q(".lg-et").textContent="OYUN BİTTİ";hud.classList.add("lg-hide");
  Q(".lg-etxt").innerHTML="Puanın: <b>"+score+"</b><br>En yüksek: <b>"+b+"</b>";ovE.classList.remove("lg-hide")}
 Q(".lg-again").onclick=e=>{e.stopPropagation();start(lastMode)};
 Q(".lg-tomenu").onclick=e=>{e.stopPropagation();menu()};
 
 /* ================= BOSS ================= */
-function startBoss(){boss={x:W+40,tx:W-82,y:GY-66,hp:4,max:4,throwT:170,qT:260,hitT:0,talk:260,dead:0,arm:0};SFX.boss();say("BÖLÜM SONU CANAVARI!","#ff5fa2");setHud()}
-function throwApple(){boss.arm=18;ents.push({k:"ap",x:boss.x-4,y:boss.y+22,vx:-(2.4+Math.random()*1.6),vy:-(2.5+Math.random()*3),w:14,h:14,b:0});tone(600,.12,"sine",.05,300)}
+function startBoss(){if(lgsMode){boss={optic:1,x:W+40,tx:W-96,y:GY-92,hp:window.LG_BOSSHP||4,max:window.LG_BOSSHP||4,throwT:200,qT:300,hitT:0,talk:300,dead:0,arm:0,laugh:0};
+  SFX.boss();say("OPTİK CANAVARI GELİYOR!","#ff5fa2");shake=60;setHud();return}
+ if(seq[seq.length-1].boss==="dolasim"){boss={dol:1,x:W+40,tx:W-92,y:GY-78,hp:4,max:4,throwT:190,qT:280,hitT:0,talk:300,dead:0,arm:0,laugh:0};
+  SFX.boss();say("DOLAŞIM CANAVARI GELİYOR!","#ff5fa2");shake=50;setHud();return}
+ boss={x:W+40,tx:W-82,y:GY-66,hp:4,max:4,throwT:170,qT:260,hitT:0,talk:260,dead:0,arm:0};SFX.boss();say("BÖLÜM SONU CANAVARI!","#ff5fa2");setHud()}
+function confetti(n){const cols=["#ffd23f","#ff5fa2","#3ee6b0","#4cc9f0","#b388ff","#ff9f43","#ffffff"];
+ for(let i=0;i<n;i++){const fromL=i%2===0;conf.push({x:fromL?-4:W+4,y:GY-10-Math.random()*60,vx:(fromL?1:-1)*(2+Math.random()*4.5),vy:-(4+Math.random()*5),c:cols[i%cols.length],w:2+Math.floor(Math.random()*3),r:Math.random()*6,l:220+Math.random()*80})}
+ tone(1047,.2,"triangle",.06);tone(1319,.25,"triangle",.06,null,.1);tone(1568,.35,"triangle",.06,null,.2)}
+function throwApple(){boss.arm=18;
+ if(boss.dol){ents.push({k:"ap",germ:1,x:boss.x-6,y:boss.y+36,vx:-(2.5+Math.random()*1.6),vy:-(2+Math.random()*3),w:16,h:16,b:0});tone(420,.14,"sine",.05,220);return}
+ if(boss.optic){ents.push({k:"ap",bub:"ABCD"[Math.floor(Math.random()*4)],x:boss.x-6,y:boss.y+40,vx:-(2.6+Math.random()*1.6),vy:-(2+Math.random()*3),w:16,h:16,b:0});tone(520,.14,"sine",.05,260);return}
+ ents.push({k:"ap",x:boss.x-4,y:boss.y+22,vx:-(2.4+Math.random()*1.6),vy:-(2.5+Math.random()*3),w:14,h:14,b:0});tone(600,.12,"sine",.05,300)}
 
 /* ================= OYUN DÖNGÜSÜ ================= */
 const SURF={tahta:{m:1,top:"#c47a3a",top2:"#b06a2e",low:"#6e3d1c",lbl:"TAHTA"},buz:{m:1.35,top:"#d6f3ff",top2:"#b5e4fb",low:"#5aa6cf",lbl:"BUZ"},kum:{m:.72,top:"#f0c674",top2:"#e2b55e",low:"#a8793a",lbl:"KUM"},
@@ -465,7 +503,7 @@ function spawn(){const r=Math.random(),z=ENSZ();
   for(let i=0;i<n;i++)ents.push({k:"c",x:W+14+i*16,y:py-20,w:16,h:16,l:letter()});
   if(Math.random()<.45)ents.push({k:"en",x:W+10+n*8,y:GY-z.h,w:z.w,h:z.h,ph:0})}
  spawnT=Math.max(48,100-base*9)+Math.random()*55}
-function letter(){const c=cfg.coin;return c.length>1&&c!=="star"&&c!=="sun"?c[Math.floor(Math.random()*c.length)]:c}
+function letter(){const c=cfg.coin;return c.length>1&&c!=="star"&&c!=="sun"&&c!=="rbc"?c[Math.floor(Math.random()*c.length)]:c}
 
 function update(){t++;
  base=Math.min(4.2,2.2+correct*.22+t/6000);let m=1;
@@ -486,11 +524,11 @@ function update(){t++;
  if(inv>0)inv--;
  if(!flagOut){if(--spawnT<=0)spawn();
   if(--qT<=0){ents.push({k:"q",x:W+10,y:GY-104,w:22,h:22,used:false});qT=430+Math.random()*260;spawnT=Math.max(spawnT,75)}
-  if(correct>=target){flagOut=true;if(idx<seq.length-1)ents.push({k:"flag",x:W+90,y:GY-130,w:10,h:130});else startBoss()}}
+  if(correct>=target&&!window.LG_HOLD){flagOut=true;if(idx<seq.length-1)ents.push({k:"flag",x:W+90,y:GY-130,w:10,h:130});else startBoss()}}
  if(boss){if(boss.x>boss.tx)boss.x-=1.3;
   else if(!boss.dead){if(--boss.throwT<=0){throwApple();boss.throwT=Math.max(62,135-(boss.max-boss.hp)*20)+Math.random()*45}
    if(--boss.qT<=0){ents.push({k:"q",x:W+10,y:GY-104,w:22,h:22,used:false,boss:true});boss.qT=330+Math.random()*120}}
-  if(boss.hitT>0)boss.hitT--;if(boss.talk>0&&boss.x<=boss.tx)boss.talk--;if(boss.arm>0)boss.arm--;
+  if(boss.hitT>0)boss.hitT--;if(boss.laugh>0)boss.laugh--;if(boss.dead&&(boss.optic||boss.dol)&&boss.dead%40===0&&boss.dead<160)confetti(60);if(boss.talk>0&&boss.x<=boss.tx)boss.talk--;if(boss.arm>0)boss.arm--;
   if(boss.dead&&++boss.dead>200){win();return}}
  const lb={x:L.x+6,y:L.y+4,w:L.w-12,h:L.h-6};
  for(const e of ents){
@@ -499,7 +537,7 @@ function update(){t++;
   if(e.k==="p"&&L.vy>=0&&prevBottom<=e.y+1&&L.y+L.h>=e.y&&L.x+24>e.x&&L.x+8<e.x+e.w){L.y=e.y-L.h;L.vy=0;L.jumps=0;L.onG=true}
   if(e.k==="c"&&!e.got&&hitBox(lb,e)){e.got=true;score+=10;SFX.coin();burst(e.x+8,e.y+8,"#ffd23f");setHud()}
   if((e.k==="en"||e.k==="ap")&&!e.dead&&hitBox(lb,e)){
-   if(L.vy>0&&prevBottom<=e.y+8){e.dead=true;L.vy=-6.2;L.jumps=1;score+=50;SFX.stomp();burst(e.x+10,e.y+8,e.k==="ap"?"#ff4d6d":"#cfcbe8",12);setHud()}
+   if(L.vy>0&&prevBottom<=e.y+8){e.dead=true;L.vy=-6.2;L.jumps=1;score+=50;SFX.stomp();burst(e.x+10,e.y+8,e.k==="ap"?(e.bub?"#f6f2e4":e.germ?"#7ee06a":"#ff4d6d"):"#cfcbe8",12);setHud()}
    else if(inv===0){e.dead=true;lives--;inv=80;shake=10;SFX.hit();burst(e.x+10,e.y+8,"#ff5fa2",10);setHud();if(lives<=0){over();return}}}
   if(e.k==="q"&&!e.used&&hitBox(lb,e)){e.used=true;e.bump=8;if(L.vy<0)L.vy=1.5;burst(e.x+11,e.y+11,"#ffd23f");quiz(e.boss);return}
   if(e.k==="flag"&&L.x+20>=e.x){clearWorld();return}
@@ -509,7 +547,7 @@ function update(){t++;
  if(surf==="buz"&&L.onG&&t%4===0)parts.push({x:L.x+4,y:GY-2,vx:-1,vy:-.6,l:14,c:"#ffffff"});
  if(surf==="kum"&&L.onG&&t%4===0)parts.push({x:L.x+4,y:GY-2,vx:-1,vy:-1,l:16,c:"#e2b55e"});
  if(surf==="kis"&&t%6===0)parts.push({x:Math.random()*W,y:-4,vx:-.6,vy:.6,l:200,c:"#ffffff"});
- parts.forEach(p=>{p.x+=p.vx;p.y+=p.vy;if(p.l<100)p.vy+=.12;p.l--});parts=parts.filter(p=>p.l>0&&p.y<GY+4);
+ parts.forEach(p=>{p.x+=p.vx;p.y+=p.vy;if(p.l<100)p.vy+=.12;p.l--});tickConf();parts=parts.filter(p=>p.l>0&&p.y<GY+4);
 }
 function hitBox(a,b){return a.x<b.x+b.w&&a.x+a.w>b.x&&a.y<b.y+b.h&&a.y+a.h>b.y}
 function burst(x,y,c,n=8){for(let i=0;i<n;i++)parts.push({x,y,vx:(Math.random()-.5)*3,vy:-Math.random()*3,l:28,c})}
@@ -531,6 +569,10 @@ function drawIcon(ic,y){const s=ic.z>.9?1:.65,x=ic.x,th=cfg.theme;cx.globalAlpha
   else if(ic.k===1)circ(x,y,6*s,"#ffd23f",2);
   else if(ic.k===2){circ(x,y,6*s,"#e6f2ff",2);circ(x+7*s,y+2,5*s,"#e6f2ff",2);circ(x-7*s,y+2,4*s,"#e6f2ff",2)}
   else{cx.fillStyle="#ff9f43";cx.beginPath();cx.ellipse(x,y,8*s,4*s,.6,0,6.3);cx.fill()}}
+ else if(th==="body"){
+  if(ic.k===0||ic.k===2){circ(x,y,7*s,"#ff4d6d",2);circ(x,y,3*s,"#b3203c",2)}
+  else if(ic.k===1){circ(x,y,6*s,"#f4f1ff",2);circ(x-2*s,y-1,2*s,"#b388ff",2);circ(x+2*s,y+2*s,2*s,"#b388ff",2)}
+  else{cx.fillStyle="#ff9fc4";cx.fillRect(x-6*s,y,12*s,2);cx.fillRect(x-1,y-6*s,2,12*s)}}
  else{ // dna
   if(ic.k<2){for(let i=0;i<8;i++){const yy=y+i*4*s,a=Math.sin(i*.8+ic.a)*7*s;cx.fillStyle="#ff9fc4";cx.fillRect(x+a,yy,3,3);cx.fillStyle="#4cc9f0";cx.fillRect(x-a,yy,3,3);if(i%2){cx.fillStyle="#e6e2ff";cx.fillRect(Math.min(x+a,x-a),yy+1,Math.abs(2*a),1)}}}
   else{circ(x,y,7*s,"#ff9fc4",2);circ(x+1,y,3*s,"#b388ff",2)}}
@@ -548,6 +590,11 @@ function drawBg(){const th=cfg.theme,sk=SKY[th];
    cx.fillStyle="#f3e0a8";cx.fillRect(mx-30,my,60,3);cx.fillStyle="#1a1530";cx.fillRect(mx-30,my+3,60,1)}
   else{const mx=W*.82,my=44;circ(mx,my,20,"#2a6fdb",3);circ(mx-5,my-4,8,"#3ee6b0",3);circ(mx+8,my+6,6,"#3ee6b0",3);circ(mx+2,my-12,4,"#ffffff",2);
    cx.fillStyle="#cfcbe8";cx.fillRect(mx-46+Math.sin(t/60)*6,my-26,8,5);cx.fillStyle="#4cc9f0";cx.fillRect(mx-54+Math.sin(t/60)*6,my-25,7,3);cx.fillRect(mx-37+Math.sin(t/60)*6,my-25,7,3)}}
+ else if(th==="body"){ // atan kalp ve damarlar
+  const mx=W*.82,my=46,bt=Math.floor(t/8)%6===0?2:0;cx.strokeStyle="rgba(255,77,109,.35)";cx.lineWidth=3;cx.beginPath();cx.moveTo(mx-60,my+10);cx.quadraticCurveTo(mx-30,my-20,mx-6,my);cx.stroke();
+  cx.strokeStyle="rgba(76,125,255,.35)";cx.beginPath();cx.moveTo(mx+60,my+14);cx.quadraticCurveTo(mx+30,my-18,mx+6,my+2);cx.stroke();
+  cx.fillStyle="#ff4d6d";cx.beginPath();cx.arc(mx-7,my-4,9+bt,0,6.3);cx.arc(mx+7,my-4,9+bt,0,6.3);cx.fill();cx.beginPath();cx.moveTo(mx-16-bt,my);cx.lineTo(mx+16+bt,my);cx.lineTo(mx,my+20+bt);cx.fill();
+  cx.fillStyle="#ffb3c1";cx.fillRect(mx-11,my-8,3,3)}
  else if(th==="weather"){ // eğik eksenli Dünya
   const mx=W*.82,my=48;circ(mx,my,20,"#2a6fdb",3);circ(mx-6,my-3,7,"#3ee6b0",3);circ(mx+7,my+7,5,"#3ee6b0",3);
   cx.strokeStyle="#ffd23f";cx.lineWidth=2;cx.beginPath();const a=23.5*Math.PI/180;cx.moveTo(mx-Math.sin(a)*30,my-Math.cos(a)*30);cx.lineTo(mx+Math.sin(a)*30,my+Math.cos(a)*30);cx.stroke();
@@ -564,14 +611,16 @@ function drawGround(){const g=cfg.ground,th=cfg.theme;
    if(s.type==="sonbahar"&&(x/16)%2===0){cx.fillStyle="#ffd23f";cx.fillRect(x0+x+8,GY-2,3,2)}}
   if(s.x>-60&&s.x<W)txt(S.lbl,x0+5,GY+22,11,"rgba(0,0,0,.55)")});return}
  const off=Math.floor((t*spd)%16);
- const P=th==="dna"?["#e07ab0","#cc6aa0","#6e2a5a","#8a3a72"]:g==="mars"?["#d47a4a","#c26a3c","#6e2f1c","#5a2414"]:g==="pad"?["#9aa9c4","#8494b2","#3a4560","#2c3550"]:["#a7a2c4","#948fb5","#5d577f","#4a456a"];
+ const P=th==="body"?["#d0405e","#b8324e","#5a1426","#741c34"]:th==="dna"?["#e07ab0","#cc6aa0","#6e2a5a","#8a3a72"]:g==="mars"?["#d47a4a","#c26a3c","#6e2f1c","#5a2414"]:g==="pad"?["#9aa9c4","#8494b2","#3a4560","#2c3550"]:["#a7a2c4","#948fb5","#5d577f","#4a456a"];
  for(let x=-off;x<W;x+=16){const i=Math.floor((x+off+t*spd)/16);cx.fillStyle=i%2?P[0]:P[1];cx.fillRect(x,GY,16,6);cx.fillStyle=P[2];cx.fillRect(x,GY+6,16,H-GY-6);
   cx.fillStyle=P[3];if(g==="pad"){cx.fillRect(x,GY+6,1,H-GY-6);cx.fillRect(x+3,GY+10,2,2);cx.fillRect(x+11,GY+10,2,2)}
+  else if(th==="body"){if(i%2===0){circ(x+8,GY+14,3,"#ff4d6d",2);circ(x+8,GY+14,1,"#b3203c",1)}}
   else if(th==="dna"){if(i%2===0){cx.fillRect(x+4,GY+11,6,4);cx.fillStyle="#b388ff";cx.fillRect(x+6,GY+12,2,2)}}
   else if(i%3===0){cx.fillRect(x+4,GY+11,5,3);cx.fillRect(x+10,GY+19,3,2)}}}
 function apple(x,y){circ(x+7,y+8,6,"#1a1530",2);circ(x+7,y+8,5,"#ff4d6d",2);circ(x+5,y+6,2,"#ffb3c1",2);cx.fillStyle="#6b4226";cx.fillRect(x+6,y,2,4);cx.fillStyle="#3ee6b0";cx.fillRect(x+8,y,4,3)}
 function coin(e){const bob=Math.sin((t+e.x)/8)*2,y=e.y+bob;
  if(e.l==="star"){spr(STAR,e.x,y,2);return}
+ if(e.l==="rbc"){circ(e.x+8,y+8,8,"#1a1530",2);circ(e.x+8,y+8,7,"#ff4d6d",2);circ(e.x+8,y+8,3,"#b3203c",2);cx.fillStyle="#ffb3c1";cx.fillRect(e.x+4,y+4,3,2);return}
  if(e.l==="sun"){cx.fillStyle="#ffb020";for(let i=0;i<8;i++){const a=i*Math.PI/4+t/30;cx.fillRect(e.x+7+Math.cos(a)*9,y+7+Math.sin(a)*9,2,2)}circ(e.x+8,y+8,6,"#1a1530",2);circ(e.x+8,y+8,5,"#ffd23f",2);return}
  circ(e.x+8,y+8,8,"#1a1530",2);circ(e.x+8,y+8,7,"#ffd23f",2);cx.fillStyle="#d99b00";cx.fillRect(e.x+3,y+12,10,2);
  const col={A:"#ff4d6d",T:"#2a6fdb",G:"#1f9e6e",C:"#7b4fd6"}[e.l]||"#8a5a00";txt(e.l,e.x+8,y+13,12,col,"center")}
@@ -580,7 +629,110 @@ function bubble(m,x,y){cx.font="bold 11px 'Pixelify Sans',monospace";const words
  const wd=Math.max(...lines.map(l=>cx.measureText(l).width))+14,ht=lines.length*13+10,bx=Math.max(4,x-wd),by=y-ht;
  cx.fillStyle="#000";cx.fillRect(bx-2,by-2,wd+4,ht+4);cx.fillStyle="#fff";cx.fillRect(bx,by,wd,ht);cx.fillRect(bx+wd-14,by+ht,8,6);
  cx.fillStyle="#1a1530";lines.forEach((l,i)=>cx.fillText(l,bx+7,by+15+i*13))}
-function drawBoss(){if(!boss)return;const b=boss,bob=b.dead?0:Math.round(Math.sin(t/14)*1.5);
+/* Optik Canavarı: kalın kâğıt gövde, cevap baloncukları (bazıları yanlış işaretli), yumuşak bakışlı iri gözler */
+function rr(x,y,w,h,r,col){cx.fillStyle=col;cx.beginPath();cx.moveTo(x+r,y);cx.arcTo(x+w,y,x+w,y+h,r);cx.arcTo(x+w,y+h,x,y+h,r);cx.arcTo(x,y+h,x,y,r);cx.arcTo(x,y,x+w,y,r);cx.fill()}
+function drawOptic(x,y,o){o=o||{};const tt=o.t!=null?o.t:t,bob=o.dead?0:Math.round(Math.sin(tt/12)*2),lg=o.laugh>0?Math.round(Math.sin(tt*1.2)*2):0;
+ x=Math.round(x+lg);y=Math.round(y+bob);
+ cx.fillStyle="rgba(0,0,0,.35)";cx.beginPath();cx.ellipse(x+36,y+96-bob,30,4,0,0,6.3);cx.fill();
+ // bacaklar ve ayakkabılar
+ const st=o.dead?0:Math.round(Math.sin(tt/6)*2);
+ cx.fillStyle="#1a1530";cx.fillRect(x+18,y+80,5,12+st);cx.fillRect(x+48,y+80,5,12-st);
+ rr(x+12,y+90+st,14,6,3,"#1a1530");rr(x+44,y+90-st,14,6,3,"#1a1530");rr(x+13,y+90+st,12,4,2,"#ff5fa2");rr(x+45,y+90-st,12,4,2,"#ff5fa2");
+ // kâğıt kalınlığı (3B görünüm)
+ rr(x+5,y+4,66,80,6,"#8f86a8");rr(x+3,y+2,66,80,6,"#b9b0cc");
+ // ön yüz
+ rr(x-1,y-1,66,80,6,"#1a1530");rr(x,y,64,78,5,"#f6f2e4");
+ cx.fillStyle="#e6dfc8";cx.fillRect(x+56,y+6,6,70);cx.fillRect(x+4,y+72,58,4);
+ // kıvrık köşe
+ cx.fillStyle="#d8cfb4";cx.beginPath();cx.moveTo(x+52,y);cx.lineTo(x+64,y+12);cx.lineTo(x+52,y+12);cx.fill();
+ cx.fillStyle="#1a1530";cx.fillRect(x+52,y+11,12,1);cx.fillRect(x+52,y,1,12);
+ // ad bandı
+ cx.fillStyle="#7b4fd6";cx.fillRect(x+3,y+3,48,18);cx.fillStyle="#5a35a8";cx.fillRect(x+3,y+19,48,2);
+ txt("OPTİK",x+27,y+11,8,"#ffd23f","center");txt("CANAVARI",x+27,y+19,8,"#fff","center");
+ // gözler (iri, yumuşak bakışlı)
+ const ex=[x+18,x+44],eyY=y+33,blink=!o.dead&&Math.floor(tt/90)%7===0&&tt%90<6;
+ ex.forEach((e,i)=>{cx.fillStyle="#1a1530";cx.beginPath();cx.ellipse(e,eyY,10,9,0,0,6.3);cx.fill();
+  cx.fillStyle="#fff";cx.beginPath();cx.ellipse(e,eyY,8.5,7.5,0,0,6.3);cx.fill();
+  if(o.dead){cx.fillStyle="#1a1530";cx.fillRect(e-5,eyY,10,2);cx.fillRect(e-6,eyY-2,2,2);cx.fillRect(e+4,eyY-2,2,2)}
+  else if(blink){cx.fillStyle="#1a1530";cx.fillRect(e-7,eyY,14,2)}
+  else{const px2=e+(o.look||-2);cx.fillStyle="#3b2a6e";cx.beginPath();cx.arc(px2,eyY+1,4.5,0,6.3);cx.fill();cx.fillStyle="#1a1530";cx.beginPath();cx.arc(px2,eyY+1,2.5,0,6.3);cx.fill();
+   cx.fillStyle="#fff";cx.fillRect(px2-2,eyY-2,2,2);
+   // yarı kapalı göz kapağı: yaramaz ama korkutucu değil
+   cx.fillStyle="#cfc6e8";cx.beginPath();cx.ellipse(e,eyY-5,8.5,4,0,Math.PI,0);cx.fill();cx.fillStyle="#1a1530";cx.fillRect(e-8,eyY-5,16,1)}
+  // kaş
+  cx.fillStyle="#1a1530";if(i===0){cx.fillRect(e-8,eyY-11+(o.laugh?1:0),12,2)}else{cx.fillRect(e-4,eyY-11+(o.laugh?1:0),12,2)}});
+ // ağız
+ const mY=y+46;
+ if(o.dead){cx.fillStyle="#1a1530";cx.fillRect(x+24,mY+4,16,2);cx.fillRect(x+22,mY+2,2,2);cx.fillRect(x+40,mY+2,2,2)}
+ else{const open=o.laugh>0?7:4;rr(x+20,mY,24,open+2,3,"#1a1530");rr(x+22,mY+1,20,open,2,"#ff5fa2");cx.fillStyle="#fff";cx.fillRect(x+24,mY+1,3,3);cx.fillRect(x+37,mY+1,3,3)}
+ // cevap baloncukları: 4 satır A B C D, bazıları yanlış işaretli
+ const marks=[[1,0],[2,2],[0,1],[3,3]];
+ for(let r=0;r<4;r++){const yy=y+57+r*5;txt(String(r+1),x+6,yy+3,5,"#7a7090");
+  for(let c=0;c<4;c++){const bx=x+16+c*10;cx.fillStyle="#a99fc2";cx.beginPath();cx.arc(bx,yy,2.4,0,6.3);cx.fill();cx.fillStyle="#f6f2e4";cx.beginPath();cx.arc(bx,yy,1.5,0,6.3);cx.fill();
+   if(marks[r][0]===c){cx.fillStyle="#2a2350";cx.beginPath();cx.arc(bx,yy,2.4,0,6.3);cx.fill()}
+   if(marks[r][1]===c&&r%2===0){cx.fillStyle="#ff4d6d";cx.fillRect(bx-3,yy-1,6,1);cx.fillRect(bx-1,yy-3,1,6)}}}
+ // kollar ve kalem
+ const arm=o.arm>0?-10:0;
+ cx.fillStyle="#1a1530";cx.fillRect(x-8,y+40+arm,9,3);cx.fillRect(x-10,y+36+arm,3,8);
+ cx.fillStyle="#ffd23f";cx.fillRect(x-14,y+30+arm,4,12);cx.fillStyle="#ff9fc4";cx.fillRect(x-14,y+28+arm,4,3);cx.fillStyle="#f2c39b";cx.fillRect(x-14,y+42+arm,4,2);cx.fillStyle="#1a1530";cx.fillRect(x-13,y+44+arm,2,2);
+ cx.fillStyle="#1a1530";cx.fillRect(x+64,y+44,8,3);cx.fillRect(x+70,y+40,3,8)}
+/* fırlatılan yanlış cevap: karalanmış ve çarpıyla işaretlenmiş şık baloncuğu */
+function bubShot(e){const x=Math.round(e.x),y=Math.round(e.y),sp=(t*.25)%6.28;
+ circ(x+8,y+8,8,"#1a1530",1);circ(x+8,y+8,7,"#f6f2e4",1);
+ txt(e.bub,x+8,y+12,11,"#5a35a8","center");
+ cx.strokeStyle="#2a2350";cx.lineWidth=1.2;cx.beginPath();for(let i=0;i<5;i++){cx.moveTo(x+3,y+4+i*2.2);cx.lineTo(x+13,y+5+i*2.2+Math.sin(sp+i))}cx.stroke();
+ cx.strokeStyle="#ff4d6d";cx.lineWidth=2.4;cx.beginPath();cx.moveTo(x+2,y+2);cx.lineTo(x+14,y+14);cx.moveTo(x+14,y+2);cx.lineTo(x+2,y+14);cx.stroke()}
+function drawConf(){conf.forEach(c=>{cx.save();cx.translate(c.x,c.y);cx.rotate(c.r);cx.fillStyle=c.c;cx.fillRect(-c.w/2,-1.5,c.w,3);cx.restore()})}
+function tickConf(){conf.forEach(c=>{c.x+=c.vx;c.y+=c.vy;c.vy+=.13;c.vx*=.99;if(c.vy>1.6)c.vy=1.6;c.r+=.2;c.l--});conf=conf.filter(c=>c.l>0&&c.y<H+10)}
+/* Dolaşım Canavarı: kalp biçimli kırmızı gövde, başından çıkan kırmızı ve mavi damar boynuzları, iri gözler; korkutucu değil */
+function germShot(e){const x=Math.round(e.x),y=Math.round(e.y),a=t*.3;
+ for(let i=0;i<8;i++){const q=i*.785+a;cx.fillStyle="#3c8a2e";cx.fillRect(x+8+Math.cos(q)*9-1,y+8+Math.sin(q)*9-1,3,3)}
+ circ(x+8,y+8,7,"#1a1530",2);circ(x+8,y+8,6,"#7ee06a",2);cx.fillStyle="#1a1530";cx.fillRect(x+5,y+6,2,2);cx.fillRect(x+10,y+6,2,2);cx.fillRect(x+6,y+11,5,1)}
+function drawDolasim(x,y,o){o=o||{};const tt=o.t!=null?o.t:t,beat=o.dead?0:(Math.floor(tt/6)%8===0?1:0),bob=o.dead?0:Math.round(Math.sin(tt/12)*2),lg=o.laugh>0?Math.round(Math.sin(tt*1.2)*2):0;
+ x=Math.round(x+lg);y=Math.round(y+bob);
+ cx.fillStyle="rgba(0,0,0,.35)";cx.beginPath();cx.ellipse(x+36,y+84-bob,32,4,0,0,6.3);cx.fill();
+ // damar boynuzları (kıvrılarak sallanır)
+ const wv=o.dead?0:Math.sin(tt/10)*3;
+ [["#ff4d6d","#b3203c",x+48,1],["#4c7dff","#2a4fb8",x+22,-1]].forEach(([c1,c2,bx,dir])=>{for(let k=0;k<9;k++){const yy=y-2-k*3,xx=bx+dir*(k*1.2)+Math.sin(tt/10+k*.6)*(k*.35)*(o.dead?0:1);
+  cx.fillStyle="#1a1530";cx.fillRect(xx-4,yy-1,9,5);cx.fillStyle=c1;cx.fillRect(xx-3,yy,7,3);cx.fillStyle=c2;cx.fillRect(xx+2,yy,2,3)}
+  const tx=bx+dir*11+wv*dir,ty=y-29;circ(tx,ty,5,"#1a1530",2);circ(tx,ty,4,c1,2)});
+ // bacaklar
+ const st=o.dead?0:Math.round(Math.sin(tt/6)*2);cx.fillStyle="#1a1530";cx.fillRect(x+20,y+66,6,12+st);cx.fillRect(x+46,y+66,6,12-st);
+ rr(x+14,y+76+st,15,6,3,"#1a1530");rr(x+43,y+76-st,15,6,3,"#1a1530");
+ // kalp gövde (iki tepe + sivri alt), atışta hafif büyür
+ const g=beat?2:0;cx.fillStyle="#1a1530";
+ cx.beginPath();cx.arc(x+22,y+18,18+g,0,6.3);cx.arc(x+50,y+18,18+g,0,6.3);cx.fill();cx.beginPath();cx.moveTo(x+3-g,y+24);cx.lineTo(x+69+g,y+24);cx.lineTo(x+36,y+72+g);cx.fill();
+ cx.fillStyle="#e8304f";cx.beginPath();cx.arc(x+22,y+18,16+g,0,6.3);cx.arc(x+50,y+18,16+g,0,6.3);cx.fill();cx.beginPath();cx.moveTo(x+6-g,y+24);cx.lineTo(x+66+g,y+24);cx.lineTo(x+36,y+68+g);cx.fill();
+ cx.fillStyle="#b81f3c";cx.beginPath();cx.moveTo(x+50,y+30);cx.lineTo(x+66+g,y+24);cx.lineTo(x+36,y+68+g);cx.fill();
+ cx.fillStyle="#ff8fa3";cx.fillRect(x+12,y+8,6,3);cx.fillRect(x+10,y+11,3,5);
+ // gözler
+ const ex=[x+24,x+48],eyY=y+24,blink=!o.dead&&Math.floor(tt/90)%7===0&&tt%90<6;
+ ex.forEach((e,i)=>{cx.fillStyle="#1a1530";cx.beginPath();cx.ellipse(e,eyY,9,8,0,0,6.3);cx.fill();cx.fillStyle="#fff";cx.beginPath();cx.ellipse(e,eyY,7.5,6.5,0,0,6.3);cx.fill();
+  if(o.dead){cx.fillStyle="#1a1530";cx.fillRect(e-5,eyY,10,2)}
+  else if(blink){cx.fillStyle="#1a1530";cx.fillRect(e-6,eyY,12,2)}
+  else{const px2=e-2;cx.fillStyle="#1a1530";cx.beginPath();cx.arc(px2,eyY+1,3.5,0,6.3);cx.fill();cx.fillStyle="#fff";cx.fillRect(px2-2,eyY-2,2,2)}
+  cx.fillStyle="#1a1530";if(i===0)cx.fillRect(e-8,eyY-11+(o.laugh?1:0),12,2);else cx.fillRect(e-4,eyY-11+(o.laugh?1:0),12,2)});
+ // ağız
+ const mY=y+38;if(o.dead){cx.fillStyle="#1a1530";cx.fillRect(x+28,mY+4,16,2)}
+ else{const op=o.laugh>0?7:4;rr(x+26,mY,20,op+2,3,"#1a1530");rr(x+28,mY+1,16,op,2,"#ff9fc4");cx.fillStyle="#fff";cx.fillRect(x+30,mY+1,3,3);cx.fillRect(x+39,mY+1,3,3)}
+ // kollar
+ const arm=o.arm>0?-8:0;cx.fillStyle="#1a1530";cx.fillRect(x-6,y+34+arm,10,3);cx.fillRect(x+68,y+34,8,3);circ(x-7,y+35+arm,4,"#e8304f",2)}
+function drawBoss(){if(!boss)return;const b=boss;
+ if(b.dol){if(!(b.hitT>0&&Math.floor(b.hitT/4)%2))drawDolasim(b.x,b.y,{dead:b.dead,laugh:b.laugh,arm:b.arm});
+  if(b.dead)for(let i=0;i<4;i++){const a=t/12+i*1.6;cx.fillStyle="#ffd23f";cx.fillRect(b.x+30+Math.cos(a)*24,b.y-14+Math.sin(a)*6,4,4)}
+  if(b.x<W){const bw=74,bx=b.x-6,by=b.y-30;cx.fillStyle="#000";cx.fillRect(bx-2,by-2,bw+4,10);cx.fillStyle="#3b3566";cx.fillRect(bx,by,bw,6);
+   cx.fillStyle="#ff5fa2";cx.fillRect(bx,by,bw*b.hp/b.max,6);txt("DOLAŞIM CANAVARI",bx,by-4,10,"#fff")}
+  if(b.talk>0&&b.x<=b.tx+2)bubble(b.talk>150?"Ben Dolaşım Canavarı! Kalbim hiç durmaz.":"Mikroplarımdan kaç, sorularımı bil!",b.x-8,b.y-42);
+  else if(b.laugh>0)bubble("Ha ha! Damarlarımda kayboldun!",b.x-8,b.y-42);
+  if(b.dead>20)bubble("Dolaşımı çözdün. Tebrikler!",b.x-8,b.y-42);return}
+ if(b.optic){if(!(b.hitT>0&&Math.floor(b.hitT/4)%2))drawOptic(b.x,b.y,{dead:b.dead,laugh:b.laugh,arm:b.arm});
+  if(b.dead)for(let i=0;i<4;i++){const a=t/12+i*1.6;cx.fillStyle="#ffd23f";cx.fillRect(b.x+30+Math.cos(a)*24,b.y-8+Math.sin(a)*6,4,4)}
+  if(b.x<W){const bw=74,bx=b.x-6,by=b.y-24;cx.fillStyle="#000";cx.fillRect(bx-2,by-2,bw+4,10);cx.fillStyle="#3b3566";cx.fillRect(bx,by,bw,6);
+   cx.fillStyle="#ff5fa2";cx.fillRect(bx,by,bw*b.hp/b.max,6);txt("OPTİK CANAVARI",bx,by-4,10,"#fff")}
+  if(b.talk>0&&b.x<=b.tx+2)bubble(b.talk>150?"Ben Optik Canavarı! Her soruda bir tuzak var.":"Yanlış şıklarım geliyor. Dikkatli oku!",b.x-8,b.y-36);
+  else if(b.laugh>0)bubble("Ha ha! Tuzağa düştün!",b.x-8,b.y-36);
+  if(b.dead>20)bubble("Tuzaklarımı fark ettin. Tebrikler!",b.x-8,b.y-36);return}
+ const bob=b.dead?0:Math.round(Math.sin(t/14)*1.5);
  if(!(b.hitT>0&&Math.floor(b.hitT/4)%2)){spr(b.dead?NEWTON_HAPPY:NEWTON,b.x,b.y+bob,3);if(!b.dead)apple(b.x-6,b.y+(b.arm>0?14:34)+bob)}
  if(b.hitT>30)apple(b.x+20,b.y-18+(50-b.hitT)*2.5);
  if(b.dead)for(let i=0;i<3;i++){const a=t/12+i*2.1;cx.fillStyle="#ffd23f";cx.fillRect(b.x+27+Math.cos(a)*18,b.y-6+Math.sin(a)*5,4,4)}
@@ -588,21 +740,21 @@ function drawBoss(){if(!boss)return;const b=boss,bob=b.dead?0:Math.round(Math.si
   cx.fillStyle="#ff5fa2";cx.fillRect(bx,by,bw*b.hp/b.max,6);txt("NEWTON",bx,by-4,10,"#fff")}
  if(b.talk>0&&b.x<=b.tx+2)bubble(b.talk>130?"Ben Isaac Newton! Kuvvetin birimi benim adımı taşır.":"Sorularımı bil, elmalarımdan kaç!",b.x-8,b.y-34);
  if(b.dead>20)bubble("Tebrikler! Bilim yolunda başarılar!",b.x-8,b.y-34)}
-function draw(){if(!cfg)return;cx.save();if(shake>0){cx.translate((Math.random()-.5)*shake,0);shake--}
+function draw(){if(!cfg)return;cx.save();if(shake>0){const a=Math.min(shake,7);cx.translate((Math.random()-.5)*a,(Math.random()-.5)*a*.6);shake--}
  drawBg();drawGround();
  ents.forEach(e=>{
-  if(e.k==="p"){const sp=cfg.theme==="space";for(let i=0;i<e.w;i+=16){cx.fillStyle="#000";cx.fillRect(e.x+i,e.y,16,e.h);cx.fillStyle=sp?"#7b74a3":cfg.theme==="dna"?"#9a4f86":cfg.theme==="weather"?"#3f8a8a":"#b8642a";cx.fillRect(e.x+i+1,e.y+1,14,e.h-2);
-   cx.fillStyle=sp?"#a49dcc":cfg.theme==="dna"?"#c97ab0":cfg.theme==="weather"?"#5fb8b0":"#e08a45";cx.fillRect(e.x+i+1,e.y+1,14,2)}}
+  if(e.k==="p"){const sp=cfg.theme==="space";for(let i=0;i<e.w;i+=16){cx.fillStyle="#000";cx.fillRect(e.x+i,e.y,16,e.h);cx.fillStyle=sp?"#7b74a3":cfg.theme==="dna"?"#9a4f86":cfg.theme==="body"?"#a83a52":cfg.theme==="weather"?"#3f8a8a":"#b8642a";cx.fillRect(e.x+i+1,e.y+1,14,e.h-2);
+   cx.fillStyle=sp?"#a49dcc":cfg.theme==="dna"?"#c97ab0":cfg.theme==="body"?"#e0647e":cfg.theme==="weather"?"#5fb8b0":"#e08a45";cx.fillRect(e.x+i+1,e.y+1,14,2)}}
   if(e.k==="c")coin(e);
   if(e.k==="en"){const fr=EN[cfg.enemy];spr(fr[Math.floor(t/8)%fr.length],e.x,e.y+(cfg.enemy==="meteor"&&Math.sin(t/5+e.ph)>0?1:0),2);
    if(cfg.enemy==="cloud"&&Math.floor(t/10)%4===0){cx.fillStyle="#ffd23f";cx.fillRect(e.x+8,e.y+e.h,2,4)}}
-  if(e.k==="ap")apple(e.x,e.y);
+  if(e.k==="ap"){if(e.bub)bubShot(e);else if(e.germ)germShot(e);else apple(e.x,e.y)}
   if(e.k==="q"){const y=e.y-(e.bump?4:0);cx.fillStyle="#000";cx.fillRect(e.x-1,y-1,24,24);cx.fillStyle=e.used?"#a07a3a":"#ffd23f";cx.fillRect(e.x+1,y+1,20,20);
    cx.fillStyle=e.used?"#7a5a20":"#d99b00";cx.fillRect(e.x+1,y+17,20,4);cx.fillRect(e.x+17,y+1,4,20);if(!e.used)txt("?",e.x+11,y+16,16,"#8a5a00","center")}
   if(e.k==="flag"){cx.fillStyle="#000";cx.fillRect(e.x-1,e.y-1,6,e.h+1);cx.fillStyle="#eee";cx.fillRect(e.x,e.y,4,e.h);
    circ(e.x+2,e.y-3,4,"#ffd23f",2);const wv=Math.sin(t/6)*2;cx.fillStyle="#3ee6b0";cx.beginPath();cx.moveTo(e.x+4,e.y+4);cx.lineTo(e.x+34,e.y+14+wv);cx.lineTo(e.x+4,e.y+26);cx.fill();
    cx.fillStyle="#000";cx.fillRect(e.x-8,GY-10,20,10);cx.fillStyle="#7b74a3";cx.fillRect(e.x-7,GY-9,18,8)}});
- drawBoss();
+ drawBoss();drawConf();
  parts.forEach(p=>{cx.fillStyle=p.c;cx.fillRect(Math.round(p.x),Math.round(p.y),p.l>100?2:3,p.l>100?2:3)});
  if(!(inv>0&&state==="run"&&Math.floor(inv/5)%2)){let fr=LUNA;if(state==="run"&&L.onG&&Math.floor(t/7)%2)fr=LUNA_RUN;if(state==="idle"&&Math.floor(Date.now()/160)%25===0)fr=LUNA_BLINK;
   spr(fr,L.x,Math.round(L.y)+(state==="idle"?Math.round(Math.sin(Date.now()/300)*2):0),2)}
@@ -611,7 +763,14 @@ function draw(){if(!cfg)return;cx.save();if(shake>0){cx.translate((Math.random()
 /* sabit adımlı döngü: 60 ve 120 Hz ekranlarda aynı hız */
 let last=performance.now(),acc=0;
 function loop(now){acc+=Math.min(100,now-last);last=now;
- if(inView){if(cv.width!==W||!stage.clientWidth)fit();while(acc>=16.67){if(state==="run")update();else if(state==="idle")t++;acc-=16.67}draw()}else acc=0;
+ if(inView){if(cv.width!==W||!stage.clientWidth)fit();while(acc>=16.67){if(state==="run")update();else{t++;if(conf.length)tickConf()}acc-=16.67}draw()}else acc=0;
  requestAnimationFrame(loop)}
-L.y=GY-L.h;menu();requestAnimationFrame(loop);
+L.y=GY-L.h;
+if(window.LG_VIDEO){/* video kaydı için kare kare ilerletme (sitede kullanılmaz) */
+ const anim=n=>[Q(".lg-toast"),Q(".lg-hint")].forEach(el=>el.getAnimations().forEach(a=>{a.pause();a._f=(a._f||0)+n*16.67;a.currentTime=a._f}));
+ window.LG={step(n){for(let i=0;i<n;i++){if(state==="run")update();else{t++;if(conf.length)tickConf()}}anim(n);draw()},
+  get state(){return state},get ents(){return ents},get L(){return L},get boss(){return boss},get lives(){return lives},get score(){return score},addScore(v){score+=v},
+  set inv(v){inv=v},setQT(v){qT=v},setCorrect(v){correct=v},setTarget(v){target=v},get target(){return target},setSpawn(v){spawnT=v},jump,fit,drawOptic,confetti,Q,cx,get W(){return W}};
+ menu()}
+else{menu();requestAnimationFrame(loop)}
 })();
