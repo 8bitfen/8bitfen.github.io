@@ -431,6 +431,10 @@
     <p style="max-width:760px;margin:0 auto 14px;text-align:center;opacity:.92">Ünite sonunda akıllı tahtada sınıfça oynanan kaçış odası: 4 oda, 12 kilit, son kasa. İnternetsiz çalışan tek dosya, öğretmen yönergesi, cevap anahtarı ve çıkış bileti. Satın almadan önce ilk odayı ücretsiz deneyebilirsin.</p>
     <div class="perks"><span>Akıllı tahtada tek tıkla</span><span>İnternet gerekmez</span><span>Cevap anahtarlı</span><span>1 ders saati</span></div>
     <div class="grid g3" id="rooms"></div>
+    <h3 class="subh" style="margin-top:34px">Luna Boss Savaşı · Maarif Modeli</h3>
+    <p style="max-width:760px;margin:0 auto 14px;text-align:center;opacity:.92">Maarif Modeli sınıfları için akıllı tahtada takım yarışması. İlk ürün 7. sınıf, diğerleri ünite ünite ekleniyor. Sınıf takımlara ayrılır, her doğru cevap ünitenin canavarına vuruş yapar; yanlışta diğer takımlar çalma hakkı kullanır. Hız soruları, tartışma kartları, öğretmen rehberi ve cevap anahtarıyla. Tek öğretmen lisansı: dosya alıcının adıyla açılır.</p>
+    <div class="perks"><span>Maarif Modeli'ne uygun</span><span>2-4 takım</span><span>İnternet gerekmez</span><span>Öğretmen rehberi</span></div>
+    <div class="grid g3" id="bosses"></div>
     </div>
   </div>
 </section>
@@ -774,7 +778,12 @@ const ESCAPES=[
  ["8. SINIF · ÜNİTE 2","Gen Merkezi","https://www.shopier.com/8bitfen/53227099","79 TL","DNA'nın yapısı, kalıtım, mutasyon-modifikasyon-adaptasyon, biyoteknoloji: 4 oda, 12 kilit, son kasa + öğretmen yönergesi ve cevap anahtarı (HTML + PDF)","kacis-dna-deneme.html","8-2"],
  ["8. SINIF · ÜNİTE 3","Basınç Laboratuvarı","https://www.shopier.com/8bitfen/53226463","79 TL","Katı, sıvı ve açık hava basıncı, hidrolik sistemler: 4 oda, 12 kilit, son kasa + öğretmen yönergesi ve cevap anahtarı (HTML + PDF)","kacis-basinc-deneme.html","8-3"]];
 document.getElementById("rooms").innerHTML=ESCAPES.map(([c,t,url,price,inc,demo,id])=>`<div class="card rv">${url?"":'<span class="lock">YAKINDA</span>'}<span class="chip" style="background:var(--mint)">${c}</span><h3>${t}</h3><p class="inc">${inc}</p><a class="btn ghost" href="${demo}" target="_blank" rel="noopener" data-kdemo="${id}">▶ 1. odayı ücretsiz dene</a> ${url?`<a class="btn yel" href="${url}" target="_blank" rel="noopener" data-kbuy="${id}">${price} · Satın al</a>`:`<button class="btn ghost" data-kwant="${id}">Açılınca haber ver</button>`}</div>`).join("");
-document.getElementById("no").textContent="("+ESCAPES.filter(e=>e[2]).length+")";
+const BOSSES=[
+ ["7. SINIF · ÜNİTE 3","Vücudumuzdaki Sistemler","https://www.shopier.com/8bitfen/53296435","69 TL","Sindirim, dolaşım, solunum ve boşaltım: 4 canavar, 52 soru, 3 tartışma kartı + 11 sayfalık öğretmen rehberi ve cevap anahtarı (HTML + PDF)","boss-7-dolasim-deneme.html","7-3"]];
+document.getElementById("bosses").innerHTML=BOSSES.map(([c,t,url,price,inc,demo,id])=>`<div class="card rv">${url?"":'<span class="lock">YAKINDA</span>'}<span class="chip" style="background:var(--pink)">${c}</span><h3>${t}</h3><p class="inc">${inc}</p><a class="btn ghost" href="${demo}" target="_blank" rel="noopener" data-bdemo="${id}">▶ Dolaşım Canavarı'nı ücretsiz dene</a> ${url?`<a class="btn yel" href="${url}" target="_blank" rel="noopener" data-bbuy="${id}">${price} · Satın al</a>`:`<button class="btn ghost" data-kwant="b${id}">Açılınca haber ver</button>`}</div>`).join("");
+document.querySelectorAll("#bosses [data-bdemo]").forEach(b=>b.addEventListener("click",()=>typeof track==="function"&&track("boss-deneme-"+b.dataset.bdemo)));
+document.querySelectorAll("#bosses [data-bbuy]").forEach(b=>b.addEventListener("click",()=>typeof track==="function"&&track("boss-satin-"+b.dataset.bbuy)));
+document.getElementById("no").textContent="("+(ESCAPES.filter(e=>e[2]).length+BOSSES.filter(e=>e[2]).length)+")";
 document.querySelectorAll("#rooms [data-kdemo]").forEach(b=>b.addEventListener("click",()=>track("kacis-deneme-"+b.dataset.kdemo)));
 document.querySelectorAll("#rooms [data-kbuy]").forEach(b=>b.addEventListener("click",()=>track("kacis-satin-al-"+b.dataset.kbuy)));
 document.querySelectorAll("#rooms [data-kwant]").forEach(b=>b.onclick=()=>{track("kacis-ilgi-"+b.dataset.kwant);b.disabled=true;b.textContent="Not alındı ✓"});
