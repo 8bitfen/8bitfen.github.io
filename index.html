@@ -500,20 +500,27 @@ document.querySelectorAll("[data-px]").forEach(pixify);
 
 /* ---------- ücretsiz çalışma kâğıtları ---------- */
 const SHEETS=[
+ [5,"Güneş ve Ay","calisma/5-gunes-ve-ay.pdf"],
  [5,"Kütle ve Ağırlık","1qALSRIXYFzJUwVDmbSRjWC-lLcaRxj16"],
  [5,"Sürtünme Kuvveti","1U_Y1TUxYuCMP4KXNOdYv55n14kHQYPrB"],
+ [6,"Güneş Sistemi ve Tutulmalar","calisma/6-gunes-sistemi-ve-tutulmalar.pdf"],
+ [6,"Bileşke Kuvvet, Sürat ve Hız","calisma/6-kuvvetin-etkisinde-hareket.pdf"],
  [6,"Bitkilerde Üreme","1Ehwr3WX-GO_j5eQogaqK-4KXsUk6QsLM"],
+ [7,"Uzay Teknolojileri ve Yıldızlar","calisma/7-uzay-cagi.pdf"],
  [7,"Sindirim Sistemi","1KUiTyT6V2oH9BD8FXvsC5yN_6zI-MgiQ"],
+ [7,"Dolaşım, Solunum ve Boşaltım","calisma/7-dolasim-solunum-bosaltim.pdf"],
  [7,"Enerji Dönüşümü","1RqsthIiWQ0UgtGvDNqIzkQVJL2JyIdbo"],
+ [8,"Mevsimler ve İklim","calisma/8-mevsimler-ve-iklim.pdf"],
  [8,"DNA ve Genetik Kod","1ryjvCBjjRU-gJ38j3G08r_IbJSmF_nsb"],
  [8,"Basınç","1Jh9Gfb52z4N1QVz5G5vkU3RSHSXn65_m"],
- [8,"Adaptasyon ve Biyoteknoloji","1HwHNvINNbLvbt_fhk71UcuNi2r4Pj3ng"]];
+ [8,"Adaptasyon ve Biyoteknoloji","1HwHNvINNbLvbt_fhk71UcuNi2r4Pj3ng"],
+ [8,"Periyodik Sistem, Kimyasal Değişim, Asit ve Baz","calisma/8-madde-ve-endustri.pdf"]];
 const GC={5:"var(--mint)",6:"var(--sky)",7:"var(--orange)",8:"var(--pink)"};
 const sh=document.getElementById("sheets");
 sh.innerHTML=SHEETS.map(([g,t,id])=>`<div class="card sheet rv" data-g="${g}" style="--c:${GC[g]}"><div class="pdf"></div><div>
  <span class="chip">ÜCRETSİZ · <span data-px>${g}</span>. SINIF</span><h3>${t}</h3>
  <p>${g==8?"Videoyla birlikte çöz; LGS tarzı sorularla biter.":"Videoyla birlikte çöz, konuyu pekiştir."}</p>
- <button class="dl" data-title="${t}" data-link="https://drive.google.com/uc?export=download&id=${id}">⬇ İndir</button></div></div>`).join("")
+ <button class="dl" data-title="${t}" data-link="${id.endsWith(".pdf")?id:"https://drive.google.com/uc?export=download&id="+id}">⬇ İndir</button></div></div>`).join("")
  +`<div class="card sheet rv" data-g="soon" style="--c:var(--lila)"><div class="pdf" style="opacity:.5"></div><div><span class="chip">YAKINDA</span><h3>Yeni kâğıtlar yolda</h3><p>Her yeni "Tam Macera" videosuyla birlikte buraya eklenir.</p></div></div>`;
 sh.querySelectorAll("[data-px]").forEach(pixify);
 document.querySelectorAll("#tabs button").forEach(b=>b.onclick=()=>{
