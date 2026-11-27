@@ -215,7 +215,29 @@ const QB={
  ["Modifikasyon ile mutasyon arasındaki fark nedir?","Modifikasyon kalıtsal değildir; mutasyon genlerde olur ve kalıtsal olabilir.","İkisi de kalıtsaldır.","Modifikasyon genlerde olur, mutasyon olmaz.","Modifikasyon genleri değiştirmez, mutasyon değiştirir."],
  ["Çöl tilkisinin büyük kulakları sayesinde fazla ısıyı atabilmesi neye örnektir?","Adaptasyon","Modifikasyon","Mutasyon","Canlının yaşadığı ortama uyum sağlamasını kolaylaştıran özellik adaptasyondur."],
  ["Bakterilere gen aktarılarak insülin üretilmesi hangi alana örnektir?","Biyoteknoloji (genetik mühendisliği)","Klimatoloji","Meteoroloji","Genlerle çalışarak canlılardan ürün elde etmek biyoteknolojinin konusudur."]
-]
+],
+"8-4":[
+ ["Hangisi kimyasal değişimdir?","Sütün ekşimesi","Buzun erimesi","Şekerin suda çözünmesi","Ekşimede yeni maddeler oluşur. Erime ve çözünme fiziksel değişimdir."],
+ ["Kaynayan suda çıkan kabarcıklar neyi gösterir?","Su buharını; değişim fizikseldir","Yeni bir gaz oluştuğunu","Suyun kimyasal tepkimeye girdiğini","Kabarcıklar su buharıdır. Yeni madde oluşmadığı için değişim fizikseldir."],
+ ["Kimyasal tepkimelerde hangisi kesinlikle korunur?","Atomların sayısı ve türü","Moleküllerin sayısı","Maddelerin fiziksel hâli","Atomlar yeniden düzenlenir; molekül sayısı değişebilir ama atom sayısı ve türü korunur."],
+ ["Açıkta paslanan demir çivinin kütlesi neden artar?","Havadaki oksijen ve su demirle birleşir","Tepkimelerde kütle korunmaz","Demir atomları çoğalır","Terazi demire eklenen maddeleri de tartar. Toplam kütle yine korunur."],
+ ["Ağzı açık kapta yanan mumun kütlesi azalır. Nedeni nedir?","Oluşan gazlar havaya karışır","Kütle yok olur","Mum hiç tepkimeye girmez","Ağzı kapalı kapta yakılsaydı toplam kütle değişmezdi."],
+ ["pH değeri 2 olan çözelti için hangisi doğrudur?","Asittir, mavi turnusolu kırmızıya çevirir","Bazdır, kırmızı turnusolu maviye çevirir","Nötrdür","pH değeri 7'den küçük olan çözeltiler asidiktir."],
+ ["Hangisi daha kuvvetli bir bazdır?","pH değeri 12 olan","pH değeri 9 olan","pH değeri 7 olan","Bazlarda pH değeri büyüdükçe bazlık kuvvetlenir."],
+ ["Asit ve bazların sulu çözeltileri için hangisi doğrudur?","İkisi de elektriği iletir","Yalnız asitler elektriği iletir","İkisi de elektriği iletmez","Sulu çözeltilerinde iyonlar bulunduğu için ikisi de elektriği iletir."],
+ ["Temizlik yaparken hangisi doğru davranıştır?","Ürünleri karıştırmadan, ortamı havalandırarak kullanmak","Çamaşır suyuyla tuz ruhunu karıştırmak","Ürünün gücünü koklayarak anlamak","Çamaşır suyuyla tuz ruhu karışırsa zehirli bir gaz çıkar."],
+ ["Kırmızı lahana suyu eklenen bir çözelti yeşil oldu. Bu çözelti için ne söylenebilir?","Baziktir","Asidiktir","Nötrdür","Kırmızı lahana suyu asitte pembe, nötrde mor, bazda yeşil olur."],
+ ["Asit yağmurlarının başlıca nedeni hangisidir?","Fosil yakıtların yanmasıyla havaya karışan kükürt ve azot oksitleri","Rüzgâr türbinleri","Ağaç dikimi","Bu gazlar bulutlardaki suyla birleşip asit oluşturur."],
+ ["Hangisi fiziksel değişimdir?","Kâğıdın yırtılması","Odunun yanması","Ekmeğin kızarması","Yırtılan kâğıt yine kâğıttır; maddenin kimliği değişmez."],
+ ["Hangisi kimyasal tepkime belirtisi değildir?","Suya mürekkep damlatınca rengin değişmesi","Sirkeye karbonat eklenince gaz çıkması","Bakır çatının yeşile dönmesi","Mürekkepli su bir karışımdır; yeni madde oluşmaz."],
+ ["Tepkimenin başında bulunan maddelere ne ad verilir?","Tepkimeye girenler","Ürünler","Çökelti","Tepkime sonunda oluşan yeni maddelere ürünler denir."],
+ ["Kapalı bir kapta 20 g madde tepkimeye girip tamamen ürüne dönüşüyor. Ürünlerin toplam kütlesi kaç gramdır?","20 g","20 g'dan az","20 g'dan fazla","Kapalı kapta kütle korunur."],
+ ["Hangisi asitlerin bir özelliğidir?","Tatları ekşidir","Ele kayganlık hissi verirler","Kırmızı turnusolu maviye çevirirler","Asitler mavi turnusolu kırmızıya çevirir. Kayganlık bazlara özgüdür."],
+ ["Hangisi bazik bir maddedir?","Sabunlu su","Limon suyu","Sirke","Sabun, diş macunu ve çamaşır suyu bazlara örnektir."],
+ ["Saf suyun pH değeri kaçtır?","7","1","14","Saf su nötrdür, pH değeri 7'dir."],
+ ["Asit seyreltilirken hangisi doğrudur?","Asit suya azar azar eklenir","Asidin üstüne su dökülür","İkisi hızlıca karıştırılır","Asidin üstüne su dökülürse sıçrama olabilir."],
+ ["Asit yağmuru göllerin pH değerini nasıl etkiler?","Düşürür","Yükseltir","Değiştirmez","Asit yağmuru göllerin ve toprağın asitliğini artırır, pH değeri düşer."],
+],
 };
 /* bölüm sonu canavarı Newton'un ilk soruları */
 const NEWTON_Q={
@@ -226,7 +248,8 @@ const NEWTON_Q={
  "7-1":["Newton'un geliştirdiği, mercek yerine ayna kullanan teleskop türü hangisidir?","Yansıtmalı (aynalı) teleskop","Kırılmalı (mercekli) teleskop","Radyo teleskop","Newton 1668'de ışığı aynayla toplayan ilk kullanışlı yansıtmalı teleskobu yaptı."],
  "7-2":["1 joule'lük iş nasıl yapılır?","1 N'luk kuvvetle cismi kuvvet yönünde 1 m hareket ettirerek","1 kg'lık cismi elde tutarak","1 m yolu 1 saniyede yürüyerek","İş = kuvvet × yer değiştirme. 1 N × 1 m = 1 J."],
  "8-1":["Dünya'yı Güneş'in çevresindeki yörüngesinde tutan kuvvet hangisidir?","Güneş'in kütle çekimi","Rüzgâr","Sürtünme kuvveti","Dünya, Güneş'in kütle çekimi sayesinde yörüngesinde kalır."],
- "8-2":["Ben fizikçiyim, kalıtımın babası değilim! Bezelyelerle kalıtım deneyleri yapan bilim insanı kimdir?","Gregor Mendel","Isaac Newton","Albert Einstein","Mendel, bezelyelerle yaptığı çaprazlamalarla kalıtımın temel kurallarını buldu."]};
+ "8-2":["Ben fizikçiyim, kalıtımın babası değilim! Bezelyelerle kalıtım deneyleri yapan bilim insanı kimdir?","Gregor Mendel","Isaac Newton","Albert Einstein","Mendel, bezelyelerle yaptığı çaprazlamalarla kalıtımın temel kurallarını buldu."],
+ "8-4":["Ben fizikçiyim ama bu sefer kimya sorusu soruyorum! Kapalı kaplarda tartım yaparak tepkimelerde kütlenin korunduğunu gösteren bilim insanı kimdir?","Antoine Lavoisier","Isaac Newton","Gregor Mendel","Lavoisier, kapalı kaplarda yaptığı dikkatli tartımlarla kütlenin korunumunu gösterdi."]};
 
 
 /* ================= MACERALAR =================
@@ -248,7 +271,8 @@ const GRADES={
 8:{c:"#ff5fa2",lgs:1,units:[
  {u:1,ad:"Mevsimler ve İklim",open:1,world:"MEVSİMLER",kisa:"Mevsimler",theme:"weather",enemy:"cloud",coin:"sun",chip:"#3ee6b0"},
  {u:2,ad:"DNA ve Genetik Kod",open:1,world:"DNA",kisa:"DNA",theme:"dna",enemy:"germ",coin:"ATGC",chip:"#b388ff"},
- {u:3,ad:"Basınç"},{u:4,ad:"Madde ve Endüstri"},{u:5,ad:"Basit Makineler"},{u:6,ad:"Enerji Dönüşümleri ve Çevre Bilimi"},{u:7,ad:"Elektrik Yükleri ve Elektrik Enerjisi"}]}};
+ {u:3,ad:"Basınç"},
+ {u:4,ad:"Madde ve Endüstri",open:1,world:"TEPKİME",kisa:"Tepkime",theme:"dna",icons:"chem",enemy:"acid",coin:"pH",chip:"#c9a0ff"},{u:5,ad:"Basit Makineler"},{u:6,ad:"Enerji Dönüşümleri ve Çevre Bilimi"},{u:7,ad:"Elektrik Yükleri ve Elektrik Enerjisi"}]}};
 const SKY={space:["#070620","#1c1852","#40266e"],force:["#170b06","#4a1f0e","#8a3a16"],weather:["#041a22","#0b3a48","#145a5e"],dna:["#120822","#2a1048","#4a1a66"],body:["#1a0610","#4a0f24","#7a1a38"]};
 
 /* ================= STİL ================= */
@@ -348,6 +372,8 @@ const EN={
       [".KKKKKKKKKK.","KNnNnNnNnNnK","KnNnNnNnNnNK","KNWWKnNWWKnK","KnWKKNnWKKNK","KNnNnNnNnNnK","KnNKKKKKKnNK","KNnNnNnNnNnK",".KKKKKKKKKK.","..KK....KK.."]],
  junk:[["....KK......","...KBBK.....","..KBbBK.KK..",".KKKKKKKDDK.","KDDGDDDDGDK.","KDGGDDKDDDK.","KDDDDDDDDdK.",".KKdDDDKKK..","...KdK.KBBK.","....K..KbbK."]],
  cloud:[["...KKKK.....","..KDDDDKKK..",".KDDDDDDDDK.","KDDWKDDWKDDK","KDDKKDDKKDDK","KDdddddddDDK",".KKKKKKKKKK.","....KYK.....","...KYK......","...KK......."]],
+ acid:[[".....K.....","....KMK....","...KMMMK...","..KMMMMMK..",".KMWKMMWKMK","KMMMMMMMMMK","KMMMKKKMMmK","KmMMMMMMMmK",".KmmMMMmmK.","..KKKKKKK.."],
+       ["...........",".....K.....","...KKMKK...","..KMMMMMK..",".KMKKMMKKMK","KMMMMMMMMMK","KMMMKKKMMmK","KmMMMMMMMmK",".KmmMMMmmK.","..KKKKKKK.."]],
  germ:[["..m..m..m..",".mMm.mMm.m.","..MMMMMMMm.",".MMWKMMWKMm","mMMMMMMMMMm",".MMMKKKKMM.","..MMMMMMMm.",".m.mMMm.m..","...m..m...."],
        [".m..m..m...","..mMm.mMm.m","..MMMMMMMm.",".MMWKMMWKMm","mMMMMMMMMMm",".MMMKKKKMM.","..MMMMMMMm.","..m.mMMm.m.","..m..m....."]]};
 const STAR=["...KK...","..KYYK..","KKKYYKKK","KYYHYYYK",".KYYYYK.",".KYYYYK.","KYYKKYYK","KK....KK"];
@@ -503,7 +529,7 @@ function spawn(){const r=Math.random(),z=ENSZ();
   for(let i=0;i<n;i++)ents.push({k:"c",x:W+14+i*16,y:py-20,w:16,h:16,l:letter()});
   if(Math.random()<.45)ents.push({k:"en",x:W+10+n*8,y:GY-z.h,w:z.w,h:z.h,ph:0})}
  spawnT=Math.max(48,100-base*9)+Math.random()*55}
-function letter(){const c=cfg.coin;return c.length>1&&c!=="star"&&c!=="sun"&&c!=="rbc"?c[Math.floor(Math.random()*c.length)]:c}
+function letter(){const c=cfg.coin;return c.length>1&&c!=="star"&&c!=="sun"&&c!=="rbc"&&c!=="pH"?c[Math.floor(Math.random()*c.length)]:c}
 
 function update(){t++;
  base=Math.min(4.2,2.2+correct*.22+t/6000);let m=1;
@@ -573,6 +599,11 @@ function drawIcon(ic,y){const s=ic.z>.9?1:.65,x=ic.x,th=cfg.theme;cx.globalAlpha
   if(ic.k===0||ic.k===2){circ(x,y,7*s,"#ff4d6d",2);circ(x,y,3*s,"#b3203c",2)}
   else if(ic.k===1){circ(x,y,6*s,"#f4f1ff",2);circ(x-2*s,y-1,2*s,"#b388ff",2);circ(x+2*s,y+2*s,2*s,"#b388ff",2)}
   else{cx.fillStyle="#ff9fc4";cx.fillRect(x-6*s,y,12*s,2);cx.fillRect(x-1,y-6*s,2,12*s)}}
+ else if(cfg.icons==="chem"){ // tepkime: deney tüpü, erlen, kabarcık, damla
+  if(ic.k===0){cx.fillStyle="#e6e2ff";cx.fillRect(x-3*s,y-10*s,6*s,16*s);cx.fillStyle="#3ee6b0";cx.fillRect(x-3*s,y,6*s,6*s);circ(x,y+6*s,3*s,"#3ee6b0",2)}
+  else if(ic.k===1){cx.fillStyle="#e6e2ff";cx.fillRect(x-2*s,y-9*s,4*s,6*s);cx.beginPath();cx.moveTo(x-2*s,y-3*s);cx.lineTo(x-8*s,y+7*s);cx.lineTo(x+8*s,y+7*s);cx.lineTo(x+2*s,y-3*s);cx.fill();cx.fillStyle="#ff9fc4";cx.fillRect(x-6*s,y+3*s,12*s,4*s)}
+  else if(ic.k===2){circ(x,y,4*s,"#c9a0ff",2);circ(x+7*s,y-5*s,3*s,"#c9a0ff",2);circ(x-6*s,y-8*s,2*s,"#c9a0ff",2)}
+  else{cx.fillStyle="#4cc9f0";cx.beginPath();cx.moveTo(x,y-7*s);cx.lineTo(x+5*s,y+2*s);cx.lineTo(x-5*s,y+2*s);cx.fill();circ(x,y+2*s,5*s,"#4cc9f0",2)}}
  else{ // dna
   if(ic.k<2){for(let i=0;i<8;i++){const yy=y+i*4*s,a=Math.sin(i*.8+ic.a)*7*s;cx.fillStyle="#ff9fc4";cx.fillRect(x+a,yy,3,3);cx.fillStyle="#4cc9f0";cx.fillRect(x-a,yy,3,3);if(i%2){cx.fillStyle="#e6e2ff";cx.fillRect(Math.min(x+a,x-a),yy+1,Math.abs(2*a),1)}}}
   else{circ(x,y,7*s,"#ff9fc4",2);circ(x+1,y,3*s,"#b388ff",2)}}
